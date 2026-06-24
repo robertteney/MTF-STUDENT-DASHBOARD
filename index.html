@@ -14,7 +14,7 @@
         }
 
         body {
-            background-color: #f8fafc;
+            background-color: #94a3b8; /* Even darker, premium dark-slate background */
             color: #1e293b;
             display: flex;
             flex-direction: column;
@@ -30,7 +30,7 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 4px solid #00A3E0; /* Brighter Blue Accent */
-            box-shadow: 0 4px 15px rgba(10, 37, 64, 0.1);
+            box-shadow: 0 4px 15px rgba(10, 37, 64, 0.2);
         }
 
         .logo-container img {
@@ -57,7 +57,7 @@
         /* Navigation Bar for Tabs */
         .sub-nav {
             background-color: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid #64748b;
             padding: 0 2rem;
             display: flex;
             gap: 1.5rem;
@@ -117,7 +117,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid #1e293b; /* Distinct dark divider */
             padding-bottom: 0.5rem;
         }
 
@@ -137,10 +137,10 @@
             gap: 1.5rem;
         }
 
-        /* Clean UI Interactive Tiles */
+        /* Clean UI Interactive Tiles (Crisp Solid White) */
         .tile {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
+            background: #ffffff !important; /* Solid bright white */
+            border: 1px solid #64748b;
             border-radius: 12px;
             padding: 2.25rem 1.5rem;
             text-decoration: none;
@@ -151,7 +151,7 @@
             justify-content: center;
             gap: 0.4rem;
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 16px rgba(10, 37, 64, 0.12);
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
@@ -197,8 +197,8 @@
 
         .tile:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(10, 37, 64, 0.1);
-            border-color: #cbd5e1;
+            box-shadow: 0 16px 28px rgba(10, 37, 64, 0.25);
+            border-color: #0A2540;
         }
 
         .tile:hover::before {
@@ -326,9 +326,9 @@
             text-align: center;
             padding: 2rem;
             font-size: 0.85rem;
-            color: #64748b;
-            background-color: #f1f5f9;
-            border-top: 1px solid #e2e8f0;
+            color: #ffffff;
+            background-color: #475569;
+            border-top: 1px solid #334155;
         }
     </style>
 </head>
