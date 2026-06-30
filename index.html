@@ -107,6 +107,10 @@
             margin-bottom: 2.5rem;
         }
 
+        .row-section:last-of-type {
+            margin-bottom: 0;
+        }
+
         .row-title {
             font-size: 1.15rem;
             font-weight: 700;
@@ -159,6 +163,12 @@
             min-height: 160px;
         }
 
+        /* Disabled / Placeholder State style modifiers for coming soon tiles */
+        .tile.disabled-tile {
+            cursor: not-allowed;
+            opacity: 0.85;
+        }
+
         .tile::before {
             content: '';
             position: absolute;
@@ -195,22 +205,22 @@
             margin-bottom: 0.4rem;
         }
 
-        .tile:hover {
+        .tile:not(.disabled-tile):hover {
             transform: translateY(-5px);
             box-shadow: 0 16px 28px rgba(10, 37, 64, 0.25);
             border-color: #0A2540;
         }
 
-        .tile:hover::before {
+        .tile:not(.disabled-tile):hover::before {
             background-color: #00A3E0; /* Brighter Blue Accent on hover */
         }
 
-        .tile:hover svg {
+        .tile:not(.disabled-tile):hover svg {
             stroke: #00A3E0; /* Brighter Blue Accent on hover */
             transform: scale(1.08);
         }
 
-        .tile:hover .sub-label {
+        .tile:not(.disabled-tile):hover .sub-label {
             color: #00A3E0;
         }
 
@@ -321,6 +331,86 @@
             background-color: #00A3E0; /* Brighter Blue Accent on hover */
         }
 
+        /* Custom Layout for Study Plan Modal Components */
+        .study-plan-container {
+            text-align: left;
+            margin-top: 1.5rem;
+        }
+
+        .study-plan-container h3 {
+            color: #0A2540;
+            margin: 1.75rem 0 0.5rem 0;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 0.25rem;
+            font-size: 1.3rem;
+        }
+
+        .study-plan-container ul {
+            padding-left: 1.25rem;
+            margin-bottom: 1.25rem;
+            list-style-type: disc;
+        }
+
+        .study-plan-container li {
+            margin-bottom: 0.4rem;
+            color: #334155;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+
+        .checkbox-item input {
+            margin-top: 0.25rem;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .slides-alert-text {
+            font-size: 0.95rem;
+            color: #475569;
+            font-style: italic;
+            margin: 0.25rem 0 1rem 0;
+        }
+
+        .modal-action-bar {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            position: sticky;
+            bottom: 0;
+            background: #ffffff;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .download-btn {
+            background-color: #00A3E0;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .download-btn:hover {
+            background-color: #0A2540;
+        }
+
         /* Minimalistic Clean Footer */
         footer {
             text-align: center;
@@ -329,6 +419,44 @@
             color: #ffffff;
             background-color: #475569;
             border-top: 1px solid #334155;
+        }
+
+        /* Standard Optimization Media Print Logic */
+        @media print {
+            body * {
+                display: none !important;
+            }
+            .modal-overlay.open {
+                position: relative;
+                background: none !important;
+                backdrop-filter: none !important;
+                display: block !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+            }
+            .modal-overlay.open .modal-content {
+                max-width: 100% !important;
+                width: 100% !important;
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                overflow-y: visible !important;
+                display: block !important;
+            }
+            .modal-action-bar, input[type="checkbox"] {
+                display: none !important;
+            }
+            .checkbox-item::before {
+                content: "[  ] " !important;
+                font-family: monospace !important;
+                font-weight: bold !important;
+                white-space: pre !important;
+            }
+            .study-plan-container h3 {
+                border-bottom: 2px solid #000000 !important;
+                margin-top: 2rem !important;
+                page-break-after: avoid;
+            }
         }
     </style>
 </head>
@@ -375,6 +503,41 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     <span>Canvas</span>
                     <div class="sub-label">(Go to: Courses > All Courses)</div>
+                </a>
+            </div>
+        </section>
+
+        <section class="row-section">
+            <h2 class="row-title">Recommended Certification Study Plans</h2>
+            <div class="grid-container">
+                <a class="tile" onclick="openModal('studyPlanModal')">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>CompTIA A+ 220-1201 Study Plan</span>
+                    <div class="sub-label">(10-Day Checklist)</div>
+                </a>
+
+                <a class="tile" onclick="openModal('studyPlanModalCore2')">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>CompTIA A+ 220-1202 Study Plan</span>
+                    <div class="sub-label">(12-Day Checklist)</div>
+                </a>
+
+                <a class="tile disabled-tile">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>CompTIA Network+ N10-009 Study Plan</span>
+                    <div class="sub-label">(Coming Soon)</div>
+                </a>
+
+                <a class="tile disabled-tile">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>CompTIA Security+ SY0-701 Study Plan</span>
+                    <div class="sub-label">(Coming Soon)</div>
+                </a>
+
+                <a class="tile disabled-tile">
+                    <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    <span>CompTIA CySA+ CS0-003 Study Plan</span>
+                    <div class="sub-label">(Coming Soon)</div>
                 </a>
             </div>
         </section>
@@ -462,6 +625,313 @@
         </div>
     </div>
 
+    <div id="studyPlanModal" class="modal-overlay" onclick="closeAllModals()">
+        <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
+            <h2>CompTIA A+ (220-1201) 10-Day Study Plan</h2>
+            
+            <div class="study-plan-container">
+                <p><strong>Important – Please Read Before You Begin</strong><br>
+                Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
+                
+                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 10-day plan.</p>
+                
+                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA A+ Core 1 (220-1201) certification exam.</p>
+
+                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
+                This study plan is designed to help you prepare for the CompTIA A+ Core 1 (220-1201) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
+
+                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+
+                <h3>Day 1 – Mobile Devices</h3>
+                <p><a href="https://docs.google.com/presentation/d/1Bc1MDZroOVQGNoXIFf4sJMRSxXVS4DOI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>1.1</strong> – Given a scenario, monitor mobile device hardware and use appropriate replacement techniques.</li>
+                    <li><strong>1.2</strong> – Compare and contrast accessories and connectivity options for mobile devices.</li>
+                    <li><strong>1.3</strong> – Given a scenario, configure basic mobile device network connectivity and provide application support.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: Mobile Devices Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review any missed questions and revisit the corresponding objectives.</div>
+
+                <h3>Day 2 – Networking (Part 1)</h3>
+                <p><a href="https://docs.google.com/presentation/d/1TcZBppmlz5fVAc8eCvefuePdtxDwL5z0/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.1</strong> – Compare and contrast Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) ports, protocols, and their purposes.</li>
+                    <li><strong>2.2</strong> – Explain wireless networking technologies.</li>
+                    <li><strong>2.3</strong> – Summarize services provided by networked hosts.</li>
+                    <li><strong>2.4</strong> – Explain common network configuration concepts.</li>
+                </ul>
+
+                <h3>Day 3 – Networking (Part 2)</h3>
+                <p><a href="https://docs.google.com/presentation/d/1OwAjH_YcyVheuuQsl41f8NgqP_zU-tt4/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.5</strong> – Compare and contrast common networking hardware devices.</li>
+                    <li><strong>2.6</strong> – Given a scenario, configure basic wired/wireless small office/home office (SOHO) networks.</li>
+                    <li><strong>2.7</strong> – Compare and contrast internet connection types, network types, and their characteristics.</li>
+                    <li><strong>2.8</strong> – Explain networking tools and their purposes.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Networking Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
+
+                <h3>Day 4 – Hardware (Part 1)</h3>
+                <p><a href="https://docs.google.com/presentation/d/1Nv-pWWt10GCrDz1CJiFTJWbsjJkPsFLY/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>3.1</strong> – Compare and contrast display components and attributes.</li>
+                    <li><strong>3.2</strong> – Summarize basic cable types and their connectors, features, and purposes.</li>
+                    <li><strong>3.3</strong> – Compare and contrast RAM characteristics.</li>
+                    <li><strong>3.4</strong> – Compare and contrast storage devices.</li>
+                </ul>
+
+                <h3>Day 5 – Hardware (Part 2)</h3>
+                <p><a href="https://docs.google.com/presentation/d/1I_SUi7rDI4AWQRQCM4zwuTjKxtAXQgYp/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>3.5</strong> – Given a scenario, install and configure motherboards, central processing units (CPUs), and add-on cards.</li>
+                    <li><strong>3.6</strong> – Given a scenario, install the appropriate power supply.</li>
+                    <li><strong>3.7</strong> – Given a scenario, deploy and configure multifunction devices/printers and settings.</li>
+                    <li><strong>3.8</strong> – Given a scenario, perform appropriate printer maintenance.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Hardware Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Carefully review all missed questions and revisit any challenging hardware concepts.</div>
+
+                <h3>Day 6 – Virtualization & Cloud Computing</h3>
+                <p><a href="https://docs.google.com/presentation/d/1VFMHfF0P7LWpsFi3XVpbN-tZ7ICBhys7/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.1</strong> – Explain virtualization concepts.</li>
+                    <li><strong>4.2</strong> – Summarize cloud computing concepts.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Virtualization & Cloud Computing Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review any areas requiring additional study.</div>
+
+                <h3>Day 7 – Hardware & Network Troubleshooting (Part 1)</h3>
+                <p><a href="https://docs.google.com/presentation/d/1maalh0evMiPQ0TlUJotpFaX_o6EpeXcF/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>5.1</strong> – Given a scenario, troubleshoot motherboards, RAM, CPUs, and power.</li>
+                    <li><strong>5.2</strong> – Given a scenario, troubleshoot drive and RAID issues.</li>
+                    <li><strong>5.3</strong> – Given a scenario, troubleshoot video, projector, and display issues.</li>
+                </ul>
+
+                <h3>Day 8 – Hardware & Network Troubleshooting (Part 2)</h3>
+                <p><a href="https://docs.google.com/presentation/d/16-YYn_262-MngYyjewBOhYxfi-Ni9deH/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>5.4</strong> – Given a scenario, troubleshoot common mobile device issues.</li>
+                    <li><strong>5.5</strong> – Given a scenario, troubleshoot network issues.</li>
+                    <li><strong>5.6</strong> – Given a scenario, troubleshoot printer issues.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 5: Hardware & Network Troubleshooting Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit objectives that need additional attention.</div>
+
+                <h3>Day 9 – Instructor Review Session</h3>
+                <p><strong>Task:</strong></p>
+                <div class="checkbox-item"><input type="checkbox"> Schedule and attend a 1-on-1 session with a Lead Instructor. (Align with Day 9).</div>
+                
+                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                </p>
+
+                <h3>Day 10 – Exam Day</h3>
+                <p>Congratulations—you've completed your study plan!</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA A+ Core 1 (220-1201) certification exam!</div>
+
+                <h3 style="margin-top:2rem;">Additional Recommendations</h3>
+                <ul>
+                    <li>Schedule additional 1-on-1 sessions with a Lead Instructor whenever you need extra assistance or clarification.</li>
+                    <li>Attend the weekly Boot Camps and Master Courses to reinforce key concepts, gain additional exam tips, and learn from instructor-led demonstrations.</li>
+                    <li>Continue using MeasureUp practice exams throughout your preparation to reinforce concepts, identify knowledge gaps, and build exam confidence.</li>
+                    <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
+                    <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
+                </ul>
+                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA A+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
+            </div>
+
+            <div class="modal-action-bar">
+                <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
+                <button class="close-btn" onclick="closeAllModals()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="studyPlanModalCore2" class="modal-overlay" onclick="closeAllModals()">
+        <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
+            <h2>CompTIA A+ (220-1202) 12-Day Study Plan</h2>
+            
+            <div class="study-plan-container">
+                <p><strong>Important – Please Read Before You Begin</strong><br>
+                Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
+                
+                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 12-day plan.</p>
+                
+                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA A+ Core 2 (220-1202) certification exam.</p>
+
+                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
+                This study plan is designed to help you prepare for the CompTIA A+ Core 2 (220-1202) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
+
+                <p style="margin-top: 0.5rem;">By following this study plan, you will develop a strong understanding of every Core 2 exam domain, build confidence by studying one section at a time, reinforce learning through regular practice exams, identify and improve weak areas before exam day, and prepare for both traditional multiple-choice questions and Performance-Based Questions (PBQs).</p>
+
+                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+
+                <h3>Day 1 – Operating Systems Fundamentals & Installation</h3>
+                <p><a href="https://docs.google.com/presentation/d/1Td7AFRPBip2NdRXjvSgnVLl-iKkUnDd4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>1.1</strong> – Explain common operating system (OS) types and their purposes.</li>
+                    <li><strong>1.2</strong> – Given a scenario, perform OS installations and upgrades in a diverse environment.</li>
+                    <li><strong>1.3</strong> – Compare and contrast basic features of Microsoft Windows editions.</li>
+                    <li><strong>1.4</strong> – Given a scenario, use Microsoft Windows operating system features and tools.</li>
+                </ul>
+
+                <h3>Day 2 – Windows Settings & Desktop Interfaces</h3>
+                <p><a href="https://docs.google.com/presentation/d/143M_olF9MqosaYVxjdftQqMtUeefBFm9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>1.5</strong> – Given a scenario, use the appropriate Microsoft command-line tools.</li>
+                    <li><strong>1.6</strong> – Given a scenario, configure Microsoft Windows settings.</li>
+                    <li><strong>1.7</strong> – Given a scenario, configure Microsoft Windows networking features on a client/desktop.</li>
+                    <li><strong>1.8</strong> – Explain common features and tools of the macOS/desktop operating system.</li>
+                </ul>
+
+                <h3>Day 3 – Linux Desktops, Application Architecture & Cloud Tools</h3>
+                <p><a href="https://docs.google.com/presentation/d/1HS3fJeNT3CPrJvtbSTUOAsnHroUtURxr/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>1.9</strong> – Identify common features and tools of the Linux client/desktop operating system.</li>
+                    <li><strong>1.10</strong> – Given a scenario, install applications according to requirements.</li>
+                    <li><strong>1.11</strong> – Given a scenario, install and configure cloud-based productivity tools.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: Operating Systems Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak operating systems concepts.</div>
+
+                <h3>Day 4 – OS Security Settings & Malware Mitigation</h3>
+                <p><a href="https://docs.google.com/presentation/d/1A-ePzHjfBuP9sl-NT9e2ykA9mofUlc7w/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.1</strong> – Summarize various security measures and their purposes.</li>
+                    <li><strong>2.2</strong> – Given a scenario, configure and apply basic Microsoft Windows OS security settings.</li>
+                    <li><strong>2.3</strong> – Compare and contrast wireless security protocols and authentication methods.</li>
+                    <li><strong>2.4</strong> – Summarize types of malware and tools/methods for detection, removal, and prevention.</li>
+                </ul>
+
+                <h3>Day 5 – Social Engineering & System Hardening</h3>
+                <p><a href="https://docs.google.com/presentation/d/1fmnEGRIRqxqlvd97KKQAZfe2VZcQFTa3/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.5</strong> – Compare and contrast common social engineering attacks, threats, and vulnerabilities.</li>
+                    <li><strong>2.6</strong> – Given a scenario, implement procedures for basic small office/home office (SOHO) malware removal.</li>
+                    <li><strong>2.7</strong> – Given a scenario, apply workstation security options and hardening techniques.</li>
+                    <li><strong>2.8</strong> – Given a scenario, apply common methods for securing mobile devices.</li>
+                </ul>
+
+                <h3>Day 6 – Network Security & Data Destruction</h3>
+                <p><a href="https://docs.google.com/presentation/d/1-Y_rAq2c5VRwc7VJBI3fha7a0dMewNj5/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.9</strong> – Compare and contrast common data destruction and disposal methods.</li>
+                    <li><strong>2.10</strong> – Given a scenario, apply security settings on SOHO wireless and wired networks.</li>
+                    <li><strong>2.11</strong> – Given a scenario, configure relevant security settings in a browser.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Security Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review any security areas requiring additional study.</div>
+
+                <h3>Day 7 – Operating Systems & Software Troubleshooting</h3>
+                <p><a href="https://docs.google.com/presentation/d/1kp4xotnUEXKWZxs1LL-Rmnh6UA8qBJ9m/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>3.1</strong> – Given a scenario, troubleshoot common Windows OS issues.</li>
+                    <li><strong>3.2</strong> – Given a scenario, troubleshoot common mobile OS and application issues.</li>
+                    <li><strong>3.3</strong> – Given a scenario, troubleshoot common mobile OS and application security issues.</li>
+                    <li><strong>3.4</strong> – Given a scenario, troubleshoot common personal computer (PC) security issues.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Software Troubleshooting Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review any troubleshooting areas requiring additional study.</div>
+
+                <h3>Day 8 – Documentation, Change Management & Asset Recovery</h3>
+                <p><a href="https://docs.google.com/presentation/d/1qF9ZcTZsyZG_RdI93GRUKV_8VzIzNkf9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.1</strong> – Given a scenario, implement best practices associated with documentation and support systems information management.</li>
+                    <li><strong>4.2</strong> – Given a scenario, apply change management procedures.</li>
+                    <li><strong>4.3</strong> – Given a scenario, implement workstation backup and recovery methods.</li>
+                    <li><strong>4.4</strong> – Given a scenario, use common safety procedures.</li>
+                </ul>
+
+                <h3>Day 9 – Compliance, Environmental Controls & Professionalism</h3>
+                <p><a href="https://docs.google.com/presentation/d/1k4n4kz-mmt4T5UlxODRglKldQI993FkZ/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.5</strong> – Summarize environmental impacts and local environment controls.</li>
+                    <li><strong>4.6</strong> – Explain the importance of prohibited content/activity and privacy, licensing, and policy concepts.</li>
+                    <li><strong>4.7</strong> – Given a scenario, use proper communication techniques and professionalism.</li>
+                </ul>
+
+                <h3>Day 10 – Basic Scripting, Remote Access & AI Concepts</h3>
+                <p><a href="https://docs.google.com/presentation/d/1YLP_xcg0tzrkEFl01tcCTQfN5DKNqNP8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.8</strong> – Explain the basics of scripting.</li>
+                    <li><strong>4.9</strong> – Given a scenario, use remote access technologies.</li>
+                    <li><strong>4.10</strong> – Explain basic concepts related to artificial intelligence (AI).</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Operational Procedures Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit operational objectives that need additional attention.</div>
+
+                <h3>Day 11 – Instructor Review Session</h3>
+                <p><strong>Task:</strong></p>
+                <div class="checkbox-item"><input type="checkbox"> Schedule and attend a 1-on-1 session with a Lead Instructor. (Align with Day 11).</div>
+                
+                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                </p>
+
+                <h3>Day 12 – Exam Day</h3>
+                <p>Congratulations—you've completed your study plan!</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA A+ Core 2 (220-1202) certification exam!</div>
+
+                <h3 style="margin-top:2rem;">Additional Recommendations</h3>
+                <ul>
+                    <li>Schedule additional 1-on-1 sessions with a Lead Instructor whenever you need extra assistance or clarification.</li>
+                    <li>Attend the weekly Boot Camps and Master Courses to reinforce key concepts, gain additional exam tips, and learn from instructor-led demonstrations.</li>
+                    <li>Continue using MeasureUp practice exams throughout your preparation to reinforce concepts, identify knowledge gaps, and build exam confidence.</li>
+                    <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
+                    <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
+                </ul>
+                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA A+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
+            </div>
+
+            <div class="modal-action-bar">
+                <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
+                <button class="close-btn" onclick="closeAllModals()">Close</button>
+            </div>
+        </div>
+    </div>
+
     <footer>
         &copy; 2026 MyComputerCareer MTF Program. All Rights Reserved.
     </footer>
@@ -484,6 +954,10 @@
             modals.forEach(modal => modal.classList.remove('open'));
             tabs.forEach(tab => tab.classList.remove('active'));
             document.getElementById('dashboardTab').classList.add('active');
+        }
+
+        function printStudyPlan() {
+            window.print();
         }
     </script>
 
