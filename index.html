@@ -421,10 +421,14 @@
             border-top: 1px solid #334155;
         }
 
-        /* Standard Optimization Media Print Logic */
+        /* Universal Optimization Media Print Logic */
         @media print {
             body * {
                 display: none !important;
+            }
+            /* Target ONLY the layout structure of the specific open modal overlay */
+            .modal-overlay.open, .modal-overlay.open * {
+                display: block !important;
             }
             .modal-overlay.open {
                 position: relative;
@@ -528,16 +532,16 @@
                     <div class="sub-label">(12-Day Checklist)</div>
                 </a>
 
-                <a class="tile disabled-tile">
+                <a class="tile" onclick="openModal('studyPlanModalSecurityPlus')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     <span>CompTIA Security+ SY0-701 Study Plan</span>
-                    <div class="sub-label">(Coming Soon)</div>
+                    <div class="sub-label">(12-Day Checklist)</div>
                 </a>
 
-                <a class="tile disabled-tile">
+                <a class="tile" onclick="openModal('studyPlanModalCySA')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     <span>CompTIA CySA+ CS0-003 Study Plan</span>
-                    <div class="sub-label">(Coming Soon)</div>
+                    <div class="sub-label">(8-Day Checklist)</div>
                 </a>
             </div>
         </section>
@@ -1079,6 +1083,281 @@
                     <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
                 </ul>
                 <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA Network+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
+            </div>
+
+            <div class="modal-action-bar">
+                <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
+                <button class="close-btn" onclick="closeAllModals()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="studyPlanModalSecurityPlus" class="modal-overlay" onclick="closeAllModals()">
+        <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
+            <h2>CompTIA Security+ (SY0-701) 12-Day Study Plan</h2>
+            
+            <div class="study-plan-container">
+                <p><strong>Important – Please Read Before You Begin</strong><br>
+                Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
+                
+                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 12-day plan.</p>
+                
+                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA Security+ (SY0-701) certification exam.</p>
+
+                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
+                This study plan is designed to help you prepare for the CompTIA Security+ (SY0-701) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
+
+                <p style="margin-top: 0.5rem;">By following this study plan, you will develop a strong understanding of every Security+ exam domain, build confidence by studying one section at a time, reinforce learning through regular practice exams, identify and improve weak areas before exam day, and prepare for both traditional multiple-choice questions and Performance-Based Questions (PBQs).</p>
+
+                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+
+                <h3>Day 1 – General Security Concepts & Cryptographic Solutions</h3>
+                <p><a href="https://docs.google.com/presentation/d/1CXJhK_7Ah_yQGgP1Gn5gOtTngQN0Mw_1/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>1.1</strong> – Compare and contrast various types of security controls.</li>
+                    <li><strong>1.2</strong> – Summarize fundamental security concepts.</li>
+                    <li><strong>1.3</strong> – Explain the importance of change management processes and the impact to security.</li>
+                    <li><strong>1.4</strong> – Explain the importance of using appropriate cryptographic solutions.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: General Security Concepts Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak core security concepts.</div>
+
+                <h3>Day 2 – Threat Actors, Motivations & Attack Surfaces</h3>
+                <p><a href="https://docs.google.com/presentation/d/1NmjnFeOzT3bVboOxnbBk6r6woZlhRK7r/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.1</strong> – Compare and contrast common threat actors and motivations.</li>
+                    <li><strong>2.2</strong> – Explain common threat vectors and attack surfaces.</li>
+                    <li><strong>2.3</strong> – Explain various types of vulnerabilities.</li>
+                </ul>
+
+                <h3>Day 3 – Malicious Activity Indicators & Enterprise Mitigation Techniques</h3>
+                <p><a href="https://docs.google.com/presentation/d/1q8prfV2L_lTGZqlanNCntwywpM4vyIku/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.4</strong> – Given a scenario, analyze indicators of malicious activity.</li>
+                    <li><strong>2.5</strong> – Explain the purpose of mitigation techniques used to secure the enterprise.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Threats, Vulnerabilities, & Mitigations Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak threat landscape concepts.</div>
+
+                <h3>Day 4 – Architecture Models & Enterprise Infrastructure Security Principles</h3>
+                <p><a href="https://docs.google.com/presentation/d/1m8u9Uo1WEhA_T7ICl-pei69p2HQsGtph/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>3.1</strong> – Compare and contrast security implications of different architecture models.</li>
+                    <li><strong>3.2</strong> – Given a scenario, apply security principles to secure enterprise infrastructure.</li>
+                </ul>
+
+                <h3>Day 5 – Data Protection Strategies & Architecture Resilience</h3>
+                <p><a href="https://docs.google.com/presentation/d/1_I-KemPC5OiynQHdsQDAe_ijPgyM0ySX/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>3.3</strong> – Compare and contrast concepts and strategies to protect data.</li>
+                    <li><strong>3.4</strong> – Explain the importance of resilience and recovery in security architecture.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Security Architecture Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak architecture concepts.</div>
+
+                <h3>Day 6 – Resource Security, Asset Management & Vulnerability Lifecycles</h3>
+                <p><a href="https://docs.google.com/presentation/d/1yeo-QkKzY1PbIvK3dYThRQI3qWkkWRI4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.1</strong> – Given a scenario, apply common security techniques to computing resources.</li>
+                    <li><strong>4.2</strong> – Explain the security implications of proper hardware, software, and data asset management.</li>
+                    <li><strong>4.3</strong> – Explain various activities associated with vulnerability management.</li>
+                </ul>
+
+                <h3>Day 7 – Security Monitoring, Capabilities Enhancement & Identity Management (IAM)</h3>
+                <p><a href="https://docs.google.com/presentation/d/1v5clN7Jp80ui4qeyokT2422qlwM4BwFz/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.4</strong> – Explain security alerting and monitoring concepts and tools.</li>
+                    <li><strong>4.5</strong> – Given a scenario, modify enterprise capabilities to enhance security.</li>
+                    <li><strong>4.6</strong> – Given a scenario, implement and maintain identity and access management.</li>
+                </ul>
+
+                <h3>Day 8 – SecOps Automation, Incident Response & Forensic Data Sources</h3>
+                <p><a href="https://docs.google.com/presentation/d/1IwWf_ufZ8sWNue3tPoxqUQcz8FfyW0u8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.7</strong> – Explain the importance of automation and orchestration related to secure operations.</li>
+                    <li><strong>4.8</strong> – Explain appropriate incident response activities.</li>
+                    <li><strong>4.9</strong> – Given a scenario, use data sources to support an investigation.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Security Operations Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review any security operations areas requiring additional study.</div>
+
+                <h3>Day 9 – Security Governance & Third-Party Risk Assessment Frameworks</h3>
+                <p><a href="https://docs.google.com/presentation/d/1Ob39s2zWtvbDShYhptaZZrmEvPD4518Z/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>5.1</strong> – Summarize elements of effective security governance.</li>
+                    <li><strong>5.2</strong> – Explain elements of the risk management process.</li>
+                    <li><strong>5.3</strong> – Explain the processes associated with third-party risk assessment and management.</li>
+                </ul>
+
+                <h3>Day 10 – Regulatory Compliance, Audit Processes & Awareness Hardening</h3>
+                <p><a href="https://docs.google.com/presentation/d/1JbhjfUhl93NEJvJLroSrB7CspR2CzuSC/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>5.4</strong> – Summarize elements of effective security compliance.</li>
+                    <li><strong>5.5</strong> – Explain types and purposes of audits and assessments.</li>
+                    <li><strong>5.6</strong> – Given a scenario, implement security awareness practices.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 5: Security Management & Oversight Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit oversight objectives that need additional attention.</div>
+
+                <h3>Day 11 – Instructor Review Session</h3>
+                <p><strong>Task:</strong></p>
+                <div class="checkbox-item"><input type="checkbox"> Schedule and attend a 1-on-1 session with a Lead Instructor. (Align with Day 11).</div>
+                
+                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                </p>
+
+                <h3>Day 12 – Exam Day</h3>
+                <p>Congratulations—you've completed your study plan!</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA Security+ (SY0-701) certification exam!</div>
+
+                <h3 style="margin-top:2rem;">Additional Recommendations</h3>
+                <ul>
+                    <li>Schedule additional 1-on-1 sessions with a Lead Instructor whenever you need extra assistance or clarification.</li>
+                    <li>Attend the weekly Boot Camps and Master Courses to reinforce key concepts, gain additional exam tips, and learn from instructor-led demonstrations.</li>
+                    <li>Continue using MeasureUp practice exams throughout your preparation to reinforce concepts, identify knowledge gaps, and build exam confidence.</li>
+                    <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
+                    <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
+                </ul>
+                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA Security+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
+            </div>
+
+            <div class="modal-action-bar">
+                <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
+                <button class="close-btn" onclick="closeAllModals()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="studyPlanModalCySA" class="modal-overlay" onclick="closeAllModals()">
+        <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
+            <h2>CompTIA CySA+ (CS0-003) 8-Day Study Plan</h2>
+            
+            <div class="study-plan-container">
+                <p><strong>Important – Please Read Before You Begin</strong><br>
+                Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
+                
+                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 8-day plan.</p>
+                
+                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA CySA+ (CS0-003) certification exam.</p>
+
+                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
+                This study plan is designed to help you prepare for the CompTIA CySA+ (CS0-003) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
+
+                <p style="margin-top: 0.5rem;">By following this study plan, you will develop a strong understanding of every CySA+ exam domain, build confidence by studying one section at a time, reinforce learning through regular practice exams, identify and improve weak areas before exam day, and prepare for both traditional multiple-choice questions and Performance-Based Questions (PBQs).</p>
+
+                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+
+                <h3>Day 1 – Security Architecture & Malicious Activity Indicators</h3>
+                <p><a href="https://docs.google.com/presentation/d/1n6e2q_EBgJEVvDS7-m_q_5Po66PltK2_/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>1.1</strong> – Explain the importance of system and network architecture concepts in security operations.</li>
+                    <li><strong>1.2</strong> – Given a scenario, analyze indicators of potentially malicious activity.</li>
+                </ul>
+
+                <h3>Day 2 – Security Analytics Tools, Threat Hunting & Process Optimization</h3>
+                <p><a href="https://docs.google.com/presentation/d/1s2zEvFNVhsGow7-F7IfLWYl0hLs2PnVk/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>1.3</strong> – Given a scenario, use appropriate tools or techniques to determine malicious activity.</li>
+                    <li><strong>1.4</strong> – Compare and contrast threat-intelligence and threat-hunting concepts.</li>
+                    <li><strong>1.5</strong> – Explain the importance of efficiency and process improvement in security operations.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: Security Operations Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak security operations concepts.</div>
+
+                <h3>Day 3 – Vulnerability Scanning Methods & Assessment Tool Outputs</h3>
+                <p><a href="https://docs.google.com/presentation/d/1BZC02QM6gZNf4AAJTFzNc0TLX-9-eqUu/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.1</strong> – Given a scenario, implement vulnerability scanning methods and concepts.</li>
+                    <li><strong>2.2</strong> – Given a scenario, analyze output from vulnerability assessment tools.</li>
+                </ul>
+
+                <h3>Day 4 – Vulnerability Prioritization, Response Handling & Mitigations</h3>
+                <p><a href="https://docs.google.com/presentation/d/1QsUCeMYcCrdVCSHFthzN2SFUh3nntGLI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>2.3</strong> – Given a scenario, analyze data to prioritize vulnerabilities.</li>
+                    <li><strong>2.4</strong> – Given a scenario, recommend controls to mitigate attacks and software vulnerabilities.</li>
+                    <li><strong>2.5</strong> – Explain concepts related to vulnerability response, handling, and management.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Vulnerability Management Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak vulnerability management concepts.</div>
+
+                <h3>Day 5 – Attack Methodologies, Incident Response Frameworks & Life Cycles</h3>
+                <p><a href="https://docs.google.com/presentation/d/1pQs_rNls5yuPDRzFScB6fUTh83B2Zi8k/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>3.1</strong> – Explain concepts related to attack methodology frameworks.</li>
+                    <li><strong>3.2</strong> – Given a scenario, perform incident response activities.</li>
+                    <li><strong>3.3</strong> – Explain the preparation and post-incident activity phases of the incident management life cycle.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Incident Response & Management Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak response mechanics.</div>
+
+                <h3>Day 6 – Intelligence Communications, Incident Reporting & Vulnerability Disclosures</h3>
+                <p><a href="https://docs.google.com/presentation/d/1GQvWbJ-XRe1sa6zEpotUitKmtzNNVxoW/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                <p><strong>Study the Following Objectives:</strong></p>
+                <ul>
+                    <li><strong>4.1</strong> – Explain the importance of vulnerability management reporting and communication.</li>
+                    <li><strong>4.2</strong> – Explain the importance of incident response reporting and communication.</li>
+                </ul>
+                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Reporting & Communication Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak communication mechanics.</div>
+
+                <h3>Day 7 – Instructor Review Session</h3>
+                <p><strong>Task:</strong></p>
+                <div class="checkbox-item"><input type="checkbox"> Schedule and attend a 1-on-1 session with a Lead Instructor. (Align with Day 7).</div>
+                
+                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                </p>
+
+                <h3>Day 8 – Exam Day</h3>
+                <p>Congratulations—you've completed your study plan!</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA CySA+ (CS0-003) certification exam!</div>
+
+                <h3 style="margin-top:2rem;">Additional Recommendations</h3>
+                <ul>
+                    <li>Schedule additional 1-on-1 sessions with a Lead Instructor whenever you need extra assistance or clarification.</li>
+                    <li>Attend the weekly Boot Camps and Master Courses to reinforce key concepts, gain additional exam tips, and learn from instructor-led demonstrations.</li>
+                    <li>Continue using MeasureUp practice exams throughout your preparation to reinforce concepts, identify knowledge gaps, and build exam confidence.</li>
+                    <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
+                    <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
+                </ul>
+                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA CySA+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
             </div>
 
             <div class="modal-action-bar">
