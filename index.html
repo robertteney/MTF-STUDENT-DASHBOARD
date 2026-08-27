@@ -163,12 +163,6 @@
             min-height: 160px;
         }
 
-        /* Disabled / Placeholder State style modifiers for coming soon tiles */
-        .tile.disabled-tile {
-            cursor: not-allowed;
-            opacity: 0.85;
-        }
-
         .tile::before {
             content: '';
             position: absolute;
@@ -205,22 +199,22 @@
             margin-bottom: 0.4rem;
         }
 
-        .tile:not(.disabled-tile):hover {
+        .tile:hover {
             transform: translateY(-5px);
             box-shadow: 0 16px 28px rgba(10, 37, 64, 0.25);
             border-color: #0A2540;
         }
 
-        .tile:not(.disabled-tile):hover::before {
+        .tile:hover::before {
             background-color: #00A3E0; /* Brighter Blue Accent on hover */
         }
 
-        .tile:not(.disabled-tile):hover svg {
+        .tile:hover svg {
             stroke: #00A3E0; /* Brighter Blue Accent on hover */
             transform: scale(1.08);
         }
 
-        .tile:not(.disabled-tile):hover .sub-label {
+        .tile:hover .sub-label {
             color: #00A3E0;
         }
 
@@ -358,6 +352,30 @@
             line-height: 1.5;
         }
 
+        .resource-box {
+            background-color: #f1f5f9;
+            border-left: 4px solid #00A3E0;
+            padding: 1.25rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .resource-box h4 {
+            color: #0A2540;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            color: #334155;
+        }
+
+        .resource-box ul {
+            margin-bottom: 0;
+        }
+
         .checkbox-item {
             display: flex;
             align-items: flex-start;
@@ -411,14 +429,13 @@
             background-color: #0A2540;
         }
 
-        /* Minimalistic Clean Footer */
         footer {
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.85rem;
+            background-color: #0A2540;
             color: #ffffff;
-            background-color: #475569;
-            border-top: 1px solid #334155;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: auto;
+            font-size: 0.9rem;
         }
 
         /* Universal Optimization Media Print Logic */
@@ -426,7 +443,6 @@
             body * {
                 display: none !important;
             }
-            /* Target ONLY the layout structure of the specific open modal overlay */
             .modal-overlay.open, .modal-overlay.open * {
                 display: block !important;
             }
@@ -508,11 +524,16 @@
                     <span>Canvas</span>
                     <div class="sub-label">(Go to: Courses > All Courses)</div>
                 </a>
+
+                <a href="https://mycomputercareer.measureup.com/login" target="_blank" class="tile">
+                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4m-2 6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14"/></svg>
+                    <span>MeasureUp</span>
+                </a>
             </div>
         </section>
 
         <section class="row-section">
-            <h2 class="row-title">Recommended Certification Study Plans</h2>
+            <h2 class="row-title">Certification Study Plans & Resources</h2>
             <div class="grid-container">
                 <a class="tile" onclick="openModal('studyPlanModal')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
@@ -551,17 +572,12 @@
             <div class="grid-container">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform?usp=header" target="_blank" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    <span>Support Staff &<br>Lead Instructor One-on-One Links</span>
+                    <span>Support Staff &<br>One-on-One Scheduling</span>
                 </a>
 
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4ZvflRvVS8DY1xiTLXfP0PWCiZeNCvxsmg7qYzMc4G1I8zg/viewform" target="_blank" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                     <span>Self Study Voucher Request Form</span>
-                </a>
-
-                <a href="https://mycomputercareer.measureup.com/login" target="_blank" class="tile">
-                    <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4m-2 6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14"/></svg>
-                    <span>MeasureUp</span>
                 </a>
             </div>
         </section>
@@ -598,15 +614,17 @@
 
     </main>
 
-    <div id="aboutModal" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 1: About MTF -->
+    <div id="aboutModal" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h2>What is the MTF?</h2>
             <p>The <strong>MTF (Maximum Time Frame)</strong> period is a designated timeframe after a student graduates to continue preparing for and taking their certification exams!</p>
-            <button class="close-btn" onclick="closeAllModals()">Return to Dashboard</button>
+            <button class="close-btn" onclick="closeAllModals(null, true)">Return to Dashboard</button>
         </div>
     </div>
 
-    <div id="limitationsModal" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 2: MTF Limitations -->
+    <div id="limitationsModal" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h2>MTF Voucher Limitations</h2>
             <p style="margin-bottom: 1rem;">Please keep the following critical policy limitations in mind:</p>
@@ -615,36 +633,41 @@
                 <li>Students are approved for up to a <strong>4th attempt</strong> at an exam.</li>
                 <li>Any certification voucher requested must be completed by the student's designated <strong>MTF expiration date</strong>.</li>
             </ul>
-            <button class="close-btn" onclick="closeAllModals()">Return to Dashboard</button>
+            <button class="close-btn" onclick="closeAllModals(null, true)">Return to Dashboard</button>
         </div>
     </div>
 
-    <div id="expiredModal" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 3: MTF Expired -->
+    <div id="expiredModal" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" onclick="event.stopPropagation()">
             <h2>MTF Expired? What's Next?</h2>
             <p>If your MTF has expired and you are still interested in pursuing additional certification attempts, contact Alumni Services at <a href="mailto:alumni@mycomputercareer.com">alumni@mycomputercareer.com</a>.</p>
             <p>They can assist you with enrollment in a free, self-paced refresher course, and upon successful completion, you may be eligible to receive an additional exam voucher. Alumni Services can provide full details regarding this process.</p>
             <p>We wish you the best in your continued certification journey, and please feel free to reach out if you have any questions.</p>
-            <button class="close-btn" onclick="closeAllModals()">Return to Dashboard</button>
+            <button class="close-btn" onclick="closeAllModals(null, true)">Return to Dashboard</button>
         </div>
     </div>
 
-    <div id="studyPlanModal" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 4: CompTIA A+ 220-1201 Study Plan -->
+    <div id="studyPlanModal" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
             <h2>CompTIA A+ (220-1201) 10-Day Study Plan</h2>
             
             <div class="study-plan-container">
                 <p><strong>Important – Please Read Before You Begin</strong><br>
                 Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
-                
-                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 10-day plan.</p>
-                
-                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA A+ Core 1 (220-1201) certification exam.</p>
 
-                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
-                This study plan is designed to help you prepare for the CompTIA A+ Core 1 (220-1201) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
-
-                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+                <div class="resource-box">
+                    <h4>📁 A+ 220-1201 Student Resources Drive</h4>
+                    <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
+                    <p><a href="https://drive.google.com/drive/folders/1HimO_m2HJEvgxhAUguOelrNvzJOKH6ev" target="_blank"><strong>→ Open A+ 220-1201 Student Resources Drive</strong></a></p>
+                    <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
+                    <ul>
+                        <li><strong>Practice PBQs (Performance-Based Questions):</strong> Get hands-on practice with simulation-style questions that test your ability to solve complex, real-world scenarios—a critical component of passing the official exam.</li>
+                        <li><strong>Hands-On Labs:</strong> Step-by-step lab activities designed to build practical experience with hardware installation, networking configurations, and mobile device setups.</li>
+                        <li><strong>Student Aids & Quick References:</strong> Access study guides, cheat sheets, acronym lists, and visual diagrams to help reinforce key concepts and improve memory retention for exam day.</li>
+                    </ul>
+                </div>
 
                 <h3>Day 1 – Mobile Devices</h3>
                 <p><a href="https://docs.google.com/presentation/d/1Bc1MDZroOVQGNoXIFf4sJMRSxXVS4DOI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
@@ -655,7 +678,7 @@
                     <li><strong>1.2</strong> – Compare and contrast accessories and connectivity options for mobile devices.</li>
                     <li><strong>1.3</strong> – Given a scenario, configure basic mobile device network connectivity and provide application support.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: Mobile Devices Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=23782689&source=liveDashboard" target="_blank">Complete the Domain 1: Mobile Devices Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review any missed questions and revisit the corresponding objectives.</div>
 
                 <h3>Day 2 – Networking (Part 1)</h3>
@@ -679,7 +702,7 @@
                     <li><strong>2.7</strong> – Compare and contrast internet connection types, network types, and their characteristics.</li>
                     <li><strong>2.8</strong> – Explain networking tools and their purposes.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Networking Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=42591521&source=liveDashboard" target="_blank">Complete the Domain 2: Networking Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
 
                 <h3>Day 4 – Hardware (Part 1)</h3>
@@ -703,7 +726,7 @@
                     <li><strong>3.7</strong> – Given a scenario, deploy and configure multifunction devices/printers and settings.</li>
                     <li><strong>3.8</strong> – Given a scenario, perform appropriate printer maintenance.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Hardware Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=20309281&source=liveDashboard" target="_blank">Complete the Domain 3: Hardware Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Carefully review all missed questions and revisit any challenging hardware concepts.</div>
 
                 <h3>Day 6 – Virtualization & Cloud Computing</h3>
@@ -714,7 +737,7 @@
                     <li><strong>4.1</strong> – Explain virtualization concepts.</li>
                     <li><strong>4.2</strong> – Summarize cloud computing concepts.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Virtualization & Cloud Computing Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=58582305&source=liveDashboard" target="_blank">Complete the Domain 4: Virtualization & Cloud Computing Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review any areas requiring additional study.</div>
 
                 <h3>Day 7 – Hardware & Network Troubleshooting (Part 1)</h3>
@@ -736,8 +759,9 @@
                     <li><strong>5.5</strong> – Given a scenario, troubleshoot network issues.</li>
                     <li><strong>5.6</strong> – Given a scenario, troubleshoot printer issues.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 5: Hardware & Network Troubleshooting Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=32236833&source=liveDashboard" target="_blank">Complete the Domain 5: Hardware & Network Troubleshooting Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit objectives that need additional attention.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1201-test/" target="_blank">Launch A+ 220-1201 Practice Test</a></div>
 
                 <h3>Day 9 – Instructor Review Session</h3>
                 <p><strong>Task:</strong></p>
@@ -761,17 +785,17 @@
                     <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
                     <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
                 </ul>
-                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA A+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
             </div>
 
             <div class="modal-action-bar">
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
-                <button class="close-btn" onclick="closeAllModals()">Close</button>
+                <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
         </div>
     </div>
 
-    <div id="studyPlanModalCore2" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 5: CompTIA A+ 220-1202 Study Plan -->
+    <div id="studyPlanModalCore2" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
             <h2>CompTIA A+ (220-1202) 12-Day Study Plan</h2>
             
@@ -780,15 +804,18 @@
                 Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
                 
                 <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 12-day plan.</p>
-                
-                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA A+ Core 2 (220-1202) certification exam.</p>
 
-                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
-                This study plan is designed to help you prepare for the CompTIA A+ Core 2 (220-1202) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
-
-                <p style="margin-top: 0.5rem;">By following this study plan, you will develop a strong understanding of every Core 2 exam domain, build confidence by studying one section at a time, reinforce learning through regular practice exams, identify and improve weak areas before exam day, and prepare for both traditional multiple-choice questions and Performance-Based Questions (PBQs).</p>
-
-                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+                <div class="resource-box">
+                    <h4>📁 A+ 220-1202 Student Resources Drive</h4>
+                    <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
+                    <p><a href="https://drive.google.com/drive/folders/1Sdn3aKzxEi1QG3hqDDtMnBfuWIV6Zeno" target="_blank"><strong>→ Open A+ 220-1202 Student Resources Drive</strong></a></p>
+                    <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
+                    <ul>
+                        <li><strong>Practice PBQs (Performance-Based Questions):</strong> Get hands-on practice with simulation-style questions that test your ability to solve complex, real-world operating system and security scenarios.</li>
+                        <li><strong>Hands-On Labs:</strong> Step-by-step lab activities designed to build practical experience with Windows tools, CLI utilities, Linux commands, and malware remediation.</li>
+                        <li><strong>Student Aids & Quick References:</strong> Access study guides, cheat sheets, command lists, and visual diagrams to help reinforce key concepts and improve memory retention for exam day.</li>
+                    </ul>
+                </div>
 
                 <h3>Day 1 – Operating Systems Fundamentals & Installation</h3>
                 <p><a href="https://docs.google.com/presentation/d/1Td7AFRPBip2NdRXjvSgnVLl-iKkUnDd4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
@@ -821,7 +848,7 @@
                     <li><strong>1.10</strong> – Given a scenario, install applications according to requirements.</li>
                     <li><strong>1.11</strong> – Given a scenario, install and configure cloud-based productivity tools.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: Operating Systems Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08983841&source=liveDashboard" target="_blank">Complete the Domain 1: Operating Systems Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak operating systems concepts.</div>
 
                 <h3>Day 4 – OS Security Settings & Malware Mitigation</h3>
@@ -855,7 +882,7 @@
                     <li><strong>2.10</strong> – Given a scenario, apply security settings on SOHO wireless and wired networks.</li>
                     <li><strong>2.11</strong> – Given a scenario, configure relevant security settings in a browser.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Security Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=48567585&source=liveDashboard" target="_blank">Complete the Domain 2: Security Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review any security areas requiring additional study.</div>
 
                 <h3>Day 7 – Operating Systems & Software Troubleshooting</h3>
@@ -868,7 +895,7 @@
                     <li><strong>3.3</strong> – Given a scenario, troubleshoot common mobile OS and application security issues.</li>
                     <li><strong>3.4</strong> – Given a scenario, troubleshoot common personal computer (PC) security issues.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Software Troubleshooting Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=52237601&source=liveDashboard" target="_blank">Complete the Domain 3: Software Troubleshooting Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review any troubleshooting areas requiring additional study.</div>
 
                 <h3>Day 8 – Documentation, Change Management & Asset Recovery</h3>
@@ -901,8 +928,9 @@
                     <li><strong>4.9</strong> – Given a scenario, use remote access technologies.</li>
                     <li><strong>4.10</strong> – Explain basic concepts related to artificial intelligence (AI).</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Operational Procedures Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=13833505&source=liveDashboard" target="_blank">Complete the Domain 4: Operational Procedures Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit operational objectives that need additional attention.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1202-test/" target="_blank">Launch A+ 220-1202 Practice Test</a></div>
 
                 <h3>Day 11 – Instructor Review Session</h3>
                 <p><strong>Task:</strong></p>
@@ -926,34 +954,35 @@
                     <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
                     <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
                 </ul>
-                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA A+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
             </div>
 
             <div class="modal-action-bar">
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
-                <button class="close-btn" onclick="closeAllModals()">Close</button>
+                <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
         </div>
     </div>
 
-    <div id="studyPlanModalNetworkPlus" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 6: CompTIA Network+ N10-009 Study Plan -->
+    <div id="studyPlanModalNetworkPlus" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
             <h2>CompTIA Network+ (N10-009) 12-Day Study Plan</h2>
             
             <div class="study-plan-container">
                 <p><strong>Important – Please Read Before You Begin</strong><br>
                 Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
-                
-                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 12-day plan.</p>
-                
-                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA Network+ (N10-009) certification exam.</p>
 
-                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
-                This study plan is designed to help you prepare for the CompTIA Network+ (N10-009) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
-
-                <p style="margin-top: 0.5rem;">By following this study plan, you will develop a strong understanding of every Network+ exam domain, build confidence by studying one section at a time, reinforce learning through regular practice exams, identify and improve weak areas before exam day, and prepare for both traditional multiple-choice questions and Performance-Based Questions (PBQs).</p>
-
-                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+                <div class="resource-box">
+                    <h4>📁 Network+ N10-009 Student Resources Drive</h4>
+                    <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
+                    <p><a href="https://drive.google.com/drive/folders/10JZ4YHSF-U63bE9-4B7ScOdZLfkTDztM" target="_blank"><strong>→ Open Network+ N10-009 Student Resources Drive</strong></a></p>
+                    <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
+                    <ul>
+                        <li><strong>Practice PBQs (Performance-Based Questions):</strong> Gain hands-on experience with simulation-style questions that test your ability to design subnets, configure router/switch interfaces, and secure network topologies.</li>
+                        <li><strong>Hands-On Labs:</strong> Interactive lab exercises covering command-line network diagnostics, routing protocol setup, wireless deployments, and VLAN configurations.</li>
+                        <li><strong>Student Aids & Quick References:</strong> Study guides, OSI layer cheat sheets, subnetting charts, port/protocol summaries, and command references for quick review.</li>
+                    </ul>
+                </div>
 
                 <h3>Day 1 – Architecture, Networking Infrastructure & Cloud Concepts</h3>
                 <p><a href="https://docs.google.com/presentation/d/1LPnewxecUdMjzR_BTtDDS5Be6yiHn4rF/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
@@ -983,7 +1012,7 @@
                     <li><strong>1.7</strong> – Given a scenario, use appropriate IPv4 network addressing.</li>
                     <li><strong>1.8</strong> – Summarize evolving cases for modern network environments.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: Networking Concepts Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=06333945" target="_blank">Complete the Domain 1: Networking Concepts Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
 
                 <h3>Day 4 – Routing Fundamentals & Layer 2/3 Switching Technologies</h3>
@@ -1003,7 +1032,7 @@
                     <li><strong>2.3</strong> – Given a scenario, select and configure wireless devices and technologies.</li>
                     <li><strong>2.4</strong> – Explain important factors of physical installations.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Networking Implementation Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=51160569" target="_blank">Complete the Domain 2: Networking Implementation Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak implementation concepts.</div>
 
                 <h3>Day 6 – Operations Policies, Contingency Procedures & Monitoring Tools</h3>
@@ -1024,7 +1053,7 @@
                     <li><strong>3.4</strong> – Given a scenario, implement IPv4 and IPv6 network services.</li>
                     <li><strong>3.5</strong> – Compare and contrast network access and management methods.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Network Operations Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=44213753" target="_blank">Complete the Domain 3: Network Operations Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review any network operations areas requiring additional study.</div>
 
                 <h3>Day 8 – Network Security Architecture, Threats & Defense Hardening</h3>
@@ -1036,7 +1065,7 @@
                     <li><strong>4.2</strong> – Summarize various types of attacks and their impact to the network.</li>
                     <li><strong>4.3</strong> – Given a scenario, apply network security features, defense techniques, and solutions.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Network Security Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08824313" target="_blank">Complete the Domain 4: Network Security Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review any network security areas requiring additional study.</div>
 
                 <h3>Day 9 – Network Core Diagnostics & Physical Medium Triage Protocols</h3>
@@ -1057,8 +1086,9 @@
                     <li><strong>5.4</strong> – Given a scenario, troubleshoot common performance issues.</li>
                     <li><strong>5.5</strong> – Given a scenario, use the appropriate tool or protocol to solve networking issues.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 5: Network Troubleshooting Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=47097337" target="_blank">Complete the Domain 5: Network Troubleshooting Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit troubleshooting objectives that need additional attention.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-network-plus-009-test/" target="_blank">Launch Network+ N10-009 Practice Test</a></div>
 
                 <h3>Day 11 – Instructor Review Session</h3>
                 <p><strong>Task:</strong></p>
@@ -1082,34 +1112,35 @@
                     <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
                     <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
                 </ul>
-                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA Network+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
             </div>
 
             <div class="modal-action-bar">
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
-                <button class="close-btn" onclick="closeAllModals()">Close</button>
+                <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
         </div>
     </div>
 
-    <div id="studyPlanModalSecurityPlus" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 7: CompTIA Security+ SY0-701 Study Plan -->
+    <div id="studyPlanModalSecurityPlus" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
             <h2>CompTIA Security+ (SY0-701) 12-Day Study Plan</h2>
             
             <div class="study-plan-container">
                 <p><strong>Important – Please Read Before You Begin</strong><br>
                 Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
-                
-                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 12-day plan.</p>
-                
-                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA Security+ (SY0-701) certification exam.</p>
 
-                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
-                This study plan is designed to help you prepare for the CompTIA Security+ (SY0-701) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
-
-                <p style="margin-top: 0.5rem;">By following this study plan, you will develop a strong understanding of every Security+ exam domain, build confidence by studying one section at a time, reinforce learning through regular practice exams, identify and improve weak areas before exam day, and prepare for both traditional multiple-choice questions and Performance-Based Questions (PBQs).</p>
-
-                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+                <div class="resource-box">
+                    <h4>📁 Security+ SY0-701 Student Resources Drive</h4>
+                    <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
+                    <p><a href="https://drive.google.com/drive/folders/1aFnn1BfLLG2nq1ugOuzbCTXNaLBTjHPR" target="_blank"><strong>→ Open Security+ SY0-701 Student Resources Drive</strong></a></p>
+                    <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
+                    <ul>
+                        <li><strong>Practice PBQs (Performance-Based Questions):</strong> Gain hands-on practice with simulation-style questions covering firewall rule creation, malware identification, log analysis, and VPN concentrator configurations.</li>
+                        <li><strong>Hands-On Labs:</strong> Interactive lab scenarios designed to reinforce core concepts in identity & access management, risk mitigation, resource hardening, and incident response.</li>
+                        <li><strong>Student Aids & Quick References:</strong> Access study guides, acronym lists, security control cheat sheets, and architecture diagrams for efficient exam day preparation.</li>
+                    </ul>
+                </div>
 
                 <h3>Day 1 – General Security Concepts & Cryptographic Solutions</h3>
                 <p><a href="https://docs.google.com/presentation/d/1CXJhK_7Ah_yQGgP1Gn5gOtTngQN0Mw_1/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
@@ -1121,7 +1152,7 @@
                     <li><strong>1.3</strong> – Explain the importance of change management processes and the impact to security.</li>
                     <li><strong>1.4</strong> – Explain the importance of using appropriate cryptographic solutions.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: General Security Concepts Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=83023108" target="_blank">Complete the Domain 1: General Security Concepts Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak core security concepts.</div>
 
                 <h3>Day 2 – Threat Actors, Motivations & Attack Surfaces</h3>
@@ -1142,7 +1173,7 @@
                     <li><strong>2.4</strong> – Given a scenario, analyze indicators of malicious activity.</li>
                     <li><strong>2.5</strong> – Explain the purpose of mitigation techniques used to secure the enterprise.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Threats, Vulnerabilities, & Mitigations Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=80667452" target="_blank">Complete the Domain 2: Threats, Vulnerabilities, & Mitigations Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak threat landscape concepts.</div>
 
                 <h3>Day 4 – Architecture Models & Enterprise Infrastructure Security Principles</h3>
@@ -1162,7 +1193,7 @@
                     <li><strong>3.3</strong> – Compare and contrast concepts and strategies to protect data.</li>
                     <li><strong>3.4</strong> – Explain the importance of resilience and recovery in security architecture.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Security Architecture Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81398607" target="_blank">Complete the Domain 3: Security Architecture Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak architecture concepts.</div>
 
                 <h3>Day 6 – Resource Security, Asset Management & Vulnerability Lifecycles</h3>
@@ -1194,7 +1225,7 @@
                     <li><strong>4.8</strong> – Explain appropriate incident response activities.</li>
                     <li><strong>4.9</strong> – Given a scenario, use data sources to support an investigation.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Security Operations Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=74734092" target="_blank">Complete the Domain 4: Security Operations Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review any security operations areas requiring additional study.</div>
 
                 <h3>Day 9 – Security Governance & Third-Party Risk Assessment Frameworks</h3>
@@ -1216,8 +1247,9 @@
                     <li><strong>5.5</strong> – Explain types and purposes of audits and assessments.</li>
                     <li><strong>5.6</strong> – Given a scenario, implement security awareness practices.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 5: Security Management & Oversight Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95875934" target="_blank">Complete the Domain 5: Security Management & Oversight Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit oversight objectives that need additional attention.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-security-plus-701-test/" target="_blank">Launch Security+ SY0-701 Practice Test</a></div>
 
                 <h3>Day 11 – Instructor Review Session</h3>
                 <p><strong>Task:</strong></p>
@@ -1241,34 +1273,35 @@
                     <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
                     <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
                 </ul>
-                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA Security+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
             </div>
 
             <div class="modal-action-bar">
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
-                <button class="close-btn" onclick="closeAllModals()">Close</button>
+                <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
         </div>
     </div>
 
-    <div id="studyPlanModalCySA" class="modal-overlay" onclick="closeAllModals()">
+    <!-- Modal 8: CompTIA CySA+ CS0-003 Study Plan -->
+    <div id="studyPlanModalCySA" class="modal-overlay" onclick="closeAllModals(event)">
         <div class="modal-content" style="max-width: 750px;" onclick="event.stopPropagation()">
             <h2>CompTIA CySA+ (CS0-003) 8-Day Study Plan</h2>
             
             <div class="study-plan-container">
                 <p><strong>Important – Please Read Before You Begin</strong><br>
                 Before starting Day 1, carefully review this entire study plan from beginning to end. Familiarizing yourself with the schedule, daily objectives, practice tests, instructor sessions, and exam timeline will help you understand what to expect throughout your preparation.</p>
-                
-                <p style="margin-top: 0.5rem;">Planning ahead allows you to schedule your study time effectively, arrange your required 1-on-1 session with a Lead Instructor in advance, register for any weekly Boot Camps or Master Courses you wish to attend, ensure you have access to your study materials and MeasureUp practice exams, and set realistic daily goals to stay on track throughout the 8-day plan.</p>
-                
-                <p style="margin-top: 0.5rem;">Following the study plan as outlined will help you stay organized, build your knowledge progressively, and maximize your readiness for the CompTIA CySA+ (CS0-003) certification exam.</p>
 
-                <p style="margin-top: 0.75rem;"><strong>Purpose:</strong><br>
-                This study plan is designed to help you prepare for the CompTIA CySA+ (CS0-003) certification exam through a structured, goal-oriented approach. Each day focuses on specific exam objectives from the official CompTIA exam blueprint, allowing you to build knowledge in manageable sections while reinforcing concepts through practice testing.</p>
-
-                <p style="margin-top: 0.5rem;">By following this study plan, you will develop a strong understanding of every CySA+ exam domain, build confidence by studying one section at a time, reinforce learning through regular practice exams, identify and improve weak areas before exam day, and prepare for both traditional multiple-choice questions and Performance-Based Questions (PBQs).</p>
-
-                <p style="margin-top: 0.5rem;">Consistency is key. Dedicate focused study time each day, take notes on topics you find challenging, and don't hesitate to ask your instructors for assistance whenever needed.</p>
+                <div class="resource-box">
+                    <h4>📁 CySA+ CS0-003 Student Resources Drive</h4>
+                    <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
+                    <p><a href="https://drive.google.com/drive/folders/14sohq92FIYp6_KosbJZuyNw7AjXx3gyo" target="_blank"><strong>→ Open CySA+ CS0-003 Student Resources Drive</strong></a></p>
+                    <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
+                    <ul>
+                        <li><strong>Practice PBQs (Performance-Based Questions):</strong> Gain hands-on practice with simulation-style questions covering log analysis, security analytics, threat hunting, and vulnerability remediation.</li>
+                        <li><strong>Hands-On Labs:</strong> Interactive lab scenarios designed to reinforce core concepts in threat management, vulnerability scanning, security operations, and incident response.</li>
+                        <li><strong>Student Aids & Quick References:</strong> Access study guides, cheat sheets, acronym lists, and analytical frameworks for efficient exam day preparation.</li>
+                    </ul>
+                </div>
 
                 <h3>Day 1 – Security Architecture & Malicious Activity Indicators</h3>
                 <p><a href="https://docs.google.com/presentation/d/1n6e2q_EBgJEVvDS7-m_q_5Po66PltK2_/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
@@ -1288,7 +1321,7 @@
                     <li><strong>1.4</strong> – Compare and contrast threat-intelligence and threat-hunting concepts.</li>
                     <li><strong>1.5</strong> – Explain the importance of efficiency and process improvement in security operations.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 1: Security Operations Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=73411914" target="_blank">Complete the Domain 1: Security Operations Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak security operations concepts.</div>
 
                 <h3>Day 3 – Vulnerability Scanning Methods & Assessment Tool Outputs</h3>
@@ -1309,7 +1342,7 @@
                     <li><strong>2.4</strong> – Given a scenario, recommend controls to mitigate attacks and software vulnerabilities.</li>
                     <li><strong>2.5</strong> – Explain concepts related to vulnerability response, handling, and management.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 2: Vulnerability Management Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=84093385" target="_blank">Complete the Domain 2: Vulnerability Management Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak vulnerability management concepts.</div>
 
                 <h3>Day 5 – Attack Methodologies, Incident Response Frameworks & Life Cycles</h3>
@@ -1321,7 +1354,7 @@
                     <li><strong>3.2</strong> – Given a scenario, perform incident response activities.</li>
                     <li><strong>3.3</strong> – Explain the preparation and post-incident activity phases of the incident management life cycle.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 3: Incident Response & Management Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95937944" target="_blank">Complete the Domain 3: Incident Response & Management Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak response mechanics.</div>
 
                 <h3>Day 6 – Intelligence Communications, Incident Reporting & Vulnerability Disclosures</h3>
@@ -1332,8 +1365,9 @@
                     <li><strong>4.1</strong> – Explain the importance of vulnerability management reporting and communication.</li>
                     <li><strong>4.2</strong> – Explain the importance of incident response reporting and communication.</li>
                 </ul>
-                <div class="checkbox-item"><input type="checkbox"> Complete the Domain 4: Reporting & Communication Practice Test.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81235044" target="_blank">Complete the Domain 4: Reporting & Communication Practice Test.</a></div>
                 <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak communication mechanics.</div>
+                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-cysa-plus-003-test/" target="_blank">Launch CySA+ CS0-003 Practice Test</a></div>
 
                 <h3>Day 7 – Instructor Review Session</h3>
                 <p><strong>Task:</strong></p>
@@ -1357,12 +1391,11 @@
                     <li>After each practice test, spend time reviewing every incorrect answer—not just the correct one. Understanding why an answer is correct is one of the most effective ways to prepare for the certification exam.</li>
                     <li>If possible, perform hands-on practice with hardware, networking equipment, virtualization software, and mobile devices whenever you study a related objective. Practical experience greatly improves knowledge retention and prepares you for Performance-Based Questions (PBQs).</li>
                 </ul>
-                <p style="font-size: 0.95rem; font-style: italic; color: #475569; margin-top: 0.5rem;">Remember, earning your CompTIA CySA+ certification is the result of consistent effort—not perfection. Stay on schedule, ask questions when needed, and use every available resource to strengthen your understanding.</p>
             </div>
 
             <div class="modal-action-bar">
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
-                <button class="close-btn" onclick="closeAllModals()">Close</button>
+                <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
         </div>
     </div>
@@ -1376,24 +1409,31 @@
         const modals = document.querySelectorAll('.modal-overlay');
 
         function openModal(modalId, activeTabId = null) {
-            closeAllModals();
-            document.getElementById(modalId).classList.add('open');
-            
+            closeAllModals(null, true);
+            const targetModal = document.getElementById(modalId);
+            if (targetModal) {
+                targetModal.classList.add('open');
+            }
             if (activeTabId) {
                 tabs.forEach(tab => tab.classList.remove('active'));
-                document.getElementById(activeTabId).classList.add('active');
+                const targetTab = document.getElementById(activeTabId);
+                if (targetTab) {
+                    targetTab.classList.add('active');
+                }
             }
         }
 
-        function closeAllModals() {
-            modals.forEach(modal => modal.classList.remove('open'));
-            tabs.forEach(tab => tab.classList.remove('active'));
-            document.getElementById('dashboardTab').classList.add('active');
+        function closeAllModals(e = null, forceClose = false) {
+            modals.forEach(modal => {
+                modal.classList.remove('open');
+            });
+            if (forceClose || !e) {
+                tabs.forEach(tab => tab.classList.remove('active'));
+                document.getElementById('dashboardTab').classList.add('active');
+            }
         }
 
-        function printStudyPlan() {
-            window.print();
-        }
+        function printStudyPlan() { window.print(); }
     </script>
 
 </body>
