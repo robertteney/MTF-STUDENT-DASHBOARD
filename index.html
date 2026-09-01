@@ -331,12 +331,35 @@
             margin-top: 1.5rem;
         }
 
-        .study-plan-container h3 {
+        .study-plan-container details {
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.5rem 1rem 1rem 1rem;
+            background-color: #ffffff;
+            transition: background-color 0.2s ease;
+        }
+
+        .study-plan-container details[open] {
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        }
+
+        .study-plan-container summary {
+            cursor: pointer;
+            outline: none;
+            user-select: none;
+            padding: 0.5rem 0;
+        }
+
+        .study-plan-container summary h3 {
+            display: inline-block;
             color: #0A2540;
-            margin: 1.75rem 0 0.5rem 0;
-            border-bottom: 1px solid #cbd5e1;
-            padding-bottom: 0.25rem;
-            font-size: 1.3rem;
+            margin: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+            font-size: 1.25rem;
         }
 
         .study-plan-container ul {
@@ -411,7 +434,7 @@
             border-top: 1px solid #e2e8f0;
         }
 
-        .download-btn {
+        .download-btn, .fullscreen-btn {
             background-color: #00A3E0;
             color: #ffffff;
             border: none;
@@ -425,7 +448,7 @@
             margin-top: 1rem;
         }
 
-        .download-btn:hover {
+        .download-btn:hover, .fullscreen-btn:hover {
             background-color: #0A2540;
         }
 
@@ -471,6 +494,11 @@
                 font-family: monospace !important;
                 font-weight: bold !important;
                 white-space: pre !important;
+            }
+            .study-plan-container details {
+                border: none !important;
+                padding: 0 !important;
+                margin: 1.5rem 0 !important;
             }
             .study-plan-container h3 {
                 border-bottom: 2px solid #000000 !important;
@@ -600,7 +628,7 @@
         <section class="row-section">
             <h2 class="row-title">Community & Safety Nets</h2>
             <div class="grid-container">
-                <a href="https://www.mycomputercareer.edu/?extole_zone_name=share_experience&utm_campaign=refer-a-friend&utm_medium=WEB&utm_source=extole_advocate&utm_content=share-it&extole_journey_campaign_id=7625663893941383715&_gl=1%2A1v9an87%2A_gcl_aw%2AR0NMLjE3NzY1NDEzMDkuQ2p3S0NBancxNHpQQmhBdUVpd0FQMy1FYnhEdnVYVU02ZGFiNTdZd2sxbDA3eFppWGxNTzJyY2RLV2ptR1JaaXVTbmx0ZWx1RC1HRzZ4b0NnU29RQXZEX0B3RQ..%2A_gcl_au%2AMzM2OTUyNTY5LjE3ODAwNzQ1Njc.&channel=LINK&extole_labels=refer-a-friend&promotable_code=share-it&extole_source=share-it" target="_blank" class="tile">
+                <a href="https://www.mycomputercareer.edu/?extole_zone_name=share_experience&utm_campaign=refer-a-friend&utm_medium=WEB&utm_source=extole_advocate&utm_content=share-it&extole_journey_campaign_id=7625663893941383715&_gl=1%2A1v9an87%2A_gcl_aw%2AR0NMLjE3NzY1NDEzMDkuQ2p3S0NBancxNHpQQmhBdUVpd0FQMy1FYnhEdnVYVU02ZGFiNTdZd2sxbDA3eFppWGxNTzJyY2RLV2ptR1JaaXVTbmx0ZWx1RC1HRzZ4b0NnU29RQXZEX0B3RQ..%2A_gcl_au%2AMzM2OTUyNTY5LjE38007456jc.&channel=LINK&extole_labels=refer-a-friend&promotable_code=share-it&extole_source=share-it" target="_blank" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     <span>Pay "IT" Forward</span>
                 </a>
@@ -676,128 +704,148 @@
                     </ul>
                 </div>
 
-                <h3>Day 1 – Mobile Devices</h3>
-                <p><a href="https://docs.google.com/document/d/1KeWS_D1lIH6OEb8do8FUH2CAJG__oerg/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1Bc1MDZroOVQGNoXIFf4sJMRSxXVS4DOI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.1</strong> – Given a scenario, monitor mobile device hardware and use appropriate replacement techniques.</li>
-                    <li><strong>1.2</strong> – Compare and contrast accessories and connectivity options for mobile devices.</li>
-                    <li><strong>1.3</strong> – Given a scenario, configure basic mobile device network connectivity and provide application support.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=23782689&source=liveDashboard" target="_blank">Complete the Domain 1: Mobile Devices Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review any missed questions and revisit the corresponding objectives.</div>
+                <details>
+                    <summary><h3>Day 1 – Mobile Devices</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1KeWS_D1lIH6OEb8do8FUH2CAJG__oerg/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Bc1MDZroOVQGNoXIFf4sJMRSxXVS4DOI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.1</strong> – Given a scenario, monitor mobile device hardware and use appropriate replacement techniques.</li>
+                        <li><strong>1.2</strong> – Compare and contrast accessories and connectivity options for mobile devices.</li>
+                        <li><strong>1.3</strong> – Given a scenario, configure basic mobile device network connectivity and provide application support.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=23782689&source=liveDashboard" target="_blank">Complete the Domain 1: Mobile Devices Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review any missed questions and revisit the corresponding objectives.</div>
+                </details>
 
-                <h3>Day 2 – Networking (Part 1)</h3>
-                <p><a href="https://docs.google.com/document/d/1LYATp65hzorKTqtNpzLmv9xSzp7GVXPO/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1TcZBppmlz5fVAc8eCvefuePdtxDwL5z0/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.1</strong> – Compare and contrast Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) ports, protocols, and their purposes.</li>
-                    <li><strong>2.2</strong> – Explain wireless networking technologies.</li>
-                    <li><strong>2.3</strong> – Summarize services provided by networked hosts.</li>
-                    <li><strong>2.4</strong> – Explain common network configuration concepts.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 2 – Networking (Part 1)</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1LYATp65hzorKTqtNpzLmv9xSzp7GVXPO/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1TcZBppmlz5fVAc8eCvefuePdtxDwL5z0/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.1</strong> – Compare and contrast Transmission Control Protocol (TCP) and User Datagram Protocol (UDP) ports, protocols, and their purposes.</li>
+                        <li><strong>2.2</strong> – Explain wireless networking technologies.</li>
+                        <li><strong>2.3</strong> – Summarize services provided by networked hosts.</li>
+                        <li><strong>2.4</strong> – Explain common network configuration concepts.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 3 – Networking (Part 2)</h3>
-                <p><a href="https://docs.google.com/document/d/1F_eoZ-2uQkhqofP2HpeyyOq3kFqYoa23/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1OwAjH_YcyVheuuQsl41f8NgqP_zU-tt4/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.5</strong> – Compare and contrast common networking hardware devices.</li>
-                    <li><strong>2.6</strong> – Given a scenario, configure basic wired/wireless small office/home office (SOHO) networks.</li>
-                    <li><strong>2.7</strong> – Compare and contrast internet connection types, network types, and their characteristics.</li>
-                    <li><strong>2.8</strong> – Explain networking tools and their purposes.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day3-wap-installation-lab/" target="_blank">Practice PBQ: WAP Installation & Cable Termination</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=42591521&source=liveDashboard" target="_blank">Complete the Domain 2: Networking Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
+                <details>
+                    <summary><h3>Day 3 – Networking (Part 2)</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1F_eoZ-2uQkhqofP2HpeyyOq3kFqYoa23/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1OwAjH_YcyVheuuQsl41f8NgqP_zU-tt4/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.5</strong> – Compare and contrast common networking hardware devices.</li>
+                        <li><strong>2.6</strong> – Given a scenario, configure basic wired/wireless small office/home office (SOHO) networks.</li>
+                        <li><strong>2.7</strong> – Compare and contrast internet connection types, network types, and their characteristics.</li>
+                        <li><strong>2.8</strong> – Explain networking tools and their purposes.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day3-wap-installation-lab/" target="_blank">Practice PBQ: WAP Installation & Cable Termination</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=42591521&source=liveDashboard" target="_blank">Complete the Domain 2: Networking Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
+                </details>
 
-                <h3>Day 4 – Hardware (Part 1)</h3>
-                <p><a href="https://docs.google.com/document/d/12PGvTFXzqxgaWda1Jpw2ViYhse8qg-3C/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1Nv-pWWt10GCrDz1CJiFTJWbsjJkPsFLY/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.1</strong> – Compare and contrast display components and attributes.</li>
-                    <li><strong>3.2</strong> – Summarize basic cable types and their connectors, features, and purposes.</li>
-                    <li><strong>3.3</strong> – Compare and contrast RAM characteristics.</li>
-                    <li><strong>3.4</strong> – Compare and contrast storage devices.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day4-pc-builder-lab/" target="_blank">Practice PBQ: PC Builder</a></div>
+                <details>
+                    <summary><h3>Day 4 – Hardware (Part 1)</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/12PGvTFXzqxgaWda1Jpw2ViYhse8qg-3C/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Nv-pWWt10GCrDz1CJiFTJWbsjJkPsFLY/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.1</strong> – Compare and contrast display components and attributes.</li>
+                        <li><strong>3.2</strong> – Summarize basic cable types and their connectors, features, and purposes.</li>
+                        <li><strong>3.3</strong> – Compare and contrast RAM characteristics.</li>
+                        <li><strong>3.4</strong> – Compare and contrast storage devices.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day4-pc-builder-lab/" target="_blank">Practice PBQ: PC Builder</a></div>
+                </details>
 
-                <h3>Day 5 – Hardware (Part 2)</h3>
-                <p><a href="https://docs.google.com/document/d/1sGl92ep-2MZe3-V-srPDT1Iyr7mtJxri/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1I_SUi7rDI4AWQRQCM4zwuTjKxtAXQgYp/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.5</strong> – Given a scenario, install and configure motherboards, central processing units (CPUs), and add-on cards.</li>
-                    <li><strong>3.6</strong> – Given a scenario, install the appropriate power supply.</li>
-                    <li><strong>3.7</strong> – Given a scenario, deploy and configure multifunction devices/printers and settings.</li>
-                    <li><strong>3.8</strong> – Given a scenario, perform appropriate printer maintenance.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-power-distribution-lab/" target="_blank">Practice PBQ: Power Distribution</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-printer-maintenance-lab/" target="_blank">Practice PBQ: Printer Maintenance</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=20309281&source=liveDashboard" target="_blank">Complete the Domain 3: Hardware Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Carefully review all missed questions and revisit any challenging hardware concepts.</div>
+                <details>
+                    <summary><h3>Day 5 – Hardware (Part 2)</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1sGl92ep-2MZe3-V-srPDT1Iyr7mtJxri/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1I_SUi7rDI4AWQRQCM4zwuTjKxtAXQgYp/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.5</strong> – Given a scenario, install and configure motherboards, central processing units (CPUs), and add-on cards.</li>
+                        <li><strong>3.6</strong> – Given a scenario, install the appropriate power supply.</li>
+                        <li><strong>3.7</strong> – Given a scenario, deploy and configure multifunction devices/printers and settings.</li>
+                        <li><strong>3.8</strong> – Given a scenario, perform appropriate printer maintenance.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-power-distribution-lab/" target="_blank">Practice PBQ: Power Distribution</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-printer-maintenance-lab/" target="_blank">Practice PBQ: Printer Maintenance</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=20309281&source=liveDashboard" target="_blank">Complete the Domain 3: Hardware Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Carefully review all missed questions and revisit any challenging hardware concepts.</div>
+                </details>
 
-                <h3>Day 6 – Virtualization & Cloud Computing</h3>
-                <p><a href="https://docs.google.com/document/d/1165wL6CW46zxQF9sjjwJ8RYhwH-cCV2z/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1VFMHfF0P7LWpsFi3XVpbN-tZ7ICBhys7/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.1</strong> – Explain virtualization concepts.</li>
-                    <li><strong>4.2</strong> – Summarize cloud computing concepts.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=58582305&source=liveDashboard" target="_blank">Complete the Domain 4: Virtualization & Cloud Computing Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review any areas requiring additional study.</div>
+                <details>
+                    <summary><h3>Day 6 – Virtualization & Cloud Computing</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1165wL6CW46zxQF9sjjwJ8RYhwH-cCV2z/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1VFMHfF0P7LWpsFi3XVpbN-tZ7ICBhys7/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.1</strong> – Explain virtualization concepts.</li>
+                        <li><strong>4.2</strong> – Summarize cloud computing concepts.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=58582305&source=liveDashboard" target="_blank">Complete the Domain 4: Virtualization & Cloud Computing Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review any areas requiring additional study.</div>
+                </details>
 
-                <h3>Day 7 – Hardware & Network Troubleshooting (Part 1)</h3>
-                <p><a href="https://docs.google.com/document/d/1tvr0OdE6Y4eWfrR60c7PjrzR2LryJSAB/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1maalh0evMiPQ0TlUJotpFaX_o6EpeXcF/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>5.1</strong> – Given a scenario, troubleshoot motherboards, RAM, CPUs, and power.</li>
-                    <li><strong>5.2</strong> – Given a scenario, troubleshoot drive and RAID issues.</li>
-                    <li><strong>5.3</strong> – Given a scenario, troubleshoot video, projector, and display issues.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day7-raid-architecture-lab/" target="_blank">Practice PBQ: Raid Architecture & Diagnostics</a></div>
+                <details>
+                    <summary><h3>Day 7 – Hardware & Network Troubleshooting (Part 1)</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1tvr0OdE6Y4eWfrR60c7PjrzR2LryJSAB/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1maalh0evMiPQ0TlUJotpFaX_o6EpeXcF/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>5.1</strong> – Given a scenario, troubleshoot motherboards, RAM, CPUs, and power.</li>
+                        <li><strong>5.2</strong> – Given a scenario, troubleshoot drive and RAID issues.</li>
+                        <li><strong>5.3</strong> – Given a scenario, troubleshoot video, projector, and display issues.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day7-raid-architecture-lab/" target="_blank">Practice PBQ: Raid Architecture & Diagnostics</a></div>
+                </details>
 
-                <h3>Day 8 – Hardware & Network Troubleshooting (Part 2)</h3>
-                <p><a href="https://docs.google.com/document/d/1eximrE1dZAlbiwEQsIobHwtJil9vl_yF/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/16-YYn_262-MngYyjewBOhYxfi-Ni9deH/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>5.4</strong> – Given a scenario, troubleshoot common mobile device issues.</li>
-                    <li><strong>5.5</strong> – Given a scenario, troubleshoot network issues.</li>
-                    <li><strong>5.6</strong> – Given a scenario, troubleshoot printer issues.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-device-issue-diagnostics-lab/" target="_blank">Practice PBQ: Device Issue Diagnosis</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-pc-diagnostics-lab/" target="_blank">Practice PBQ: PC Diagnostics</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=32236833&source=liveDashboard" target="_blank">Complete the Domain 5: Hardware & Network Troubleshooting Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit objectives that need additional attention.</div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1201-test/" target="_blank">Launch A+ 220-1201 Practice Test</a></div>
+                <details>
+                    <summary><h3>Day 8 – Hardware & Network Troubleshooting (Part 2)</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1eximrE1dZAlbiwEQsIobHwtJil9vl_yF/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/16-YYn_262-MngYyjewBOhYxfi-Ni9deH/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>5.4</strong> – Given a scenario, troubleshoot common mobile device issues.</li>
+                        <li><strong>5.5</strong> – Given a scenario, troubleshoot network issues.</li>
+                        <li><strong>5.6</strong> – Given a scenario, troubleshoot printer issues.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-device-issue-diagnostics-lab/" target="_blank">Practice PBQ: Device Issue Diagnosis</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-pc-diagnostics-lab/" target="_blank">Practice PBQ: PC Diagnostics</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=32236833&source=liveDashboard" target="_blank">Complete the Domain 5: Hardware & Network Troubleshooting Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit objectives that need additional attention.</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1201-test/" target="_blank">Launch A+ 220-1201 Practice Test</a></div>
+                </details>
 
-                <h3>Day 9 – Instructor Review Session</h3>
-                <p><strong>Task:</strong></p>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 9).</div>
-                
-                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
-                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
-                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
-                </p>
+                <details>
+                    <summary><h3>Day 9 – Instructor Review Session</h3></summary>
+                    <p><strong>Task:</strong></p>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 9).</div>
+                    
+                    <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                        <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                        <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                    </p>
+                </details>
 
-                <h3>Day 10 – Exam Day</h3>
-                <p>Congratulations—you've completed your study plan!</p>
-                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
-                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA A+ Core 1 (220-1201) certification exam!</div>
+                <details>
+                    <summary><h3>Day 10 – Exam Day</h3></summary>
+                    <p>Congratulations—you've completed your study plan!</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                    <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA A+ Core 1 (220-1201) certification exam!</div>
+                </details>
 
                 <h3 style="margin-top:2rem;">Additional Recommendations</h3>
                 <ul>
@@ -810,6 +858,7 @@
             </div>
 
             <div class="modal-action-bar">
+                <button class="fullscreen-btn" onclick="openStudyPlanFullscreen('studyPlanModal')">View Fullscreen</button>
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
                 <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
@@ -845,151 +894,175 @@
                     </ul>
                 </div>
 
-                <h3>Day 1 – Operating Systems Fundamentals & Installation</h3>
-                <p><a href="https://docs.google.com/document/d/1S3jDvksZG3o6D_CzFoInquftDbHFLEhe/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1Td7AFRPBip2NdRXjvSgnVLl-iKkUnDd4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.1</strong> – Explain common operating system (OS) types and their purposes.</li>
-                    <li><strong>1.2</strong> – Given a scenario, perform OS installations and upgrades in a diverse environment.</li>
-                    <li><strong>1.3</strong> – Compare and contrast basic features of Microsoft Windows editions.</li>
-                    <li><strong>1.4</strong> – Given a scenario, use Microsoft Windows operating system features and tools.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 1 – Operating Systems Fundamentals & Installation</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1S3jDvksZG3o6D_CzFoInquftDbHFLEhe/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Td7AFRPBip2NdRXjvSgnVLl-iKkUnDd4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.1</strong> – Explain common operating system (OS) types and their purposes.</li>
+                        <li><strong>1.2</strong> – Given a scenario, perform OS installations and upgrades in a diverse environment.</li>
+                        <li><strong>1.3</strong> – Compare and contrast basic features of Microsoft Windows editions.</li>
+                        <li><strong>1.4</strong> – Given a scenario, use Microsoft Windows operating system features and tools.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 2 – Windows Settings & Desktop Interfaces</h3>
-                <p><a href="https://docs.google.com/document/d/177rXUNH7eMjIQ7CTnRe9CXD1SMGoE1TX/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/143M_olF9MqosaYVxjdftQqMtUeefBFm9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.5</strong> – Given a scenario, use the appropriate Microsoft command-line tools.</li>
-                    <li><strong>1.6</strong> – Given a scenario, configure Microsoft Windows settings.</li>
-                    <li><strong>1.7</strong> – Given a scenario, configure Microsoft Windows networking features on a client/desktop.</li>
-                    <li><strong>1.8</strong> – Explain common features and tools of the macOS/desktop operating system.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 2 – Windows Settings & Desktop Interfaces</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/177rXUNH7eMjIQ7CTnRe9CXD1SMGoE1TX/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/143M_olF9MqosaYVxjdftQqMtUeefBFm9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.5</strong> – Given a scenario, use the appropriate Microsoft command-line tools.</li>
+                        <li><strong>1.6</strong> – Given a scenario, configure Microsoft Windows settings.</li>
+                        <li><strong>1.7</strong> – Given a scenario, configure Microsoft Windows networking features on a client/desktop.</li>
+                        <li><strong>1.8</strong> – Explain common features and tools of the macOS/desktop operating system.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 3 – Linux Desktops, Application Architecture & Cloud Tools</h3>
-                <p><a href="https://docs.google.com/document/d/13EUOvOhxSFdW8ufutQ503X1TZf0VeYR_/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1HS3fJeNT3CPrJvtbSTUOAsnHroUtURxr/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.9</strong> – Identify common features and tools of the Linux client/desktop operating system.</li>
-                    <li><strong>1.10</strong> – Given a scenario, install applications according to requirements.</li>
-                    <li><strong>1.11</strong> – Given a scenario, install and configure cloud-based productivity tools.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08983841&source=liveDashboard" target="_blank">Complete the Domain 1: Operating Systems Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak operating systems concepts.</div>
+                <details>
+                    <summary><h3>Day 3 – Linux Desktops, Application Architecture & Cloud Tools</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/13EUOvOhxSFdW8ufutQ503X1TZf0VeYR_/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1HS3fJeNT3CPrJvtbSTUOAsnHroUtURxr/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.9</strong> – Identify common features and tools of the Linux client/desktop operating system.</li>
+                        <li><strong>1.10</strong> – Given a scenario, install applications according to requirements.</li>
+                        <li><strong>1.11</strong> – Given a scenario, install and configure cloud-based productivity tools.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08983841&source=liveDashboard" target="_blank">Complete the Domain 1: Operating Systems Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak operating systems concepts.</div>
+                </details>
 
-                <h3>Day 4 – OS Security Settings & Malware Mitigation</h3>
-                <p><a href="https://docs.google.com/document/d/1bywVfEPBLF9sazR2iw270LT_X-UVjNZE/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1A-ePzHjfBuP9sl-NT9e2ykA9mofUlc7w/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.1</strong> – Summarize various security measures and their purposes.</li>
-                    <li><strong>2.2</strong> – Given a scenario, configure and apply basic Microsoft Windows OS security settings.</li>
-                    <li><strong>2.3</strong> – Compare and contrast wireless security protocols and authentication methods.</li>
-                    <li><strong>2.4</strong> – Summarize types of malware and tools/methods for detection, removal, and prevention.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day4-malware-lab/" target="_blank">Practice PBQ: Malware Incident Response</a></div>
+                <details>
+                    <summary><h3>Day 4 – OS Security Settings & Malware Mitigation</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1bywVfEPBLF9sazR2iw270LT_X-UVjNZE/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1A-ePzHjfBuP9sl-NT9e2ykA9mofUlc7w/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.1</strong> – Summarize various security measures and their purposes.</li>
+                        <li><strong>2.2</strong> – Given a scenario, configure and apply basic Microsoft Windows OS security settings.</li>
+                        <li><strong>2.3</strong> – Compare and contrast wireless security protocols and authentication methods.</li>
+                        <li><strong>2.4</strong> – Summarize types of malware and tools/methods for detection, removal, and prevention.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day4-malware-lab/" target="_blank">Practice PBQ: Malware Incident Response</a></div>
+                </details>
 
-                <h3>Day 5 – Social Engineering & System Hardening</h3>
-                <p><a href="https://docs.google.com/document/d/13r18jQRLLacdNIJndHM_Cgcbw04EQ1nf/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1fmnEGRIRqxqlvd97KKQAZfe2VZcQFTa3/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.5</strong> – Compare and contrast common social engineering attacks, threats, and vulnerabilities.</li>
-                    <li><strong>2.6</strong> – Given a scenario, implement procedures for basic small office/home office (SOHO) malware removal.</li>
-                    <li><strong>2.7</strong> – Given a scenario, apply workstation security options and hardening techniques.</li>
-                    <li><strong>2.8</strong> – Given a scenario, apply common methods for securing mobile devices.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day5-email-analysis-lab/" target="_blank">Practice PBQ: Email Analysis</a></div>
+                <details>
+                    <summary><h3>Day 5 – Social Engineering & System Hardening</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/13r18jQRLLacdNIJndHM_Cgcbw04EQ1nf/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1fmnEGRIRqxqlvd97KKQAZfe2VZcQFTa3/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.5</strong> – Compare and contrast common social engineering attacks, threats, and vulnerabilities.</li>
+                        <li><strong>2.6</strong> – Given a scenario, implement procedures for basic small office/home office (SOHO) malware removal.</li>
+                        <li><strong>2.7</strong> – Given a scenario, apply workstation security options and hardening techniques.</li>
+                        <li><strong>2.8</strong> – Given a scenario, apply common methods for securing mobile devices.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day5-email-analysis-lab/" target="_blank">Practice PBQ: Email Analysis</a></div>
+                </details>
 
-                <h3>Day 6 – Network Security & Data Destruction</h3>
-                <p><a href="https://docs.google.com/document/d/1jD5kXUWdazfL8NyXO97GBerLUOSoVN_-/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1-Y_rAq2c5VRwc7VJBI3fha7a0dMewNj5/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.9</strong> – Compare and contrast common data destruction and disposal methods.</li>
-                    <li><strong>2.10</strong> – Given a scenario, apply security settings on SOHO wireless and wired networks.</li>
-                    <li><strong>2.11</strong> – Given a scenario, configure relevant security settings in a browser.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-home-network-lab/" target="_blank">Practice PBQ: Home Network Configuration</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-router-configuration-audit-lab/" target="_blank">Practice PBQ: Router Configuration & Audit</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=48567585&source=liveDashboard" target="_blank">Complete the Domain 2: Security Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review any security areas requiring additional study.</div>
+                <details>
+                    <summary><h3>Day 6 – Network Security & Data Destruction</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1jD5kXUWdazfL8NyXO97GBerLUOSoVN_-/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1-Y_rAq2c5VRwc7VJBI3fha7a0dMewNj5/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.9</strong> – Compare and contrast common data destruction and disposal methods.</li>
+                        <li><strong>2.10</strong> – Given a scenario, apply security settings on SOHO wireless and wired networks.</li>
+                        <li><strong>2.11</strong> – Given a scenario, configure relevant security settings in a browser.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-home-network-lab/" target="_blank">Practice PBQ: Home Network Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-router-configuration-audit-lab/" target="_blank">Practice PBQ: Router Configuration & Audit</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=48567585&source=liveDashboard" target="_blank">Complete the Domain 2: Security Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review any security areas requiring additional study.</div>
+                </details>
 
-                <h3>Day 7 – Operating Systems & Software Troubleshooting</h3>
-                <p><a href="https://docs.google.com/document/d/13S3vJgRIIBIjhE02RUEJz6ECX-TWLi99/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1kp4xotnUEXKWZxs1LL-Rmnh6UA8qBJ9m/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.1</strong> – Given a scenario, troubleshoot common Windows OS issues.</li>
-                    <li><strong>3.2</strong> – Given a scenario, troubleshoot common mobile OS and application issues.</li>
-                    <li><strong>3.3</strong> – Given a scenario, troubleshoot common mobile OS and application security issues.</li>
-                    <li><strong>3.4</strong> – Given a scenario, troubleshoot common personal computer (PC) security issues.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day7-application-deployment-troubleshooting-lab/" target="_blank">Practice PBQ: Application Deployment Troubleshooting</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=52237601&source=liveDashboard" target="_blank">Complete the Domain 3: Software Troubleshooting Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review any troubleshooting areas requiring additional study.</div>
+                <details>
+                    <summary><h3>Day 7 – Operating Systems & Software Troubleshooting</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/13S3vJgRIIBIjhE02RUEJz6ECX-TWLi99/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1kp4xotnUEXKWZxs1LL-Rmnh6UA8qBJ9m/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.1</strong> – Given a scenario, troubleshoot common Windows OS issues.</li>
+                        <li><strong>3.2</strong> – Given a scenario, troubleshoot common mobile OS and application issues.</li>
+                        <li><strong>3.3</strong> – Given a scenario, troubleshoot common mobile OS and application security issues.</li>
+                        <li><strong>3.4</strong> – Given a scenario, troubleshoot common personal computer (PC) security issues.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day7-application-deployment-troubleshooting-lab/" target="_blank">Practice PBQ: Application Deployment Troubleshooting</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=52237601&source=liveDashboard" target="_blank">Complete the Domain 3: Software Troubleshooting Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review any troubleshooting areas requiring additional study.</div>
+                </details>
 
-                <h3>Day 8 – Documentation, Change Management & Asset Recovery</h3>
-                <p><a href="https://docs.google.com/document/d/1A-HrMCLvHWeKcMOwpcewBDg1ZVhKoMpx/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1qF9ZcTZsyZG_RdI93GRUKV_8VzIzNkf9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.1</strong> – Given a scenario, implement best practices associated with documentation and support systems information management.</li>
-                    <li><strong>4.2</strong> – Given a scenario, apply change management procedures.</li>
-                    <li><strong>4.3</strong> – Given a scenario, implement workstation backup and recovery methods.</li>
-                    <li><strong>4.4</strong> – Given a scenario, use common safety procedures.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 8 – Documentation, Change Management & Asset Recovery</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1A-HrMCLvHWeKcMOwpcewBDg1ZVhKoMpx/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1qF9ZcTZsyZG_RdI93GRUKV_8VzIzNkf9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.1</strong> – Given a scenario, implement best practices associated with documentation and support systems information management.</li>
+                        <li><strong>4.2</strong> – Given a scenario, apply change management procedures.</li>
+                        <li><strong>4.3</strong> – Given a scenario, implement workstation backup and recovery methods.</li>
+                        <li><strong>4.4</strong> – Given a scenario, use common safety procedures.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 9 – Compliance, Environmental Controls & Professionalism</h3>
-                <p><a href="https://docs.google.com/document/d/1fwEyufHLvaJwDZMlcQQosTqerSzF-u0W/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1k4n4kz-mmt4T5UlxODRglKldQI993FkZ/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.5</strong> – Summarize environmental impacts and local environment controls.</li>
-                    <li><strong>4.6</strong> – Explain the importance of prohibited content/activity and privacy, licensing, and policy concepts.</li>
-                    <li><strong>4.7</strong> – Given a scenario, use proper communication techniques and professionalism.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-email-lab/" target="_blank">Practice PBQ: Help Desk 1</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-router-lab/" target="_blank">Practice PBQ: Help Desk 2</a></div>
+                <details>
+                    <summary><h3>Day 9 – Compliance, Environmental Controls & Professionalism</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1fwEyufHLvaJwDZMlcQQosTqerSzF-u0W/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1k4n4kz-mmt4T5UlxODRglKldQI993FkZ/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.5</strong> – Summarize environmental impacts and local environment controls.</li>
+                        <li><strong>4.6</strong> – Explain the importance of prohibited content/activity and privacy, licensing, and policy concepts.</li>
+                        <li><strong>4.7</strong> – Given a scenario, use proper communication techniques and professionalism.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-email-lab/" target="_blank">Practice PBQ: Help Desk 1</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-router-lab/" target="_blank">Practice PBQ: Help Desk 2</a></div>
+                </details>
 
-                <h3>Day 10 – Basic Scripting, Remote Access & AI Concepts</h3>
-                <p><a href="https://docs.google.com/document/d/1qR9KW6PSAi5Qxu9HA59tAI7RuUWrR72O/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1YLP_xcg0tzrkEFl01tcCTQfN5DKNqNP8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.8</strong> – Explain the basics of scripting.</li>
-                    <li><strong>4.9</strong> – Given a scenario, use remote access technologies.</li>
-                    <li><strong>4.10</strong> – Explain basic concepts related to artificial intelligence (AI).</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=13833505&source=liveDashboard" target="_blank">Complete the Domain 4: Operational Procedures Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit operational objectives that need additional attention.</div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1202-test/" target="_blank">Launch A+ 220-1202 Practice Test</a></div>
+                <details>
+                    <summary><h3>Day 10 – Basic Scripting, Remote Access & AI Concepts</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1qR9KW6PSAi5Qxu9HA59tAI7RuUWrR72O/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1YLP_xcg0tzrkEFl01tcCTQfN5DKNqNP8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.8</strong> – Explain the basics of scripting.</li>
+                        <li><strong>4.9</strong> – Given a scenario, use remote access technologies.</li>
+                        <li><strong>4.10</strong> – Explain basic concepts related to artificial intelligence (AI).</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=13833505&source=liveDashboard" target="_blank">Complete the Domain 4: Operational Procedures Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit operational objectives that need additional attention.</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1202-test/" target="_blank">Launch A+ 220-1202 Practice Test</a></div>
+                </details>
 
-                <h3>Day 11 – Instructor Review Session</h3>
-                <p><strong>Task:</strong></p>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
-                
-                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
-                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
-                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
-                </p>
+                <details>
+                    <summary><h3>Day 11 – Instructor Review Session</h3></summary>
+                    <p><strong>Task:</strong></p>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
+                    
+                    <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                        <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                        <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                    </p>
+                </details>
 
-                <h3>Day 12 – Exam Day</h3>
-                <p>Congratulations—you've completed your study plan!</p>
-                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
-                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA A+ Core 2 (220-1202) certification exam!</div>
+                <details>
+                    <summary><h3>Day 12 – Exam Day</h3></summary>
+                    <p>Congratulations—you've completed your study plan!</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                    <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA A+ Core 2 (220-1202) certification exam!</div>
+                </details>
 
                 <h3 style="margin-top:2rem;">Additional Recommendations</h3>
                 <ul>
@@ -1002,6 +1075,7 @@
             </div>
 
             <div class="modal-action-bar">
+                <button class="fullscreen-btn" onclick="openStudyPlanFullscreen('studyPlanModalCore2')">View Fullscreen</button>
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
                 <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
@@ -1036,142 +1110,173 @@
                     </ul>
                 </div>
 
-                <h3>Day 1 – Architecture, Networking Infrastructure & Cloud Concepts</h3>
-                <p><a href="https://docs.google.com/document/d/1MmsRew1d0UH1sSh701xAcQi8RdDegyVr/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1LPnewxecUdMjzR_BTtDDS5Be6yiHn4rF/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.1</strong> – Explain concepts related to the Open System Interconnection (OSI) reference model.</li>
-                    <li><strong>1.2</strong> – Compare and contrast networking appliances, applications, and functions.</li>
-                    <li><strong>1.3</strong> – Summarize cloud concepts and connectivity options.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 1 – Architecture, Networking Infrastructure & Cloud Concepts</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1MmsRew1d0UH1sSh701xAcQi8RdDegyVr/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1LPnewxecUdMjzR_BTtDDS5Be6yiHn4rF/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.1</strong> – Explain concepts related to the Open System Interconnection (OSI) reference model.</li>
+                        <li><strong>1.2</strong> – Compare and contrast networking appliances, applications, and functions.</li>
+                        <li><strong>1.3</strong> – Summarize cloud concepts and connectivity options.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 2 – Media Specifications, Protocols & Structural Topologies</h3>
-                <p><a href="https://docs.google.com/document/d/1x2mlgCnXzc6xwzA1UBVw6TkVa2qEqZu9/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/15sOSWYTrXeXnTfav0ObNVnga7Hs5J-DU/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.4</strong> – Explain common networking ports, protocols, services, and traffic types.</li>
-                    <li><strong>1.5</strong> – Compare and contrast transmission media and transceivers.</li>
-                    <li><strong>1.6</strong> – Compare and contrast network topologies, architectures, and types.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 2 – Media Specifications, Protocols & Structural Topologies</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1x2mlgCnXzc6xwzA1UBVw6TkVa2qEqZu9/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/15sOSWYTrXeXnTfav0ObNVnga7Hs5J-DU/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.4</strong> – Explain common networking ports, protocols, services, and traffic types.</li>
+                        <li><strong>1.5</strong> – Compare and contrast transmission media and transceivers.</li>
+                        <li><strong>1.6</strong> – Compare and contrast network topologies, architectures, and types.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 3 – IPv4 Addressing, Subnet Subnetworks & Systems Environment Integration</h3>
-                <p><a href="https://docs.google.com/document/d/1-on3AM6D6dobf2bActA3QeIYevWsUpjQ/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1xM6ctA38ARemP1brik1B9yJFbm7vdTIM/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.7</strong> – Given a scenario, use appropriate IPv4 network addressing.</li>
-                    <li><strong>1.8</strong> – Summarize evolving cases for modern network environments.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day3-vlsm-lab/" target="_blank">Practice PBQ: VLSM-CIDR</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=06333945" target="_blank">Complete the Domain 1: Networking Concepts Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
+                <details>
+                    <summary><h3>Day 3 – IPv4 Addressing, Subnet Subnetworks & Systems Environment Integration</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1-on3AM6D6dobf2bActA3QeIYevWsUpjQ/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1xM6ctA38ARemP1brik1B9yJFbm7vdTIM/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.7</strong> – Given a scenario, use appropriate IPv4 network addressing.</li>
+                        <li><strong>1.8</strong> – Summarize evolving cases for modern network environments.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day3-vlsm-lab/" target="_blank">Practice PBQ: VLSM-CIDR</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=06333945" target="_blank">Complete the Domain 1: Networking Concepts Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
+                </details>
 
-                <h3>Day 4 – Routing Fundamentals & Layer 2/3 Switching Technologies</h3>
-                <p><a href="https://docs.google.com/document/d/1P-g86PRBxHh76PB7z025KPZV2VxOEXjH/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1NS01lwQSAunwboqbLyKcATVMQXq0Nwgn/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.1</strong> – Explain characteristics of routing technologies.</li>
-                    <li><strong>2.2</strong> – Given a scenario, configure switching technologies and features.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-enterprise-routing-lab/" target="_blank">Practice PBQ: Healthcare Enterprise Routing</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-switchport-configuration-lab/" target="_blank">Practice PBQ: Switch Port Configuration</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-stp-switches-lab/" target="_blank">Practice PBQ: STP Switches</a></div>
+                <details>
+                    <summary><h3>Day 4 – Routing Fundamentals & Layer 2/3 Switching Technologies</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1P-g86PRBxHh76PB7z025KPZV2VxOEXjH/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1NS01lwQSAunwboqbLyKcATVMQXq0Nwgn/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.1</strong> – Explain characteristics of routing technologies.</li>
+                        <li><strong>2.2</strong> – Given a scenario, configure switching technologies and features.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1xo6FGITODd6PsknvjMsdvvVWi7YirqPW/edit" target="_blank">Packet Tracer: Configure VLANs & Router on a Stick</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1QGtFH3BkCM6hLLshje2-od2sGVajBKFA/edit" target="_blank">Packet Tracer: Static & Dynamic Routing with Routers</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-enterprise-routing-lab/" target="_blank">Practice PBQ: Healthcare Enterprise Routing</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-switchport-configuration-lab/" target="_blank">Practice PBQ: Switch Port Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-stp-switches-lab/" target="_blank">Practice PBQ: STP Switches</a></div>
+                </details>
 
-                <h3>Day 5 – Wireless Deployments & Physical Infrastructure Installations</h3>
-                <p><a href="https://docs.google.com/document/d/1tlujH0daXYETZyVQNyOj-oT7wEb6liV7/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1RCfQuipKTHIT1OU8pzJvOZJ4VGh1SqMP/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.3</strong> – Given a scenario, select and configure wireless devices and technologies.</li>
-                    <li><strong>2.4</strong> – Explain important factors of physical installations.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=51160569" target="_blank">Complete the Domain 2: Networking Implementation Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak implementation concepts.</div>
+                <details>
+                    <summary><h3>Day 5 – Wireless Deployments & Physical Infrastructure Installations</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1tlujH0daXYETZyVQNyOj-oT7wEb6liV7/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1RCfQuipKTHIT1OU8pzJvOZJ4VGh1SqMP/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.3</strong> – Given a scenario, select and configure wireless devices and technologies.</li>
+                        <li><strong>2.4</strong> – Explain important factors of physical installations.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1IXmdpkcJnMz_SPH79yTDC8zUK3gEsy2x/edit" target="_blank">Packet Tracer: Configure Wireless</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=51160569" target="_blank">Complete the Domain 2: Networking Implementation Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak implementation concepts.</div>
+                </details>
 
-                <h3>Day 6 – Operations Policies, Contingency Procedures & Monitoring Tools</h3>
-                <p><a href="https://docs.google.com/document/d/1M4yn06FuJrEJQ5JqkHDuIprZyobYvu1Q/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1Q7mk3XP_VgAH4cysjQkuZ8U0dncwUNmj/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.1</strong> – Explain the purpose of organizational processes and procedures.</li>
-                    <li><strong>3.2</strong> – Given a scenario, use network monitoring technologies.</li>
-                    <li><strong>3.3</strong> – Explain disaster recovery (DR) concepts.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 6 – Operations Policies, Contingency Procedures & Monitoring Tools</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1M4yn06FuJrEJQ5JqkHDuIprZyobYvu1Q/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Q7mk3XP_VgAH4cysjQkuZ8U0dncwUNmj/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.1</strong> – Explain the purpose of organizational processes and procedures.</li>
+                        <li><strong>3.2</strong> – Given a scenario, use network monitoring technologies.</li>
+                        <li><strong>3.3</strong> – Explain disaster recovery (DR) concepts.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 7 – Network Engineering Services & Infrastructure Access Management</h3>
-                <p><a href="https://docs.google.com/document/d/1rkaYynRYaLioTLeUOuCaI_JaIxMjzK5R/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1fSosQbjf71mH2fDFsfERrTB8iVP0PsUw/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.4</strong> – Given a scenario, implement IPv4 and IPv6 network services.</li>
-                    <li><strong>3.5</strong> – Compare and contrast network access and management methods.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=44213753" target="_blank">Complete the Domain 3: Network Operations Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review any network operations areas requiring additional study.</div>
+                <details>
+                    <summary><h3>Day 7 – Network Engineering Services & Infrastructure Access Management</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1rkaYynRYaLioTLeUOuCaI_JaIxMjzK5R/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1fSosQbjf71mH2fDFsfERrTB8iVP0PsUw/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.4</strong> – Given a scenario, implement IPv4 and IPv6 network services.</li>
+                        <li><strong>3.5</strong> – Compare and contrast network access and management methods.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/11845ap2eFpu8U9xsqWbiSy1CFSZu5xsq/edit" target="_blank">Packet Tracer: DHCP</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1d6MVlqetbnCG7cSfkWuPpQrekFBc3L12/edit" target="_blank">Packet Tracer: DNS</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=44213753" target="_blank">Complete the Domain 3: Network Operations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review any network operations areas requiring additional study.</div>
+                </details>
 
-                <h3>Day 8 – Network Security Architecture, Threats & Defense Hardening</h3>
-                <p><a href="https://docs.google.com/document/d/1RmR8ZlLduAU1eWXcix-ZIhwb0Bdx18Vz/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1pku9vuMtif2UpXuhy0gop1zzh050wENA/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.1</strong> – Explain the importance of basic network security concepts.</li>
-                    <li><strong>4.2</strong> – Summarize various types of attacks and their impact to the network.</li>
-                    <li><strong>4.3</strong> – Given a scenario, apply network security features, defense techniques, and solutions.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day8-device-placement-lab/" target="_blank">Practice PBQ: Device Placement & Configuration</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08824313" target="_blank">Complete the Domain 4: Network Security Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review any network security areas requiring additional study.</div>
+                <details>
+                    <summary><h3>Day 8 – Network Security Architecture, Threats & Defense Hardening</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1RmR8ZlLduAU1eWXcix-ZIhwb0Bdx18Vz/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1pku9vuMtif2UpXuhy0gop1zzh050wENA/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.1</strong> – Explain the importance of basic network security concepts.</li>
+                        <li><strong>4.2</strong> – Summarize various types of attacks and their impact to the network.</li>
+                        <li><strong>4.3</strong> – Given a scenario, apply network security features, defense techniques, and solutions.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/15qs2suwWqm5U7b75OabpjXvOGjT8svjC/edit" target="_blank">Packet Tracer: Apply Access Control</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day8-device-placement-lab/" target="_blank">Practice PBQ: Device Placement & Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08824313" target="_blank">Complete the Domain 4: Network Security Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review any network security areas requiring additional study.</div>
+                </details>
 
-                <h3>Day 9 – Network Core Diagnostics & Physical Medium Triage Protocols</h3>
-                <p><a href="https://docs.google.com/document/d/1CB_Hr0dkdQ8hzeBRWq6p7G94iISTFw2J/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1iIPwxHmggJo67g0eRpLX3ndIzBjHwXaf/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>5.1</strong> – Explain the troubleshooting methodology.</li>
-                    <li><strong>5.2</strong> – Given a scenario, troubleshoot common cabling and physical interface issues.</li>
-                    <li><strong>5.3</strong> – Given a scenario, troubleshoot common issues with network services.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day9-network-troubleshooting-lab/" target="_blank">Practice PBQ: Network Troubleshooting</a></div>
+                <details>
+                    <summary><h3>Day 9 – Network Core Diagnostics & Physical Medium Triage Protocols</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1CB_Hr0dkdQ8hzeBRWq6p7G94iISTFw2J/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1iIPwxHmggJo67g0eRpLX3ndIzBjHwXaf/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>5.1</strong> – Explain the troubleshooting methodology.</li>
+                        <li><strong>5.2</strong> – Given a scenario, troubleshoot common cabling and physical interface issues.</li>
+                        <li><strong>5.3</strong> – Given a scenario, troubleshoot common issues with network services.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day9-network-troubleshooting-lab/" target="_blank">Practice PBQ: Network Troubleshooting</a></div>
+                </details>
 
-                <h3>Day 10 – Performance Optimizations & Command-Line Troubleshooting Utilities</h3>
-                <p><a href="https://docs.google.com/document/d/1LYxZ04qYEgIS-7tfPyaf8fhIXqJZOpTP/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1KDKli_-6pKd6L7ZkMjLt6eUrHLLYAfXJ/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>5.4</strong> – Given a scenario, troubleshoot common performance issues.</li>
-                    <li><strong>5.5</strong> – Given a scenario, use the appropriate tool or protocol to solve networking issues.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day10-enterprise-NOC-lab/" target="_blank">Practice PBQ: Enterprise NOC Diagnostic Dashboard</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=47097337" target="_blank">Complete the Domain 5: Network Troubleshooting Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit troubleshooting objectives that need additional attention.</div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-network-plus-009-test/" target="_blank">Launch Network+ N10-009 Practice Test</a></div>
+                <details>
+                    <summary><h3>Day 10 – Performance Optimizations & Command-Line Troubleshooting Utilities</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1LYxZ04qYEgIS-7tfPyaf8fhIXqJZOpTP/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1KDKli_-6pKd6L7ZkMjLt6eUrHLLYAfXJ/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>5.4</strong> – Given a scenario, troubleshoot common performance issues.</li>
+                        <li><strong>5.5</strong> – Given a scenario, use the appropriate tool or protocol to solve networking issues.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1F7iAbpQEcgYNq364DlHpb3MY8KMCmaJi/edit" target="_blank">Packet Tracer: Demonstration of Commands</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day10-enterprise-NOC-lab/" target="_blank">Practice PBQ: Enterprise NOC Diagnostic Dashboard</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=47097337" target="_blank">Complete the Domain 5: Network Troubleshooting Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit troubleshooting objectives that need additional attention.</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-network-plus-009-test/" target="_blank">Launch Network+ N10-009 Practice Test</a></div>
+                </details>
 
-                <h3>Day 11 – Instructor Review Session</h3>
-                <p><strong>Task:</strong></p>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
-                
-                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
-                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
-                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
-                </p>
+                <details>
+                    <summary><h3>Day 11 – Instructor Review Session</h3></summary>
+                    <p><strong>Task:</strong></p>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
+                    
+                    <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                        <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                        <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                    </p>
+                </details>
 
-                <h3>Day 12 – Exam Day</h3>
-                <p>Congratulations—you've completed your study plan!</p>
-                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
-                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA Network+ (N10-009) certification exam!</div>
+                <details>
+                    <summary><h3>Day 12 – Exam Day</h3></summary>
+                    <p>Congratulations—you've completed your study plan!</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                    <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA Network+ (N10-009) certification exam!</div>
+                </details>
 
                 <h3 style="margin-top:2rem;">Additional Recommendations</h3>
                 <ul>
@@ -1184,6 +1289,7 @@
             </div>
 
             <div class="modal-action-bar">
+                <button class="fullscreen-btn" onclick="openStudyPlanFullscreen('studyPlanModalNetworkPlus')">View Fullscreen</button>
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
                 <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
@@ -1219,143 +1325,167 @@
                     </ul>
                 </div>
 
-                <h3>Day 1 – General Security Concepts & Cryptographic Solutions</h3>
-                <p><a href="https://docs.google.com/document/d/1F2z-hRMjugRERdDD00dB4hJCJH261Ggr/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1CXJhK_7Ah_yQGgP1Gn5gOtTngQN0Mw_1/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.1</strong> – Compare and contrast various types of security controls.</li>
-                    <li><strong>1.2</strong> – Summarize fundamental security concepts.</li>
-                    <li><strong>1.3</strong> – Explain the importance of change management processes and the impact to security.</li>
-                    <li><strong>1.4</strong> – Explain the importance of using appropriate cryptographic solutions.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=83023108" target="_blank">Complete the Domain 1: General Security Concepts Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak core security concepts.</div>
+                <details>
+                    <summary><h3>Day 1 – General Security Concepts & Cryptographic Solutions</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1F2z-hRMjugRERdDD00dB4hJCJH261Ggr/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1CXJhK_7Ah_yQGgP1Gn5gOtTngQN0Mw_1/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.1</strong> – Compare and contrast various types of security controls.</li>
+                        <li><strong>1.2</strong> – Summarize fundamental security concepts.</li>
+                        <li><strong>1.3</strong> – Explain the importance of change management processes and the impact to security.</li>
+                        <li><strong>1.4</strong> – Explain the importance of using appropriate cryptographic solutions.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=83023108" target="_blank">Complete the Domain 1: General Security Concepts Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak core security concepts.</div>
+                </details>
 
-                <h3>Day 2 – Threat Actors, Motivations & Attack Surfaces</h3>
-                <p><a href="https://docs.google.com/document/d/1AUQxrLQZka6EWC3_luD1lKxxDnTSUVry/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1NmjnFeOzT3bVboOxnbBk6r6woZlhRK7r/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.1</strong> – Compare and contrast common threat actors and motivations.</li>
-                    <li><strong>2.2</strong> – Explain common threat vectors and attack surfaces.</li>
-                    <li><strong>2.3</strong> – Explain various types of vulnerabilities.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day2-threat-identification-lab/" target="_blank">Practice PBQ: Threat Identification</a></div>
+                <details>
+                    <summary><h3>Day 2 – Threat Actors, Motivations & Attack Surfaces</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1AUQxrLQZka6EWC3_luD1lKxxDnTSUVry/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1NmjnFeOzT3bVboOxnbBk6r6woZlhRK7r/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.1</strong> – Compare and contrast common threat actors and motivations.</li>
+                        <li><strong>2.2</strong> – Explain common threat vectors and attack surfaces.</li>
+                        <li><strong>2.3</strong> – Explain various types of vulnerabilities.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day2-threat-identification-lab/" target="_blank">Practice PBQ: Threat Identification</a></div>
+                </details>
 
-                <h3>Day 3 – Malicious Activity Indicators & Enterprise Mitigation Techniques</h3>
-                <p><a href="https://docs.google.com/document/d/1bjHTbHt4eht_q8vXjVhwUgOb-S-kdHYl/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1q8prfV2L_lTGZqlanNCntwywpM4vyIku/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.4</strong> – Given a scenario, analyze indicators of malicious activity.</li>
-                    <li><strong>2.5</strong> – Explain the purpose of mitigation techniques used to secure the enterprise.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day3-network-threat-analysis-lab/" target="_blank">Practice PBQ: Network Threat Analysis & Forensics</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=80667452" target="_blank">Complete the Domain 2: Threats, Vulnerabilities, & Mitigations Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak threat landscape concepts.</div>
+                <details>
+                    <summary><h3>Day 3 – Malicious Activity Indicators & Enterprise Mitigation Techniques</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1bjHTbHt4eht_q8vXjVhwUgOb-S-kdHYl/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1q8prfV2L_lTGZqlanNCntwywpM4vyIku/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.4</strong> – Given a scenario, analyze indicators of malicious activity.</li>
+                        <li><strong>2.5</strong> – Explain the purpose of mitigation techniques used to secure the enterprise.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day3-network-threat-analysis-lab/" target="_blank">Practice PBQ: Network Threat Analysis & Forensics</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=80667452" target="_blank">Complete the Domain 2: Threats, Vulnerabilities, & Mitigations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak threat landscape concepts.</div>
+                </details>
 
-                <h3>Day 4 – Architecture Models & Enterprise Infrastructure Security Principles</h3>
-                <p><a href="https://docs.google.com/document/d/1jCjui124_wFcVCSxIMWYbOi6L8qVSwkZ/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1m8u9Uo1WEhA_T7ICl-pei69p2HQsGtph/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.1</strong> – Compare and contrast security implications of different architecture models.</li>
-                    <li><strong>3.2</strong> – Given a scenario, apply security principles to secure enterprise infrastructure.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-cloud-architecture-lab/" target="_blank">Practice PBQ: Cloud Architecture</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-site-to-site-vpn-lab/" target="_blank">Practice PBQ: Site-to-site VPN</a></div>
+                <details>
+                    <summary><h3>Day 4 – Architecture Models & Enterprise Infrastructure Security Principles</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1jCjui124_wFcVCSxIMWYbOi6L8qVSwkZ/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1m8u9Uo1WEhA_T7ICl-pei69p2HQsGtph/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.1</strong> – Compare and contrast security implications of different architecture models.</li>
+                        <li><strong>3.2</strong> – Given a scenario, apply security principles to secure enterprise infrastructure.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-cloud-architecture-lab/" target="_blank">Practice PBQ: Cloud Architecture</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-site-to-site-vpn-lab/" target="_blank">Practice PBQ: Site-to-site VPN</a></div>
+                </details>
 
-                <h3>Day 5 – Data Protection Strategies & Architecture Resilience</h3>
-                <p><a href="https://docs.google.com/document/d/1cXvDfZWrYrZ_xrmZpfjqvmdmOCqlZaxy/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1_I-KemPC5OiynQHdsQDAe_ijPgyM0ySX/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.3</strong> – Compare and contrast concepts and strategies to protect data.</li>
-                    <li><strong>3.4</strong> – Explain the importance of resilience and recovery in security architecture.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81398607" target="_blank">Complete the Domain 3: Security Architecture Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak architecture concepts.</div>
+                <details>
+                    <summary><h3>Day 5 – Data Protection Strategies & Architecture Resilience</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1cXvDfZWrYrZ_xrmZpfjqvmdmOCqlZaxy/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1_I-KemPC5OiynQHdsQDAe_ijPgyM0ySX/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.3</strong> – Compare and contrast concepts and strategies to protect data.</li>
+                        <li><strong>3.4</strong> – Explain the importance of resilience and recovery in security architecture.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81398607" target="_blank">Complete the Domain 3: Security Architecture Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak architecture concepts.</div>
+                </details>
 
-                <h3>Day 6 – Resource Security, Asset Management & Vulnerability Lifecycles</h3>
-                <p><a href="https://docs.google.com/document/d/1Zr2W98SdwuUIPeUqjhayUL2rxdQtbXPA/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1yeo-QkKzY1PbIvK3dYThRQI3qWkkWRI4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.1</strong> – Given a scenario, apply common security techniques to computing resources.</li>
-                    <li><strong>4.2</strong> – Explain the security implications of proper hardware, software, and data asset management.</li>
-                    <li><strong>4.3</strong> – Explain various activities associated with vulnerability management.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 6 – Resource Security, Asset Management & Vulnerability Lifecycles</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1Zr2W98SdwuUIPeUqjhayUL2rxdQtbXPA/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1yeo-QkKzY1PbIvK3dYThRQI3qWkkWRI4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.1</strong> – Given a scenario, apply common security techniques to computing resources.</li>
+                        <li><strong>4.2</strong> – Explain the security implications of proper hardware, software, and data asset management.</li>
+                        <li><strong>4.3</strong> – Explain various activities associated with vulnerability management.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 7 – Security Monitoring, Capabilities Enhancement & Identity Management (IAM)</h3>
-                <p><a href="https://docs.google.com/document/d/1xzF-5h5RbkvjH0Jlifz7KPwtQcr3oTJb/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1v5clN7Jp80ui4qeyokT2422qlwM4BwFz/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.4</strong> – Explain security alerting and monitoring concepts and tools.</li>
-                    <li><strong>4.5</strong> – Given a scenario, modify enterprise capabilities to enhance security.</li>
-                    <li><strong>4.6</strong> – Given a scenario, implement and maintain identity and access management.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day7-passwordless-authentication-lab/" target="_blank">Practice PBQ: Passwordless Authentication</a></div>
+                <details>
+                    <summary><h3>Day 7 – Security Monitoring, Capabilities Enhancement & Identity Management (IAM)</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1xzF-5h5RbkvjH0Jlifz7KPwtQcr3oTJb/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1v5clN7Jp80ui4qeyokT2422qlwM4BwFz/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.4</strong> – Explain security alerting and monitoring concepts and tools.</li>
+                        <li><strong>4.5</strong> – Given a scenario, modify enterprise capabilities to enhance security.</li>
+                        <li><strong>4.6</strong> – Given a scenario, implement and maintain identity and access management.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day7-passwordless-authentication-lab/" target="_blank">Practice PBQ: Passwordless Authentication</a></div>
+                </details>
 
-                <h3>Day 8 – SecOps Automation, Incident Response & Forensic Data Sources</h3>
-                <p><a href="https://docs.google.com/document/d/1ctMW3kJoTQV6dmnU1Fb8ejz8soa-AO6B/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1IwWf_ufZ8sWNue3tPoxqUQcz8FfyW0u8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.7</strong> – Explain the importance of automation and orchestration related to secure operations.</li>
-                    <li><strong>4.8</strong> – Explain appropriate incident response activities.</li>
-                    <li><strong>4.9</strong> – Given a scenario, use data sources to support an investigation.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=74734092" target="_blank">Complete the Domain 4: Security Operations Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review any security operations areas requiring additional study.</div>
+                <details>
+                    <summary><h3>Day 8 – SecOps Automation, Incident Response & Forensic Data Sources</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1ctMW3kJoTQV6dmnU1Fb8ejz8soa-AO6B/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1IwWf_ufZ8sWNue3tPoxqUQcz8FfyW0u8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.7</strong> – Explain the importance of automation and orchestration related to secure operations.</li>
+                        <li><strong>4.8</strong> – Explain appropriate incident response activities.</li>
+                        <li><strong>4.9</strong> – Given a scenario, use data sources to support an investigation.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=74734092" target="_blank">Complete the Domain 4: Security Operations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review any security operations areas requiring additional study.</div>
+                </details>
 
-                <h3>Day 9 – Security Governance & Third-Party Risk Assessment Frameworks</h3>
-                <p><a href="https://docs.google.com/document/d/1G4aowoDOf6hq3U8Nlxm97yJ2wPi5Hjkh/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1Ob39s2zWtvbDShYhptaZZrmEvPD4518Z/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>5.1</strong> – Summarize elements of effective security governance.</li>
-                    <li><strong>5.2</strong> – Explain elements of the risk management process.</li>
-                    <li><strong>5.3</strong> – Explain the processes associated with third-party risk assessment and management.</li>
-                </ul>
+                <details>
+                    <summary><h3>Day 9 – Security Governance & Third-Party Risk Assessment Frameworks</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1G4aowoDOf6hq3U8Nlxm97yJ2wPi5Hjkh/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Ob39s2zWtvbDShYhptaZZrmEvPD4518Z/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>5.1</strong> – Summarize elements of effective security governance.</li>
+                        <li><strong>5.2</strong> – Explain elements of the risk management process.</li>
+                        <li><strong>5.3</strong> – Explain the processes associated with third-party risk assessment and management.</li>
+                    </ul>
+                </details>
 
-                <h3>Day 10 – Regulatory Compliance, Audit Processes & Awareness Hardening</h3>
-                <p><a href="https://docs.google.com/document/d/13JIOj2kKKNXQB0-KIxF3zcvRenal-rIT/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1JbhjfUhl93NEJvJLroSrB7CspR2CzuSC/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>5.4</strong> – Summarize elements of effective security compliance.</li>
-                    <li><strong>5.5</strong> – Explain types and purposes of audits and assessments.</li>
-                    <li><strong>5.6</strong> – Given a scenario, implement security awareness practices.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95875934" target="_blank">Complete the Domain 5: Security Management & Oversight Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit oversight objectives that need additional attention.</div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-security-plus-701-test/" target="_blank">Launch Security+ SY0-701 Practice Test</a></div>
+                <details>
+                    <summary><h3>Day 10 – Regulatory Compliance, Audit Processes & Awareness Hardening</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/13JIOj2kKKNXQB0-KIxF3zcvRenal-rIT/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1JbhjfUhl93NEJvJLroSrB7CspR2CzuSC/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>5.4</strong> – Summarize elements of effective security compliance.</li>
+                        <li><strong>5.5</strong> – Explain types and purposes of audits and assessments.</li>
+                        <li><strong>5.6</strong> – Given a scenario, implement security awareness practices.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95875934" target="_blank">Complete the Domain 5: Security Management & Oversight Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit oversight objectives that need additional attention.</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-security-plus-701-test/" target="_blank">Launch Security+ SY0-701 Practice Test</a></div>
+                </details>
 
-                <h3>Day 11 – Instructor Review Session</h3>
-                <p><strong>Task:</strong></p>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
-                
-                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
-                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
-                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
-                </p>
+                <details>
+                    <summary><h3>Day 11 – Instructor Review Session</h3></summary>
+                    <p><strong>Task:</strong></p>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
+                    
+                    <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                        <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                        <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                    </p>
+                </details>
 
-                <h3>Day 12 – Exam Day</h3>
-                <p>Congratulations—you've completed your study plan!</p>
-                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
-                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA Security+ (SY0-701) certification exam!</div>
+                <details>
+                    <summary><h3>Day 12 – Exam Day</h3></summary>
+                    <p>Congratulations—you've completed your study plan!</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                    <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA Security+ (SY0-701) certification exam!</div>
+                </details>
 
                 <h3 style="margin-top:2rem;">Additional Recommendations</h3>
                 <ul>
@@ -1368,6 +1498,7 @@
             </div>
 
             <div class="modal-action-bar">
+                <button class="fullscreen-btn" onclick="openStudyPlanFullscreen('studyPlanModalSecurityPlus')">View Fullscreen</button>
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
                 <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
@@ -1401,101 +1532,117 @@
                     </ul>
                 </div>
 
-                <h3>Day 1 – Security Architecture & Malicious Activity Indicators</h3>
-                <p><a href="https://docs.google.com/document/d/1mfreJl2F0l8CIBsOaCtmHp_UirFaJ_Df/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1n6e2q_EBgJEVvDS7-m_q_5Po66PltK2_/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.1</strong> – Explain the importance of system and network architecture concepts in security operations.</li>
-                    <li><strong>1.2</strong> – Given a scenario, analyze indicators of potentially malicious activity.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-cybersecurity-suspicous-login-lab/" target="_blank">Practice PBQ: Cybersecurity Suspicious Login</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-phishing-log-review-lab/" target="_blank">Practice PBQ: Phishing Log Review</a></div>
+                <details>
+                    <summary><h3>Day 1 – Security Architecture & Malicious Activity Indicators</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1mfreJl2F0l8CIBsOaCtmHp_UirFaJ_Df/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1n6e2q_EBgJEVvDS7-m_q_5Po66PltK2_/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.1</strong> – Explain the importance of system and network architecture concepts in security operations.</li>
+                        <li><strong>1.2</strong> – Given a scenario, analyze indicators of potentially malicious activity.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-cybersecurity-suspicous-login-lab/" target="_blank">Practice PBQ: Cybersecurity Suspicious Login</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-phishing-log-review-lab/" target="_blank">Practice PBQ: Phishing Log Review</a></div>
+                </details>
 
-                <h3>Day 2 – Security Analytics Tools, Threat Hunting & Process Optimization</h3>
-                <p><a href="https://docs.google.com/document/d/1vzjfwJ0pzYOfDpezrrypFxHIS-VPJtbz/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1s2zEvFNVhsGow7-F7IfLWYl0hLs2PnVk/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>1.3</strong> – Given a scenario, use appropriate tools or techniques to determine malicious activity.</li>
-                    <li><strong>1.4</strong> – Compare and contrast threat-intelligence and threat-hunting concepts.</li>
-                    <li><strong>1.5</strong> – Explain the importance of efficiency and process improvement in security operations.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-cybersecurity-investigation-lab/" target="_blank">Practice PBQ: Cybersecurity Investigation</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-it-help-desk-lab/" target="_blank">Practice PBQ: IT Help Desk</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=73411914" target="_blank">Complete the Domain 1: Security Operations Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak security operations concepts.</div>
+                <details>
+                    <summary><h3>Day 2 – Security Analytics Tools, Threat Hunting & Process Optimization</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1vzjfwJ0pzYOfDpezrrypFxHIS-VPJtbz/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1s2zEvFNVhsGow7-F7IfLWYl0hLs2PnVk/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>1.3</strong> – Given a scenario, use appropriate tools or techniques to determine malicious activity.</li>
+                        <li><strong>1.4</strong> – Compare and contrast threat-intelligence and threat-hunting concepts.</li>
+                        <li><strong>1.5</strong> – Explain the importance of efficiency and process improvement in security operations.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-cybersecurity-investigation-lab/" target="_blank">Practice PBQ: Cybersecurity Investigation</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-it-help-desk-lab/" target="_blank">Practice PBQ: IT Help Desk</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=73411914" target="_blank">Complete the Domain 1: Security Operations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak security operations concepts.</div>
+                </details>
 
-                <h3>Day 3 – Vulnerability Scanning Methods & Assessment Tool Outputs</h3>
-                <p><a href="https://docs.google.com/document/d/1LetEulCTClSz1zI_ZTSFHY6y5S_EiWs8/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1BZC02QM6gZNf4AAJTFzNc0TLX-9-eqUu/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.1</strong> – Given a scenario, implement vulnerability scanning methods and concepts.</li>
-                    <li><strong>2.2</strong> – Given a scenario, analyze output from vulnerability assessment tools.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day3-security-analysis-lab/" target="_blank">Practice PBQ: Security Analysis</a></div>
+                <details>
+                    <summary><h3>Day 3 – Vulnerability Scanning Methods & Assessment Tool Outputs</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1LetEulCTClSz1zI_ZTSFHY6y5S_EiWs8/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1BZC02QM6gZNf4AAJTFzNc0TLX-9-eqUu/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.1</strong> – Given a scenario, implement vulnerability scanning methods and concepts.</li>
+                        <li><strong>2.2</strong> – Given a scenario, analyze output from vulnerability assessment tools.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day3-security-analysis-lab/" target="_blank">Practice PBQ: Security Analysis</a></div>
+                </details>
 
-                <h3>Day 4 – Vulnerability Prioritization, Response Handling & Mitigations</h3>
-                <p><a href="https://docs.google.com/document/d/1G1SVv542pJu3Vpo9KyaSf785Ni8TUAZg/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1QsUCeMYcCrdVCSHFthzN2SFUh3nntGLI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>2.3</strong> – Given a scenario, analyze data to prioritize vulnerabilities.</li>
-                    <li><strong>2.4</strong> – Given a scenario, recommend controls to mitigate attacks and software vulnerabilities.</li>
-                    <li><strong>2.5</strong> – Explain concepts related to vulnerability response, handling, and management.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-cybersecurity-configuration-lab/" target="_blank">Practice PBQ: Cybersecurity Configuration</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-vulnerability-remediation-lab/" target="_blank">Practice PBQ: Vulnerability Remediation</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-web-server-vulnerability-lab/" target="_blank">Practice PBQ: Web Server Vulnerability</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=84093385" target="_blank">Complete the Domain 2: Vulnerability Management Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak vulnerability management concepts.</div>
+                <details>
+                    <summary><h3>Day 4 – Vulnerability Prioritization, Response Handling & Mitigations</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1G1SVv542pJu3Vpo9KyaSf785Ni8TUAZg/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1QsUCeMYcCrdVCSHFthzN2SFUh3nntGLI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>2.3</strong> – Given a scenario, analyze data to prioritize vulnerabilities.</li>
+                        <li><strong>2.4</strong> – Given a scenario, recommend controls to mitigate attacks and software vulnerabilities.</li>
+                        <li><strong>2.5</strong> – Explain concepts related to vulnerability response, handling, and management.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-cybersecurity-configuration-lab/" target="_blank">Practice PBQ: Cybersecurity Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-vulnerability-remediation-lab/" target="_blank">Practice PBQ: Vulnerability Remediation</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-web-server-vulnerability-lab/" target="_blank">Practice PBQ: Web Server Vulnerability</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=84093385" target="_blank">Complete the Domain 2: Vulnerability Management Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak vulnerability management concepts.</div>
+                </details>
 
-                <h3>Day 5 – Attack Methodologies, Incident Response Frameworks & Life Cycles</h3>
-                <p><a href="https://docs.google.com/document/d/17Wi6_uggtIpbphlGLNgmucmJ351LTmp1/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1pQs_rNls5yuPDRzFScB6fUTh83B2Zi8k/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>3.1</strong> – Explain concepts related to attack methodology frameworks.</li>
-                    <li><strong>3.2</strong> – Given a scenario, perform incident response activities.</li>
-                    <li><strong>3.3</strong> – Explain the preparation and post-incident activity phases of the incident management life cycle.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-kill-chain-lab/" target="_blank">Practice PBQ: Kill Chain</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-security-incident-lab/" target="_blank">Practice PBQ: Security Incident</a></div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95937944" target="_blank">Complete the Domain 3: Incident Response & Management Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak response mechanics.</div>
+                <details>
+                    <summary><h3>Day 5 – Attack Methodologies, Incident Response Frameworks & Life Cycles</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/17Wi6_uggtIpbphlGLNgmucmJ351LTmp1/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1pQs_rNls5yuPDRzFScB6fUTh83B2Zi8k/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>3.1</strong> – Explain concepts related to attack methodology frameworks.</li>
+                        <li><strong>3.2</strong> – Given a scenario, perform incident response activities.</li>
+                        <li><strong>3.3</strong> – Explain the preparation and post-incident activity phases of the incident management life cycle.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-kill-chain-lab/" target="_blank">Practice PBQ: Kill Chain</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-security-incident-lab/" target="_blank">Practice PBQ: Security Incident</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95937944" target="_blank">Complete the Domain 3: Incident Response & Management Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak response mechanics.</div>
+                </details>
 
-                <h3>Day 6 – Intelligence Communications, Incident Reporting & Vulnerability Disclosures</h3>
-                <p><a href="https://docs.google.com/document/d/1Fx4XavgdDWUi6zX_1XzF6oO0eODEqrkN/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                <p><a href="https://docs.google.com/presentation/d/1GQvWbJ-XRe1sa6zEpotUitKmtzNNVxoW/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
-                <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
-                <p><strong>Study the Following Objectives:</strong></p>
-                <ul>
-                    <li><strong>4.1</strong> – Explain the importance of vulnerability management reporting and communication.</li>
-                    <li><strong>4.2</strong> – Explain the importance of incident response reporting and communication.</li>
-                </ul>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81235044" target="_blank">Complete the Domain 4: Reporting & Communication Practice Test.</a></div>
-                <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak communication mechanics.</div>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-cysa-plus-003-test/" target="_blank">Launch CySA+ CS0-003 Practice Test</a></div>
+                <details>
+                    <summary><h3>Day 6 – Intelligence Communications, Incident Reporting & Vulnerability Disclosures</h3></summary>
+                    <p><a href="https://docs.google.com/document/d/1Fx4XavgdDWUi6zX_1XzF6oO0eODEqrkN/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1GQvWbJ-XRe1sa6zEpotUitKmtzNNVxoW/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
+                    <p><strong>Study the Following Objectives:</strong></p>
+                    <ul>
+                        <li><strong>4.1</strong> – Explain the importance of vulnerability management reporting and communication.</li>
+                        <li><strong>4.2</strong> – Explain the importance of incident response reporting and communication.</li>
+                    </ul>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81235044" target="_blank">Complete the Domain 4: Reporting & Communication Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak communication mechanics.</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-cysa-plus-003-test/" target="_blank">Launch CySA+ CS0-003 Practice Test</a></div>
+                </details>
 
-                <h3>Day 7 – Instructor Review Session</h3>
-                <p><strong>Task:</strong></p>
-                <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 7).</div>
-                
-                <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
-                    <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
-                    <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
-                </p>
+                <details>
+                    <summary><h3>Day 7 – Instructor Review Session</h3></summary>
+                    <p><strong>Task:</strong></p>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 7).</div>
+                    
+                    <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
+                        <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
+                        <strong>During your session:</strong> Receive guidance on remaining weak areas, discuss Performance-Based Questions (PBQs)/exam strategies, obtain your exam voucher (if applicable), and work to schedule your exam.
+                    </p>
+                </details>
 
-                <h3>Day 8 – Exam Day</h3>
-                <p>Congratulations—you've completed your study plan!</p>
-                <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
-                <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA CySA+ (CS0-003) certification exam!</div>
+                <details>
+                    <summary><h3>Day 8 – Exam Day</h3></summary>
+                    <p>Congratulations—you've completed your study plan!</p>
+                    <p style="margin-bottom: 0.5rem;"><strong>Before the Exam:</strong> Review notes, get a good night's rest, arrive early (or prepare your remote environment), stay confident, and trust your preparation.</p>
+                    <div class="checkbox-item"><input type="checkbox"> <strong>Goal:</strong> Pass the CompTIA CySA+ (CS0-003) certification exam!</div>
+                </details>
 
                 <h3 style="margin-top:2rem;">Additional Recommendations</h3>
                 <ul>
@@ -1508,6 +1655,7 @@
             </div>
 
             <div class="modal-action-bar">
+                <button class="fullscreen-btn" onclick="openStudyPlanFullscreen('studyPlanModalCySA')">View Fullscreen</button>
                 <button class="download-btn" onclick="printStudyPlan()">Download / Print Plan</button>
                 <button class="close-btn" onclick="closeAllModals(null, true)">Close</button>
             </div>
@@ -1548,6 +1696,159 @@
         }
 
         function printStudyPlan() { window.print(); }
+
+        function openStudyPlanFullscreen(modalId) {
+            const modal = document.getElementById(modalId);
+            if (!modal) return;
+
+            const contentElement = modal.querySelector('.study-plan-container');
+            const titleElement = modal.querySelector('h2');
+            
+            const fullscreenWindow = window.open('', '_blank');
+            if (!fullscreenWindow) {
+                alert("Popup blocker prevented opening the study plan in a new tab. Please allow popups for this site.");
+                return;
+            }
+
+            const titleText = titleElement ? titleElement.innerText : 'Study Plan';
+            const bodyHTML = contentElement ? contentElement.innerHTML : '';
+
+            fullscreenWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>${titleText}</title>
+                    <style>
+                        body {
+                            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+                            background-color: #f8fafc;
+                            color: #1e293b;
+                            margin: 0;
+                            padding: 2rem;
+                            display: flex;
+                            justify-content: center;
+                        }
+                        .fullscreen-container {
+                            background: #ffffff;
+                            max-width: 900px;
+                            width: 100%;
+                            padding: 3rem;
+                            border-radius: 12px;
+                            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+                            border-top: 6px solid #0A2540;
+                        }
+                        h2 {
+                            color: #0A2540;
+                            font-size: 2rem;
+                            margin-bottom: 1.5rem;
+                            border-bottom: 2px solid #00A3E0;
+                            padding-bottom: 0.5rem;
+                        }
+                        h3 {
+                            color: #0A2540;
+                            margin: 0;
+                            font-size: 1.3rem;
+                        }
+                        details {
+                            margin-top: 1.25rem;
+                            margin-bottom: 1.25rem;
+                            border: 1px solid #e2e8f0;
+                            border-radius: 8px;
+                            padding: 0.5rem 1rem 1rem 1rem;
+                            background-color: #ffffff;
+                        }
+                        summary {
+                            cursor: pointer;
+                            outline: none;
+                            user-select: none;
+                            padding: 0.5rem 0;
+                        }
+                        summary h3 {
+                            display: inline-block;
+                        }
+                        p {
+                            color: #475569;
+                            font-size: 1.05rem;
+                            line-height: 1.7;
+                            margin-bottom: 1.25rem;
+                        }
+                        a {
+                            color: #00A3E0;
+                            text-decoration: none;
+                            font-weight: 600;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                        ul {
+                            padding-left: 1.25rem;
+                            margin-bottom: 1.25rem;
+                            list-style-type: disc;
+                        }
+                        li {
+                            margin-bottom: 0.4rem;
+                            color: #334155;
+                            font-size: 1rem;
+                            line-height: 1.5;
+                        }
+                        .resource-box {
+                            background-color: #f1f5f9;
+                            border-left: 4px solid #00A3E0;
+                            padding: 1.25rem;
+                            border-radius: 6px;
+                            margin: 1.5rem 0;
+                        }
+                        .resource-box h4 {
+                            color: #0A2540;
+                            font-size: 1.1rem;
+                            margin-bottom: 0.5rem;
+                        }
+                        .checkbox-item {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 0.6rem;
+                            margin-bottom: 0.6rem;
+                            font-weight: 500;
+                            color: #1e293b;
+                            line-height: 1.4;
+                        }
+                        .checkbox-item input {
+                            margin-top: 0.25rem;
+                            width: 16px;
+                            height: 16px;
+                            cursor: pointer;
+                        }
+                        .slides-alert-text {
+                            font-size: 0.95rem;
+                            color: #475569;
+                            font-style: italic;
+                            margin: 0.25rem 0 1rem 0;
+                        }
+                        @media print {
+                            body { background: white; padding: 0; }
+                            .fullscreen-container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+                            details { border: none !important; padding: 0 !important; margin: 1.5rem 0 !important; }
+                            input[type="checkbox"] { display: none !important; }
+                            .checkbox-item::before {
+                                content: "[  ] ";
+                                font-family: monospace;
+                                font-weight: bold;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="fullscreen-container">
+                        <h2>${titleText}</h2>
+                        ${bodyHTML}
+                    </div>
+                </body>
+                </html>
+            `);
+            fullscreenWindow.document.close();
+        }
     </script>
 
 </body>
