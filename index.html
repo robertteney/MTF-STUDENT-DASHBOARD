@@ -61,6 +61,7 @@
             padding: 0 2rem;
             display: flex;
             gap: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .nav-tab {
@@ -264,6 +265,13 @@
             color: #0A2540;
             margin-bottom: 1.25rem;
             font-size: 1.8rem;
+        }
+
+        .modal-content h3 {
+            color: #0A2540;
+            margin-top: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
         }
 
         .modal-content p {
@@ -522,6 +530,7 @@
         <button id="dashboardTab" class="nav-tab active" onclick="closeAllModals()">Dashboard</button>
         <button id="aboutTab" class="nav-tab" onclick="openModal('aboutModal', 'aboutTab')">About MTF</button>
         <button id="limitationsTab" class="nav-tab" onclick="openModal('limitationsModal', 'limitationsTab')">MTF Limitations</button>
+        <button id="reschedulingTab" class="nav-tab" onclick="openModal('reschedulingModal', 'reschedulingTab')">Exam Rescheduling & Troubleshooting</button>
     </nav>
 
     <main>
@@ -628,7 +637,7 @@
         <section class="row-section">
             <h2 class="row-title">Community & Safety Nets</h2>
             <div class="grid-container">
-                <a href="https://www.mycomputercareer.edu/?extole_zone_name=share_experience&utm_campaign=refer-a-friend&utm_medium=WEB&utm_source=extole_advocate&utm_content=share-it&extole_journey_campaign_id=7625663893941383715&_gl=1%2A1v9an87%2A_gcl_aw%2AR0NMLjE3NzY1NDEzMDkuQ2p3S0NBancxNHpQQmhBdUVpd0FQMy1FYnhEdnVYVU02ZGFiNTdZd2sxbDA3eFppWGxNTzJyY2RLV2ptR1JaaXVTbmx0ZWx1RC1HRzZ4b0NnU29RQXZEX0B3RQ..%2A_gcl_au%2AMzM2OTUyNTY5LjE38007456jc.&channel=LINK&extole_labels=refer-a-friend&promotable_code=share-it&extole_source=share-it" target="_blank" class="tile">
+                <a href="https://www.mycomputercareer.edu/?extole_zone_name=share_experience&utm_campaign=refer-a-friend&utm_medium=WEB&utm_source=extole_advocate&utm_content=share-it&extole_journey_campaign_id=7625663893941383715&_gl=1%2A1v9an87%2A_gcl_aw%2AR0NMLjE3NzY1NDEzMDkuQ2p3S0NBancxNHpQQmhBdUVpd0FQMy1FYnhEdnVYVU02ZGFiNTdZd2sxbDA3eFppWGxNTzJyY2RLV2ptR1JaaXVTbmx0ZWx1RC1HRzZ4b0NnU29RQXZEX0B3RQ..%2A_gcl_au%2AMzM2OTUyNTY5LjE38007456jc.&channel=LINK&extole_labels=refer-a-friend&promotable_code=share-it" target="_blank" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     <span>Pay "IT" Forward</span>
                 </a>
@@ -661,6 +670,51 @@
                 <li>Students are approved for up to a <strong>4th attempt</strong> at an exam.</li>
                 <li>Any certification voucher requested must be completed by the student's designated <strong>MTF expiration date</strong>.</li>
             </ul>
+            <button class="close-btn" onclick="closeAllModals(null, true)">Return to Dashboard</button>
+        </div>
+    </div>
+
+    <!-- Modal: Exam Rescheduling & Troubleshooting -->
+    <div id="reschedulingModal" class="modal-overlay" onclick="closeAllModals(event)">
+        <div class="modal-content" style="max-width: 680px;" onclick="event.stopPropagation()">
+            <h2>Exam Rescheduling & Pearson VUE Support</h2>
+            <p><strong>Important:</strong> This information applies only to existing exam appointments, rescheduling, cancellations, and technical issues. It does NOT apply to new exam attempts or requests for additional exam vouchers.</p>
+            <p>For new exam attempts, students must schedule a 1-on-1 appointment with their MTF Instructor and follow the instructions provided before a new voucher can be approved.</p>
+            
+            <h3>Rescheduling Your Exam</h3>
+            <ul class="modal-list">
+                <li>Exams must be rescheduled at least 24 hours before your scheduled appointment to avoid forfeiting your voucher.</li>
+                <li>A forfeited voucher may count as one of your allotted exam attempts, even if you did not take the exam.</li>
+                <li>Always verify your new exam date and time through your Pearson VUE confirmation email.</li>
+            </ul>
+
+            <h3>Rescheduling Your Exam (Due to Testing Center or Pearson VUE Cancellation)</h3>
+            <ul class="modal-list">
+                <li>If your exam is canceled by the testing center or Pearson VUE, you should be able to reschedule using your original voucher, provided it remains valid.</li>
+                <li>Once your exam has been rescheduled, verify the new date and time in your Pearson VUE confirmation email.</li>
+                <li>Notify your MTF Instructor immediately of any exam cancellations, rescheduling, or interruptions.</li>
+            </ul>
+
+            <h3>Pearson VUE Technical Support</h3>
+            <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> 877-551-7587</p>
+            <p style="margin-bottom: 0.5rem;">Contact Pearson VUE if you experience:</p>
+            <ul class="modal-list">
+                <li>Issues completing the exam check-in process.</li>
+                <li>A testing center that is closed upon arrival.</li>
+                <li>Testing center closures due to severe weather.</li>
+                <li>Being stuck on the online exam queue screen.</li>
+                <li>Technical issues, disconnections, or exam crashes.</li>
+                <li>Issues connecting with your online proctor.</li>
+            </ul>
+
+            <h3>Important Reminders</h3>
+            <ul class="modal-list">
+                <li>Contact Pearson VUE immediately if an issue prevents you from testing.</li>
+                <li>Request and retain a support case number for any reported issues.</li>
+                <li>Notify your MTF Instructor immediately of any exam cancellations, rescheduling, or interruptions.</li>
+                <li>New exam attempts require MTF Instructor approval. Schedule a 1-on-1 appointment and follow all instructions provided. Do not use these rescheduling procedures to request a new exam attempt.</li>
+            </ul>
+
             <button class="close-btn" onclick="closeAllModals(null, true)">Return to Dashboard</button>
         </div>
     </div>
