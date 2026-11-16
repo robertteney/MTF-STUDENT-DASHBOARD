@@ -514,6 +514,25 @@
                 page-break-after: avoid;
             }
         }
+
+        /* Holiday closure announcement — independent of dashboard controls */
+        .holiday-notice {
+            max-width: 1200px;
+            width: calc(100% - 4rem);
+            margin: 1.25rem auto 0;
+            padding: 1rem 1.25rem;
+            background: #ffffff;
+            border: 2px solid #b91c1c;
+            border-radius: 10px;
+            color: #b91c1c;
+            text-align: center;
+            font-size: 1.05rem;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+        @media (max-width: 600px) {
+            .holiday-notice { width: calc(100% - 2rem); }
+        }
     </style>
 </head>
 <body>
@@ -532,6 +551,10 @@
         <button id="limitationsTab" class="nav-tab" onclick="openModal('limitationsModal', 'limitationsTab')">MTF Limitations</button>
         <button id="reschedulingTab" class="nav-tab" onclick="openModal('reschedulingModal', 'reschedulingTab')">Exam Rescheduling & Troubleshooting</button>
     </nav>
+
+    <aside class="holiday-notice" role="status" aria-label="Holiday closure notice">
+        MyComputerCareer will be closed for Thanksgiving on November 26–27, 2026; for the holidays from December 20–27, 2026; and for New Year's Day on January 1, 2027.
+    </aside>
 
     <main>
         
