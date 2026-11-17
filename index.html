@@ -2033,8 +2033,7 @@ body.mtf-resource-view .resource-page-copy:before{content:"🍂 THANKSGIVING SEA
             if (!popup) { alert('Please allow popups to view the study plan in a new tab.'); return; }
             const doc = popup.document;
             doc.open();
-            doc.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Certification Study Plan</title><style>body{font:16px Segoe UI,Arial,sans-serif;color:#183047;background:#f1f5f9;padding:25px;line-height:1.6}.container{max-width:950px;margin:auto;background:white;padding:35px;border-radius:12px}details{border:1px solid #d9e3eb;border-radius:8px;margin:14px 0;padding:12px}summary{cursor:pointer;font-weight:700}a{color:#007ea9}@media print{body{background:white;padding:0}.container{padding:0}}</style></head><body><div class="container"><h2 id="plan-title"></h2><div id="plan-content"></div></div>
-</body></html>');
+            doc.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Certification Study Plan</title><style>body{font:16px Segoe UI,Arial,sans-serif;color:#183047;background:#f1f5f9;padding:25px;line-height:1.6}.container{max-width:950px;margin:auto;background:white;padding:35px;border-radius:12px}details{border:1px solid #d9e3eb;border-radius:8px;margin:14px 0;padding:12px}summary{cursor:pointer;font-weight:700}a{color:#007ea9}@media print{body{background:white;padding:0}.container{padding:0}}</style></head><body><div class="container"><h2 id="plan-title"></h2><div id="plan-content"></div></div>\n</body></html>');
             doc.close();
             doc.getElementById('plan-title').textContent = title ? title.textContent : 'Study Plan';
             if (content) doc.getElementById('plan-content').appendChild(content.cloneNode(true));
