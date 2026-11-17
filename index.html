@@ -533,93 +533,226 @@
         @media (max-width: 600px) {
             .holiday-notice { width: calc(100% - 2rem); }
         }
-    </style>
-</head>
+    
+/* COMPLETE WORKSPACE REDESIGN */
+:root{--deep:#08192a;--sidebar:#0a1b2d;--ink:#142b42;--muted:#687c90;--aqua:#05c3c7;--blue:#0b83b8}
+html{scroll-behavior:smooth}body{background:#f1f5f9;color:var(--ink);display:block;font-family:Segoe UI,system-ui,sans-serif}
+.app-shell{display:flex;min-height:100vh}.command-sidebar{width:260px;flex:0 0 260px;background:var(--sidebar);color:#fff;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:27px 17px;z-index:15;border-right:1px solid #18364f}
+.brand{display:flex;align-items:center;gap:12px;margin:0 8px 46px}.brand-mark{background:linear-gradient(135deg,#0cb8c8,#2369c4);width:43px;height:43px;display:grid;place-items:center;border-radius:12px;font-size:19px;font-weight:900;box-shadow:0 7px 20px #00b3d033}.brand-mark span{color:#b7ffff}.brand strong{font-size:13px;display:block;letter-spacing:-.03em}.brand small{display:block;font-size:9px;letter-spacing:.14em;color:#83a7c1;margin-top:4px}
+.sidebar-caption{font-size:10px;letter-spacing:.18em;color:#6687a0;margin:0 14px 12px;font-weight:800}.sidebar-secondary{margin-top:35px}.sub-nav{background:transparent;border:0;box-shadow:none;padding:0;display:flex;flex-direction:column;gap:5px}.nav-tab{display:flex;align-items:center;gap:13px;color:#b2c9da;padding:13px 14px;border-radius:9px;text-align:left;font-size:13px;width:100%;font-weight:600}.nav-tab span{font-size:13px}.nav-tab.active,.nav-tab:hover{background:#16364c;color:#e7ffff}.nav-tab.active{box-shadow:inset 3px 0 #06c9cd}.nav-tab.active::after{display:none}.section-links{display:flex;flex-direction:column;gap:3px}.section-links a{display:flex;gap:12px;align-items:center;color:#6095b0;font-size:11px;padding:11px 13px;text-decoration:none;border-radius:8px;font-weight:700}.section-links a span{color:#b6c9d9;font-size:12px;font-weight:500}.section-links a:hover{background:#14364e}.sidebar-bottom{margin-top:auto;border-top:1px solid #264154;padding:22px 10px 0;color:#b7e3e7;font-size:9px;letter-spacing:.08em;font-weight:800}.sidebar-bottom small{display:block;margin:8px 0 0 14px;color:#718ea4;font-size:10px;letter-spacing:0;font-weight:400}.online-dot,.live-indicator{display:inline-block;width:7px;height:7px;background:#15d8ac;border-radius:50%;box-shadow:0 0 0 4px #15d8ac18;margin-right:7px}
+.workspace{min-width:0;flex:1}.topbar{height:66px;padding:0 clamp(22px,4vw,55px);display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #e0e8ef;color:#8292a2;font-size:10px;letter-spacing:.12em;font-weight:800}.breadcrumb span{padding:0 11px;color:#c0ceda}.topbar-right{display:flex;align-items:center;gap:9px}.topbar-divider{width:1px;height:19px;background:#dae3ea;margin:0 12px}
+.hero{background:radial-gradient(circle at 83% 48%,#164e70 0%,transparent 36%),linear-gradient(125deg,#0a2034,#0d324b);min-height:325px;padding:52px clamp(25px,5vw,72px);display:flex;justify-content:space-between;gap:30px;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;inset:0;opacity:.14;background-image:linear-gradient(#73b6d3 1px,transparent 1px),linear-gradient(90deg,#73b6d3 1px,transparent 1px);background-size:45px 45px;mask-image:linear-gradient(90deg,transparent 40%,black)}.hero-copy{position:relative;z-index:1;max-width:560px}.eyebrow{color:#4ae4e2;letter-spacing:.19em;font-size:10px;font-weight:800;display:flex;align-items:center;gap:10px}.eyebrow-line{width:25px;height:2px;background:#0bcfd2}.hero h1{color:#fff;font-size:clamp(32px,3.6vw,52px);line-height:1.09;letter-spacing:-.055em;margin:18px 0 16px;font-weight:800}.hero h1 em{font-style:normal;color:#5ce0e2}.hero p{color:#a9c3d5;max-width:520px;font-size:14px;line-height:1.7}.hero-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:24px}.primary-action{background:#06c1c5;color:#06283c!important;text-decoration:none;border-radius:7px;padding:13px 17px;font-size:12px;font-weight:800;display:inline-flex;gap:22px}.secondary-action{color:#c6e2ef;text-decoration:none;font-size:12px;font-weight:700}.hero-graphic{width:290px;min-width:240px;position:relative;align-self:stretch}.orbit{position:absolute;border:1px solid #48cde14d;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.orbit-one{width:180px;height:180px}.orbit-two{width:250px;height:250px;border-style:dashed}.orbit-three{width:310px;height:310px;border-color:#48cde122}.core-hex{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:128px;height:128px;background:#0e3d57;border:2px solid #40cdd7;clip-path:polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0 50%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#e8ffff;font-size:34px;font-weight:900;letter-spacing:-.06em}.core-hex span{font-size:9px;letter-spacing:.27em;color:#57d8e0}.orbit-label{position:absolute;color:#74c6d9;font-size:9px;letter-spacing:.15em;font-weight:800}.label-one{top:8%;left:20%}.label-two{right:-4%;top:48%}.label-three{bottom:7%;left:14%}
+.holiday-notice{width:auto;max-width:none;margin:23px clamp(22px,4vw,55px) 0;padding:14px 18px;background:#fff6f5;border:1px solid #f0c9c6;border-left:4px solid #db3946;color:#ad2a34;display:flex;gap:20px;align-items:center;text-align:left;border-radius:8px;font-size:12px;line-height:1.6;box-shadow:none}.holiday-notice strong{font-size:10px;letter-spacing:.08em;white-space:nowrap}.holiday-notice span{font-weight:600}
+.workspace-tools{margin:38px clamp(22px,4vw,55px) 15px;display:flex;justify-content:space-between;gap:20px;align-items:end}.eyebrow-dark{color:#0c91b3}.workspace-tools h2{font-size:27px;letter-spacing:-.045em;margin:7px 0}.workspace-tools p{color:#73879a;font-size:13px}.search-wrap{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #d9e3ec;border-radius:9px;padding:0 15px;min-width:min(100%,310px);height:45px;box-shadow:0 3px 12px #1c3b5710}.search-wrap span{font-size:24px;color:#158bb2}.search-wrap input{width:100%;outline:none;border:0;background:transparent;color:#12344a;font-size:12px}.search-status{margin:0 clamp(22px,4vw,55px);font-size:12px;color:#50768b}
+main{max-width:none;margin:0;padding:10px clamp(22px,4vw,55px) 65px}.row-section{margin:26px 0 38px;scroll-margin-top:20px}.row-title{font-size:12px;color:#1d425b;letter-spacing:.09em;border-bottom:1px solid #d8e3ed;padding-bottom:13px;margin-bottom:16px}.row-title::before{background:#00bfc6;height:16px;width:4px}.grid-container{grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}.tile{background:#fff!important;min-height:164px;align-items:flex-start;text-align:left;padding:23px 20px 20px;gap:9px;border:1px solid #dce6ee;border-radius:12px;box-shadow:0 5px 14px #0c2d4610;position:relative;cursor:pointer;width:100%;font:inherit}.tile::before{height:0}.tile:after{content:"↗";position:absolute;right:18px;top:18px;color:#91a8b8;font-size:16px}.tile:not([href]):after{content:"＋"}.tile svg{width:31px;height:31px;stroke:#0b8eb3;margin-bottom:9px}.tile span{font-size:14px;font-weight:750;color:#173a55;line-height:1.4}.tile .sub-label{font-size:11px;color:#71879b;font-weight:500}.tile:hover{transform:translateY(-4px);box-shadow:0 15px 25px #0c2d4624;border-color:#32afc5}.tile:hover svg{stroke:#0b8eb3;transform:none}.tile:hover .sub-label{color:#50839c}
+.modal-overlay{background:rgba(5,19,34,.76);backdrop-filter:blur(6px)}.modal-content{border:1px solid #d7e7ef;border-top:5px solid #08aebf;box-shadow:0 28px 75px #0007;border-radius:16px}.modal-content a{color:#087ba5;text-decoration:underline;text-underline-offset:2px}.study-plan-container details{background:#f7fafc;border-color:#d3e2ec}.study-plan-container details[open]{background:#fff;border-color:#77c6d6}.resource-box{background:#eff8fc}.modal-action-bar{z-index:2}footer{background:#08192a}
+.tile:focus-visible,.nav-tab:focus-visible,.section-links a:focus-visible,.modal-content button:focus-visible{outline:3px solid #00c4ca;outline-offset:3px}
+@media(max-width:1100px){.command-sidebar{width:215px;flex-basis:215px}.hero-graphic{width:210px;min-width:180px}.orbit-three{width:230px;height:230px}.orbit-two{width:200px;height:200px}.orbit-one{width:150px;height:150px}}
+@media(max-width:760px){.app-shell{display:block}.command-sidebar{position:relative;width:100%;height:auto;padding:15px;display:block}.brand{margin:0 0 14px}.sidebar-caption,.sidebar-secondary,.section-links,.sidebar-bottom{display:none}.sub-nav{flex-direction:row;flex-wrap:wrap}.nav-tab{width:auto;padding:10px 12px}.topbar{height:48px;padding:0 20px}.topbar-right{display:none}.hero{padding:34px 24px;min-height:auto}.hero-graphic{display:none}.holiday-notice{margin:15px 18px 0;display:block}.holiday-notice strong{display:block;margin-bottom:5px}.workspace-tools{margin:28px 18px 12px;display:block}.search-wrap{margin-top:16px;max-width:none}main{padding:10px 18px 45px}.grid-container{grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr))}.modal-content{padding:1.3rem;width:95%}.modal-action-bar{flex-wrap:wrap;gap:5px}.modal-action-bar button{margin-top:5px}}
+@media print{.command-sidebar,.hero,.topbar,.workspace-tools,.holiday-notice,.search-status{display:none!important}}
+
+/* Holiday alert visibility enhancement — isolated visual changes */
+.holiday-notice {
+  background:linear-gradient(105deg,#fff0ed 0%,#fff8f1 100%);
+  border:2px solid #e75b4c; border-left:7px solid #d52d37;
+  padding:20px 24px; border-radius:12px;
+  box-shadow:0 8px 24px rgba(172,46,42,.16);
+  color:#92202b; font-size:14px; line-height:1.65;
+  gap:22px;
+}
+.holiday-notice::before {content:"⚠";font-size:26px;line-height:1;color:#c72b36;flex:0 0 auto;}
+.holiday-notice strong {font-size:12px;letter-spacing:.1em;color:#a71e2d;min-width:170px;}
+.holiday-notice span {font-weight:700;color:#832632;}
+@media(max-width:760px){.holiday-notice{padding:17px 18px;gap:10px}.holiday-notice::before{display:inline-block;margin-bottom:8px}.holiday-notice strong{margin-bottom:6px}}
+</style>
+
+<style id="assistant-styles">
+.mtf-help-launch{position:fixed;right:26px;bottom:24px;z-index:2000;background:#0c344d;color:#fff;border:2px solid #39d6dc;border-radius:999px;box-shadow:0 10px 35px #09243b55;padding:13px 19px;font:700 13px Segoe UI,system-ui,sans-serif;cursor:pointer;display:flex;gap:10px;align-items:center}
+.mtf-help-launch:hover{background:#0d5267;transform:translateY(-2px)}.mtf-help-launch .help-dot{background:#36d6d6;color:#062c3d;border-radius:50%;width:27px;height:27px;display:grid;place-items:center;font-size:18px}
+.mtf-help-panel{position:fixed;z-index:2100;right:24px;bottom:88px;width:min(440px,calc(100vw - 24px));height:min(650px,calc(100vh - 110px));background:#142235;color:#fff;border:1px solid #36576d;border-radius:17px;box-shadow:0 20px 65px #061a30aa;display:none;flex-direction:column;overflow:hidden;font:13px Segoe UI,system-ui,sans-serif}
+.mtf-help-panel.is-open{display:flex}.mtf-help-head{display:flex;align-items:center;gap:11px;padding:15px 17px;border-bottom:1px solid #38536a;background:#132136}.mtf-help-icon{background:#287d95;width:35px;height:35px;border-radius:11px;display:grid;place-items:center;font-size:20px}.mtf-help-head strong{font-size:13px;display:block}.mtf-help-head small{color:#a6d0e1;display:block;font-size:10px;margin-top:3px}.mtf-help-close{margin-left:auto;background:transparent;border:0;color:#d2e5f0;font-size:23px;cursor:pointer;padding:5px 8px}
+.mtf-help-messages{padding:15px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}.mtf-bubble{background:#273d55;padding:13px;border-radius:11px;line-height:1.6;max-width:100%;color:#f5fbff}.mtf-bubble.user{background:#0d6279;align-self:flex-end;max-width:88%;overflow-wrap:anywhere}.mtf-bubble strong{color:#fff}.mtf-bubble p{margin:7px 0;color:#e3f2fa;font-size:12px}.mtf-bubble ol{margin:8px 0 0;padding-left:20px}.mtf-bubble li{margin:5px 0}.mtf-help-topics{display:grid;gap:7px}.mtf-topic{width:100%;border:1px solid #3c5c72;background:#24374f;color:#fff;padding:12px;text-align:left;border-radius:8px;cursor:pointer;font-size:12px;display:flex;justify-content:space-between;gap:8px}.mtf-topic:hover,.mtf-topic:focus-visible{background:#31526a;border-color:#69cfe2}.mtf-topic span{color:#76d6e9}.mtf-help-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.mtf-action{background:#0d7f9d;border:1px solid #45bbd2;color:#fff;border-radius:7px;padding:9px 11px;cursor:pointer;font-weight:700;font-size:11px}.mtf-action.secondary{background:#273f56;border-color:#4b6c80}.mtf-action:hover{filter:brightness(1.15)}.mtf-help-form{display:flex;gap:8px;padding:12px;border-top:1px solid #3c5267;background:#142235}.mtf-help-input{flex:1;min-width:0;background:#fff;border:0;border-radius:8px;padding:12px;color:#172f45;font:12px Segoe UI,system-ui,sans-serif}.mtf-help-send{background:#11a8bc;color:#fff;border:0;border-radius:8px;padding:0 15px;font-size:17px;cursor:pointer}.mtf-help-foot{font-size:10px;text-align:center;color:#a5c1d2;padding:0 10px 10px}.mtf-help-note{font-size:11px;color:#b5cfe0;margin-top:8px}.mtf-help-messages a{color:#79e2ee}
+@media(max-width:600px){.mtf-help-launch{right:12px;bottom:12px}.mtf-help-panel{right:8px;bottom:74px;width:calc(100vw - 16px);height:min(660px,calc(100dvh - 88px))}}
+@media print{.mtf-help-launch,.mtf-help-panel{display:none!important}}
+</style>
+<style id="resource-tab-styles">
+/* Category tabs: only the selected resource group appears. */
+.section-links{gap:7px!important}.section-tab{appearance:none;width:100%;border:1px solid transparent;background:transparent;color:#a9c6d8;display:flex;align-items:center;gap:12px;text-align:left;padding:13px 12px;border-radius:9px;font:700 11px Segoe UI,system-ui,sans-serif;cursor:pointer;transition:background .15s,border-color .15s}.section-tab span{font-size:13px;color:#c6d8e5;font-weight:550}.section-tab:hover{background:#1a3950;border-color:#2b5168}.section-tab[aria-selected="true"]{background:linear-gradient(90deg,#14576b,#183a53);border-color:#30879a;color:#73f2e9;box-shadow:inset 3px 0 #15d6d5}.section-tab[aria-selected="true"] span{color:white}.section-tab:focus-visible{outline:2px solid #4ee7e4;outline-offset:2px}
+.row-section[data-inactive-tab="true"]{display:none!important}.row-section[data-inactive-tab="false"]{display:block!important}.row-section .grid-container{animation:tabAppear .2s ease-out}@keyframes tabAppear{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(max-width:760px){.sidebar-caption.sidebar-secondary,.section-links{display:flex!important}.sidebar-caption.sidebar-secondary{display:block!important;margin:14px 5px 7px}.section-links{flex-direction:row!important;overflow-x:auto;gap:5px!important;padding:0 0 6px}.section-tab{flex:0 0 auto;width:auto;padding:10px 12px;white-space:nowrap}.section-tab span{font-size:11px}}
+</style><style id="home-page-style">
+.mtf-home{margin:35px clamp(22px,4vw,55px) 60px}.home-intro{max-width:950px;margin-bottom:25px}.home-intro h2{font-size:clamp(28px,3vw,40px);letter-spacing:-.05em;color:#18394f;margin:11px 0}.home-intro p{font-size:14px;line-height:1.85;color:#60778a}.home-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,1fr);gap:18px}.home-primary,.home-info{background:#fff;border:1px solid #d9e5ed;border-radius:14px;padding:30px;box-shadow:0 6px 22px #143e5510}.home-primary{border-top:4px solid #0abac4}.home-kicker{color:#008ca7;font-size:10px;letter-spacing:.14em;font-weight:850}.home-primary h3{font-size:25px;line-height:1.2;letter-spacing:-.04em;margin:14px 0}.home-primary p,.home-info p,.home-cta p{color:#62798c;font-size:13px;line-height:1.8}.home-rule{height:1px;background:#dce8ef;margin:22px 0}.home-primary h4{margin:0 0 10px;font-size:15px}.home-primary ol{padding-left:20px}.home-primary li{font-size:13px;line-height:1.75;color:#536c7d;margin:10px 0}.home-side{display:grid;gap:18px}.home-info h3{font-size:19px;letter-spacing:-.03em;margin:12px 0}.home-info button{background:#e8f6f9;border:1px solid #b8e5ec;border-radius:8px;padding:11px 14px;color:#086f8e;font-size:12px;font-weight:750;cursor:pointer}.home-info button:hover{background:#c9eff4}.home-cta{background:linear-gradient(115deg,#0b3049,#10546b);color:white;border-radius:14px;margin-top:19px;padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:20px}.home-cta .home-kicker{color:#6de0e4}.home-cta h3{font-size:21px;margin:8px 0}.home-cta p{color:#bad5df;margin:0}.home-cta button{background:#32d2d6;color:#093348;border:0;border-radius:8px;padding:14px 17px;font-weight:800;cursor:pointer}.mtf-home[hidden],.workspace-tools[data-home-hidden="true"],.search-status[data-home-hidden="true"],main[data-home-hidden="true"]{display:none!important}@media(max-width:950px){.home-layout{grid-template-columns:1fr}.home-side{grid-template-columns:1fr 1fr}}@media(max-width:650px){.mtf-home{margin:25px 18px}.home-side{grid-template-columns:1fr}.home-cta{display:block}.home-cta button{margin-top:15px}}
+</style><style id="return-home-styles">.workspace-tools .resource-heading{display:flex;flex-direction:column;align-items:flex-start;gap:9px}.return-home-btn{display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid #bdd7e5;border-radius:9px;color:#0b6e91;padding:11px 16px;font:750 12px Segoe UI,system-ui,sans-serif;cursor:pointer;box-shadow:0 3px 12px #102d4812;transition:background .15s,transform .15s}.return-home-btn:hover{background:#e4f7fa;transform:translateX(-2px)}.return-home-btn:focus-visible{outline:3px solid #0abfc6;outline-offset:3px}@media(max-width:760px){.return-home-btn{margin-bottom:5px}}</style>
+<style id="resource-layout-update">
+/* Home is the only page with the welcome hero and announcements. */
+body.mtf-resource-view .topbar,body.mtf-resource-view .hero,body.mtf-resource-view .holiday-notice,body.mtf-resource-view .exam-retirement-alert{display:none!important}
+body.mtf-resource-view .workspace{padding-top:0}
+.exam-retirement-alert{margin:12px clamp(22px,4vw,55px) 0;display:flex;gap:16px;align-items:flex-start;padding:17px 20px;background:#fff8e8;border:1px solid #eacb85;border-left:5px solid #d48b16;border-radius:10px;color:#734916;box-shadow:0 5px 18px #442b0b10}
+.retirement-icon{flex:0 0 30px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#d98a1a;color:white;font-weight:900;font-size:18px}
+.exam-retirement-alert strong{font-size:12px;letter-spacing:.055em}.exam-retirement-alert p{font-size:12px;line-height:1.65;margin:6px 0 0;color:#76532a}
+body.mtf-resource-view .resource-return-bar{display:block!important;margin:32px clamp(22px,4vw,55px) 6px}
+.resource-return-bar{display:none}
+body.mtf-resource-view .workspace-tools{display:flex!important;margin:12px clamp(22px,4vw,55px) 55px;justify-content:flex-end}
+body.mtf-resource-view .workspace-tools .resource-heading{display:none!important}
+body.mtf-resource-view .workspace-tools .search-wrap{width:min(100%,360px)}
+body.mtf-resource-view main{padding-top:0;padding-bottom:8px}
+body.mtf-resource-view .row-section{margin-top:12px}
+body.mtf-resource-view .search-status{margin-bottom:20px}
+@media(max-width:650px){body.mtf-resource-view .resource-return-bar{margin:22px 18px 6px}body.mtf-resource-view .workspace-tools{margin:15px 18px 45px}.exam-retirement-alert{margin:12px 18px 0;padding:14px}}
+@media print{.exam-retirement-alert,.resource-return-bar{display:none!important}}
+</style>
+<style id="resource-page-technical-redesign">
+/* Single-column resource pages: header, tiles, then search. */
+body.mtf-resource-view .workspace{display:block!important;min-width:0!important;width:auto!important}
+body.mtf-resource-view .resource-return-bar{display:flex!important;justify-content:flex-start;align-items:center;width:auto!important;max-width:none!important;margin:25px clamp(22px,4vw,55px) 0!important}
+body.mtf-resource-view main{display:block!important;float:none!important;clear:both!important;position:relative!important;width:100%!important;max-width:none!important;margin:0!important;padding:0 clamp(22px,4vw,55px) 12px!important;box-sizing:border-box!important}
+body.mtf-resource-view main .row-section{display:block;width:100%;max-width:none;margin:18px 0 0!important}
+body.mtf-resource-view main .row-section[data-inactive-tab="true"]{display:none!important}
+body.mtf-resource-view .row-section .row-title{font-size:12px;letter-spacing:.12em;margin:29px 0 19px;padding-bottom:13px;border-bottom:1px solid #cfdfe8;color:#1e526b}
+body.mtf-resource-view .row-section .grid-container{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(min(100%,235px),1fr))!important;gap:17px!important;width:100%!important;max-width:none!important;margin:0!important}
+body.mtf-resource-view .row-section .tile{min-height:190px!important;padding:25px 23px!important;border:1px solid #d7e6ed!important;border-radius:13px!important;background:linear-gradient(145deg,#fff,#f9fcfe)!important;box-shadow:0 7px 23px #133b5412!important}
+body.mtf-resource-view .row-section .tile:hover{border-color:#18a7bd!important;box-shadow:0 16px 32px #0a3d5625!important;transform:translateY(-4px)}
+body.mtf-resource-view .row-section .tile svg{width:38px;height:38px;stroke:#078eaf;margin-bottom:12px}
+body.mtf-resource-view .row-section .tile span{font-size:15px;line-height:1.35}
+body.mtf-resource-view .row-section .tile .sub-label{font-size:11px;line-height:1.5}
+body.mtf-resource-view .workspace-tools{display:flex!important;float:none!important;clear:both!important;position:relative!important;width:auto!important;max-width:none!important;margin:32px clamp(22px,4vw,55px) 12px!important;padding:20px 0 0!important;border-top:1px solid #d4e3eb;justify-content:stretch!important}
+body.mtf-resource-view .workspace-tools .search-wrap{width:100%!important;max-width:760px!important;min-width:0!important;height:50px;border:1px solid #c8dfe9;box-shadow:0 5px 20px #0d3a5410}
+body.mtf-resource-view .search-status{margin:0 clamp(22px,4vw,55px) 55px!important}
+.resource-page-hero{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:205px;overflow:hidden;border-radius:16px;padding:29px clamp(24px,3vw,44px);background:radial-gradient(circle at 82% 35%,#155776 0,transparent 42%),linear-gradient(120deg,#0a2236,#103d55);box-shadow:0 13px 32px #0c30432b}
+.resource-page-hero:before{content:"";position:absolute;inset:0;opacity:.13;background-image:linear-gradient(#74b9d4 1px,transparent 1px),linear-gradient(90deg,#74b9d4 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(90deg,transparent 30%,black)}
+.resource-page-copy{position:relative;z-index:1;max-width:710px}
+.resource-page-kicker{display:block;color:#55d8e1;letter-spacing:.2em;font-size:10px;font-weight:850}
+.resource-page-index{color:#92cbd8;margin-left:9px}
+.resource-page-copy h2{font-size:clamp(29px,3vw,42px);line-height:1.1;letter-spacing:-.045em;color:#fff;margin:13px 0 10px}
+.resource-page-headline{font-size:16px;font-weight:700;color:#69e2e4;margin:0 0 9px}
+.resource-page-description{font-size:12px;line-height:1.7;color:#bdd3e0;max-width:620px;margin:0}
+.resource-page-visual{width:185px;min-width:185px;height:155px;position:relative;margin-left:25px}
+.tech-ring{position:absolute;border:1px solid #52d5de6e;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.tech-ring-a{width:130px;height:130px}.tech-ring-b{width:185px;height:185px;border-style:dashed;opacity:.55}.tech-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:#d8fcff;font-size:44px;font-weight:850;line-height:1}.tech-center small{font-size:8px;letter-spacing:.16em;color:#69dce1;margin-top:9px}
+@media(max-width:720px){.resource-page-hero{padding:27px 22px;min-height:200px}.resource-page-visual{display:none}body.mtf-resource-view .resource-return-bar{margin:20px 18px 0!important}body.mtf-resource-view main{padding:0 18px 12px!important}body.mtf-resource-view .workspace-tools{margin:24px 18px 12px!important}body.mtf-resource-view .search-status{margin:0 18px 30px!important}}
+@media print{.resource-page-hero{box-shadow:none;background:#fff;color:#000}.resource-page-copy h2{color:#111}.resource-page-visual{display:none}}
+</style><style id="home-search-only-css">
+.workspace-tools,.search-status{display:none!important}
+body:not(.mtf-resource-view) .mtf-home .workspace-tools{display:flex!important;float:none!important;position:static!important;width:auto!important;margin:28px 0 10px!important;padding:18px 0 0!important;border-top:1px solid #d5e4ed;justify-content:flex-start!important}
+body:not(.mtf-resource-view) .mtf-home .workspace-tools .resource-heading{display:none!important}
+body:not(.mtf-resource-view) .mtf-home .workspace-tools .search-wrap{display:flex!important;width:min(100%,760px)!important;max-width:760px!important;min-width:0!important;height:52px!important}
+body:not(.mtf-resource-view) .mtf-home .search-status{display:block!important;margin:0 0 24px!important}
+body.mtf-resource-view .workspace-tools,body.mtf-resource-view .search-status{display:none!important}
+</style><style id="strict-home-search-visibility">
+/* Search is an exclusive Home & Updates feature. */
+body.mtf-resource-view .workspace-tools,
+body.mtf-resource-view .workspace-tools .search-wrap,
+body.mtf-resource-view #searchStatus{display:none!important;visibility:hidden!important}
+body:not(.mtf-resource-view) #section-overview .workspace-tools{display:flex!important;visibility:visible!important;justify-content:flex-start!important}
+body:not(.mtf-resource-view) #section-overview .workspace-tools .search-wrap{display:flex!important;visibility:visible!important}
+</style></head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="YOUR_LOGO_IMAGE_URL_HERE" alt="MyComputerCareer Logo" onerror="this.style.display='none'; document.getElementById('fallback').style.display='block';">
-            <div id="fallback" class="logo-fallback" style="display: none;">MyComputer<span>Career</span></div>
-        </div>
-        <h1>Welcome to your MTF Dashboard</h1>
-    </header>
+<div class="app-shell">
+<aside class="command-sidebar" aria-label="Workspace navigation">
+  <div class="brand"><div class="brand-mark">M<span>+</span></div><div><strong>MyComputerCareer</strong><small>MTF STUDENT PORTAL</small></div></div>
+  <div class="sidebar-caption">WORKSPACE</div>
+  <nav class="sub-nav" aria-label="Dashboard pages">
+    <button id="dashboardTab" class="nav-tab active" onclick="closeAllModals();window.mtfShowCategory('section-overview',true)">◫ <span>Overview</span></button>
+    <button id="aboutTab" class="nav-tab" onclick="openModal('aboutModal', 'aboutTab')">ⓘ <span>About MTF</span></button>
+    <button id="limitationsTab" class="nav-tab" onclick="openModal('limitationsModal', 'limitationsTab')">◇ <span>Voucher Policies</span></button>
+    <button id="reschedulingTab" class="nav-tab" onclick="openModal('reschedulingModal', 'reschedulingTab')">↻ <span>Exam Rescheduling</span></button>
+  </nav>
+  <div class="sidebar-caption sidebar-secondary">RESOURCE PAGES</div>
+  <nav class="section-links" role="tablist" aria-label="Resource categories">
+<button type="button" class="section-tab" data-section="section-overview" aria-controls="section-overview" aria-selected="true" role="tab">⌂ <span>Home & Updates</span></button>
+    <button type="button" class="section-tab" data-section="section-training" aria-controls="section-training" aria-selected="false" role="tab">01 <span>Training platforms</span></button>
+    <button type="button" class="section-tab" data-section="section-certifications" aria-controls="section-certifications" aria-selected="false" role="tab">02 <span>Certification tracks</span></button>
+    <button type="button" class="section-tab" data-section="section-support" aria-controls="section-support" aria-selected="false" role="tab">03 <span>Support & scheduling</span></button>
+    <button type="button" class="section-tab" data-section="section-career" aria-controls="section-career" aria-selected="false" role="tab">04 <span>Career & records</span></button>
+    <button type="button" class="section-tab" data-section="section-community" aria-controls="section-community" aria-selected="false" role="tab">05 <span>Community</span></button>
+  </nav>
+  <div class="sidebar-bottom"><span class="online-dot"></span> STUDENT RESOURCE CENTER <small>Certification success starts here</small></div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="breadcrumb">STUDENT PORTAL <span>/</span> MTF WORKSPACE</div><div class="topbar-right"><span class="live-indicator"></span> RESOURCE HUB <span class="topbar-divider"></span> MYCOMPUTERCAREER</div></header>
+  <div class="hero">
+    <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> YOUR CERTIFICATION COMMAND CENTER</div>
+      <h1>Build skills.<br><em>Earn certifications.</em></h1>
+      <p>One workspace for instructor support, training resources, certification study plans, and exam readiness.</p>
+      <div class="hero-actions"><a href="#section-certifications" class="primary-action">Explore study plans <span>↗</span></a><a href="#section-support" class="secondary-action">Get instructor support →</a></div>
+    </div>
+    <div class="hero-graphic" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="core-hex">MTF<span>READY</span></div><div class="orbit-label label-one">LEARN</div><div class="orbit-label label-two">PRACTICE</div><div class="orbit-label label-three">CERTIFY</div></div>
+  </div>
+  <aside class="holiday-notice" role="status" aria-label="Holiday closure notice"><strong>HOLIDAY CLOSURE ALERT</strong><span>Thanksgiving: November 26–27, 2026 &nbsp; • &nbsp; Holiday break: December 20–27, 2026 &nbsp; • &nbsp; New Year's Day: January 1, 2027</span></aside>
+  <aside class="exam-retirement-alert" role="status" aria-label="CySA+ exam retirement notice"><span class="retirement-icon" aria-hidden="true">!</span><div><strong>CompTIA CySA+ CS0-003 RETIREMENT NOTICE</strong><p>CompTIA CySA+ exam version <b>CS0-003</b> retires on <b>December 22, 2026</b>. Students preparing for this version should review their exam timeline and contact an MTF instructor if they need guidance.</p></div></aside>
+<section id="section-overview" class="mtf-home">
+<div class="home-intro"><div class="eyebrow eyebrow-dark">WELCOME TO THE MAXIMUM TIME FRAME</div><h2>Your certification journey continues here.</h2><p>Graduation is a milestone, not the finish line. Your Maximum Time Frame (MTF) is a designated period after graduation to continue preparing for and taking certification exams. This portal brings your preparation, support, and important procedures together in one place.</p></div>
+<div class="home-layout"><article class="home-primary"><span class="home-kicker">WHY MTF MATTERS</span><h3>Make the most of your next opportunity.</h3><p>Industry certifications can help demonstrate your technical knowledge. Consistent preparation, practice, and instructor guidance can help you approach your exam with greater confidence.</p><div class="home-rule"></div><h4>Your MTF success checklist</h4><ol><li><strong>Know your goal.</strong> Select the certification you're preparing for and review its study plan.</li><li><strong>Build a routine.</strong> Use training platforms, boot camps, and practice resources regularly.</li><li><strong>Ask questions early.</strong> Schedule a 1-on-1 when you need help understanding an exam objective.</li><li><strong>Know the policies.</strong> Review voucher requirements and exam rescheduling rules before testing.</li></ol></article>
+<div class="home-side"><article class="home-info"><span class="home-kicker">IMPORTANT EXAM REMINDER</span><h3>Protect your exam voucher.</h3><p>Existing exam appointments must be rescheduled at least 24 hours in advance or the voucher may be forfeited. Check the full policy before changing your exam.</p><button onclick="openModal('reschedulingModal','reschedulingTab')">Read rescheduling policy →</button></article><article class="home-info"><span class="home-kicker">YOU HAVE SUPPORT</span><h3>Get help before exam day.</h3><p>Instructor 1-on-1 sessions, boot camps, and certification study plans are available through the resource tabs. You can also ask the MTF Student Assistant where to go.</p><button onclick="window.mtfShowCategory('section-support',true)">Find instructor support →</button></article></div></div>
+<div class="home-cta"><div><span class="home-kicker">YOUR NEXT STEP</span><h3>Ready to prepare?</h3><p>Choose a category in the sidebar to open its resources. No resource tiles appear on this home page.</p></div><button onclick="window.mtfShowCategory('section-certifications',true)">Explore certification tracks →</button></div>
 
-    <nav class="sub-nav">
-        <button id="dashboardTab" class="nav-tab active" onclick="closeAllModals()">Dashboard</button>
-        <button id="aboutTab" class="nav-tab" onclick="openModal('aboutModal', 'aboutTab')">About MTF</button>
-        <button id="limitationsTab" class="nav-tab" onclick="openModal('limitationsModal', 'limitationsTab')">MTF Limitations</button>
-        <button id="reschedulingTab" class="nav-tab" onclick="openModal('reschedulingModal', 'reschedulingTab')">Exam Rescheduling & Troubleshooting</button>
-    </nav>
-
-    <aside class="holiday-notice" role="status" aria-label="Holiday closure notice">
-        MyComputerCareer will be closed for Thanksgiving on November 26–27, 2026; for the holidays from December 20–27, 2026; and for New Year's Day on January 1, 2027.
-    </aside>
-
-    <main>
+</section>
+    <main data-home-hidden="true">
         
-        <section class="row-section">
+        <section id="section-training" class="row-section">
+<div class="resource-page-hero"><div class="resource-page-copy"><span class="resource-page-kicker">TRAINING SYSTEMS <span class="resource-page-index">/ 01</span></span><h2>Training Platforms</h2><p class="resource-page-headline">Build momentum every day.</p><p class="resource-page-description">Join instructor-led review sessions, practice your skills, and access the learning platforms that keep your preparation on track.</p></div><div class="resource-page-visual" aria-hidden="true"><div class="tech-ring tech-ring-a"></div><div class="tech-ring tech-ring-b"></div><div class="tech-center">01<small>RESOURCE NODE</small></div></div></div>
             <h2 class="row-title">Daily Training Nodes</h2>
             <div class="grid-container">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYA3zp5tHf-YDPhbe-ora5x1YmQLBs3muBkX83fID_iBiEOw/viewform" target="_blank" class="tile">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeYA3zp5tHf-YDPhbe-ora5x1YmQLBs3muBkX83fID_iBiEOw/viewform" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M12 2v2M4.22 4.22l1.42 1.42M1 12h2M21 12h2M18.36 5.64l1.42-1.42M23 22H1M16 22a4 4 0 0 0-8 0"/></svg>
                     <span>Morning Boot Camps</span>
                     <div class="sub-label">(No Registration Required)</div>
                 </a>
 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSezWjYxOTJxT-ZwwDwDsY8nTbL849oDRv8GxGh6NlnxU4xiqw/viewform?usp=header" target="_blank" class="tile">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSezWjYxOTJxT-ZwwDwDsY8nTbL849oDRv8GxGh6NlnxU4xiqw/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
                     <span>Evening Boot Camps</span>
                     <div class="sub-label">(No Registration Required)</div>
                 </a>
 
-                <a href="https://www.myccmasterycourses.com/" target="_blank" class="tile">
+                <a href="https://www.myccmasterycourses.com/" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                     <span>Saturday Master Courses</span>
                     <div class="sub-label">(Registration Required)</div>
                 </a>
 
-                <a href="https://mycomputercareer.instructure.com/login/canvas" target="_blank" class="tile">
+                <a href="https://mycomputercareer.instructure.com/login/canvas" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
                     <span>Canvas</span>
                     <div class="sub-label">(Go to: Courses > All Courses)</div>
                 </a>
 
-                <a href="https://mycomputercareer.measureup.com/login" target="_blank" class="tile">
+                <a href="https://mycomputercareer.measureup.com/login" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4m-2 6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14"/></svg>
                     <span>MeasureUp</span>
                 </a>
             </div>
         </section>
 
-        <section class="row-section">
+        <section id="section-certifications" class="row-section">
+<div class="resource-page-hero"><div class="resource-page-copy"><span class="resource-page-kicker">CERTIFICATION PATHWAYS <span class="resource-page-index">/ 02</span></span><h2>Certification Tracks</h2><p class="resource-page-headline">Your roadmap to exam readiness.</p><p class="resource-page-description">Choose your certification and launch a structured study plan with daily objectives, resources, and progress checklists.</p></div><div class="resource-page-visual" aria-hidden="true"><div class="tech-ring tech-ring-a"></div><div class="tech-ring tech-ring-b"></div><div class="tech-center">02<small>RESOURCE NODE</small></div></div></div>
             <h2 class="row-title">Certification Study Plans & Resources</h2>
             <div class="grid-container">
-                <a class="tile" onclick="openModal('studyPlanModal')">
+                <a class="tile" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" onclick="openModal('studyPlanModal')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     <span>CompTIA A+ 220-1201 Study Plan</span>
                     <div class="sub-label">(10-Day Checklist)</div>
                 </a>
 
-                <a class="tile" onclick="openModal('studyPlanModalCore2')">
+                <a class="tile" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" onclick="openModal('studyPlanModalCore2')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     <span>CompTIA A+ 220-1202 Study Plan</span>
                     <div class="sub-label">(12-Day Checklist)</div>
                 </a>
 
-                <a class="tile" onclick="openModal('studyPlanModalNetworkPlus')">
+                <a class="tile" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" onclick="openModal('studyPlanModalNetworkPlus')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     <span>CompTIA Network+ N10-009 Study Plan</span>
                     <div class="sub-label">(12-Day Checklist)</div>
                 </a>
 
-                <a class="tile" onclick="openModal('studyPlanModalSecurityPlus')">
+                <a class="tile" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" onclick="openModal('studyPlanModalSecurityPlus')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     <span>CompTIA Security+ SY0-701 Study Plan</span>
                     <div class="sub-label">(12-Day Checklist)</div>
                 </a>
 
-                <a class="tile" onclick="openModal('studyPlanModalCySA')">
+                <a class="tile" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" onclick="openModal('studyPlanModalCySA')">
                     <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
                     <span>CompTIA CySA+ CS0-003 Study Plan</span>
                     <div class="sub-label">(8-Day Checklist)</div>
@@ -627,45 +760,48 @@
             </div>
         </section>
 
-        <section class="row-section">
+        <section id="section-support" class="row-section">
+<div class="resource-page-hero"><div class="resource-page-copy"><span class="resource-page-kicker">INSTRUCTOR ACCESS <span class="resource-page-index">/ 03</span></span><h2>Support & Scheduling</h2><p class="resource-page-headline">Get the support you need.</p><p class="resource-page-description">Connect with an instructor, schedule individual guidance, or follow the voucher request process.</p></div><div class="resource-page-visual" aria-hidden="true"><div class="tech-ring tech-ring-a"></div><div class="tech-ring tech-ring-b"></div><div class="tech-center">03<small>RESOURCE NODE</small></div></div></div>
             <h2 class="row-title">Direct Support & Scheduling</h2>
             <div class="grid-container">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform?usp=header" target="_blank" class="tile">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                     <span>Support Staff &<br>One-on-One Scheduling</span>
                 </a>
 
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4ZvflRvVS8DY1xiTLXfP0PWCiZeNCvxsmg7qYzMc4G1I8zg/viewform" target="_blank" class="tile">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4ZvflRvVS8DY1xiTLXfP0PWCiZeNCvxsmg7qYzMc4G1I8zg/viewform" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                     <span>Self Study Voucher Request Form</span>
                 </a>
             </div>
         </section>
 
-        <section class="row-section">
+        <section id="section-career" class="row-section">
+<div class="resource-page-hero"><div class="resource-page-copy"><span class="resource-page-kicker">NEXT-STEP SERVICES <span class="resource-page-index">/ 04</span></span><h2>Career & Records</h2><p class="resource-page-headline">Take your progress further.</p><p class="resource-page-description">Access alumni career support and academic records as you prepare for your next professional milestone.</p></div><div class="resource-page-visual" aria-hidden="true"><div class="tech-ring tech-ring-a"></div><div class="tech-ring tech-ring-b"></div><div class="tech-center">04<small>RESOURCE NODE</small></div></div></div>
             <h2 class="row-title">Admin & Career Launching</h2>
             <div class="grid-container">
-                <a href="https://www.mycomputercareer.edu/alumni/career-services/" target="_blank" class="tile">
+                <a href="https://www.mycomputercareer.edu/alumni/career-services/" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
                     <span>Alumni Career Services</span>
                 </a>
 
-                <a href="https://wonderful-forest-0c336960f.2.azurestaticapps.net/" target="_blank" class="tile">
+                <a href="https://wonderful-forest-0c336960f.2.azurestaticapps.net/" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M16 13H8M16 17H8"/></svg>
                     <span>Request your Transcript</span>
                 </a>
             </div>
         </section>
 
-        <section class="row-section">
+        <section id="section-community" class="row-section">
+<div class="resource-page-hero"><div class="resource-page-copy"><span class="resource-page-kicker">STUDENT CONNECTIONS <span class="resource-page-index">/ 05</span></span><h2>Community</h2><p class="resource-page-headline">Stay connected beyond graduation.</p><p class="resource-page-description">Explore ways to stay engaged with the MyComputerCareer community and find guidance for your next steps.</p></div><div class="resource-page-visual" aria-hidden="true"><div class="tech-ring tech-ring-a"></div><div class="tech-ring tech-ring-b"></div><div class="tech-center">05<small>RESOURCE NODE</small></div></div></div>
             <h2 class="row-title">Community & Safety Nets</h2>
             <div class="grid-container">
-                <a href="https://www.mycomputercareer.edu/?extole_zone_name=share_experience&utm_campaign=refer-a-friend&utm_medium=WEB&utm_source=extole_advocate&utm_content=share-it&extole_journey_campaign_id=7625663893941383715&_gl=1%2A1v9an87%2A_gcl_aw%2AR0NMLjE3NzY1NDEzMDkuQ2p3S0NBancxNHpQQmhBdUVpd0FQMy1FYnhEdnVYVU02ZGFiNTdZd2sxbDA3eFppWGxNTzJyY2RLV2ptR1JaaXVTbmx0ZWx1RC1HRzZ4b0NnU29RQXZEX0B3RQ..%2A_gcl_au%2AMzM2OTUyNTY5LjE38007456jc.&channel=LINK&extole_labels=refer-a-friend&promotable_code=share-it" target="_blank" class="tile">
+                <a href="https://www.mycomputercareer.edu/?extole_zone_name=share_experience&utm_campaign=refer-a-friend&utm_medium=WEB&utm_source=extole_advocate&utm_content=share-it&extole_journey_campaign_id=7625663893941383715&_gl=1%2A1v9an87%2A_gcl_aw%2AR0NMLjE3NzY1NDEzMDkuQ2p3S0NBancxNHpQQmhBdUVpd0FQMy1FYnhEdnVYVU02ZGFiNTdZd2sxbDA3eFppWGxNTzJyY2RLV2ptR1JaaXVTbmx0ZWx1RC1HRzZ4b0NnU29RQXZEX0B3RQ..%2A_gcl_au%2AMzM2OTUyNTY5LjE38007456jc.&channel=LINK&extole_labels=refer-a-friend&promotable_code=share-it" target="_blank" rel="noopener noreferrer" class="tile">
                     <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                     <span>Pay "IT" Forward</span>
                 </a>
 
-                <a class="tile" onclick="openModal('expiredModal')">
+                <a class="tile" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}" onclick="openModal('expiredModal')">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
                     <span>MTF Expired? What's Next?</span>
                 </a>
@@ -673,6 +809,9 @@
         </section>
 
     </main>
+
+</div><!-- /workspace -->
+</div><!-- /app-shell -->
 
     <!-- Modal 1: About MTF -->
     <div id="aboutModal" class="modal-overlay" onclick="closeAllModals(event)">
@@ -765,7 +904,7 @@
                 <div class="resource-box">
                     <h4>📁 A+ 220-1201 Student Resources Drive</h4>
                     <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
-                    <p><a href="https://drive.google.com/drive/folders/1HimO_m2HJEvgxhAUguOelrNvzJOKH6ev" target="_blank"><strong>→ Open A+ 220-1201 Student Resources Drive</strong></a></p>
+                    <p><a href="https://drive.google.com/drive/folders/1HimO_m2HJEvgxhAUguOelrNvzJOKH6ev" target="_blank" rel="noopener noreferrer"><strong>→ Open A+ 220-1201 Student Resources Drive</strong></a></p>
                     <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
                     <ul>
                         <li><strong>PBQ Guidance Documents:</strong> Access guidance and walk-through documents to help you understand complex, simulation-style PBQ scenarios.</li>
@@ -775,16 +914,16 @@
                     </ul>
                     <p style="margin-top: 0.75rem; margin-bottom: 0.25rem;"><strong>Flash Cards:</strong></p>
                     <ul style="list-style-type: none; padding-left: 0;">
-                        <li><a href="https://wayground.com/join?gc=05767305" target="_blank">→ Ports/Protocols Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=32127994" target="_blank">→ Acronyms (AAA-OLED) Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=16858106" target="_blank">→ Acronyms (ONT-XSS) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=05767305" target="_blank" rel="noopener noreferrer">→ Ports/Protocols Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=32127994" target="_blank" rel="noopener noreferrer">→ Acronyms (AAA-OLED) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=16858106" target="_blank" rel="noopener noreferrer">→ Acronyms (ONT-XSS) Flash Cards</a></li>
                     </ul>
                 </div>
 
                 <details>
                     <summary><h3>Day 1 – Mobile Devices</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1KeWS_D1lIH6OEb8do8FUH2CAJG__oerg/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1Bc1MDZroOVQGNoXIFf4sJMRSxXVS4DOI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1KeWS_D1lIH6OEb8do8FUH2CAJG__oerg/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Bc1MDZroOVQGNoXIFf4sJMRSxXVS4DOI/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 1 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -792,14 +931,14 @@
                         <li><strong>1.2</strong> – Compare and contrast accessories and connectivity options for mobile devices.</li>
                         <li><strong>1.3</strong> – Given a scenario, configure basic mobile device network connectivity and provide application support.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=23782689&source=liveDashboard" target="_blank">Complete the Domain 1: Mobile Devices Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=23782689&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 1: Mobile Devices Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review any missed questions and revisit the corresponding objectives.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 2 – Networking (Part 1)</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1LYATp65hzorKTqtNpzLmv9xSzp7GVXPO/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1TcZBppmlz5fVAc8eCvefuePdtxDwL5z0/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1LYATp65hzorKTqtNpzLmv9xSzp7GVXPO/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1TcZBppmlz5fVAc8eCvefuePdtxDwL5z0/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank" rel="noopener noreferrer"><strong>→ View Day 2 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -812,8 +951,8 @@
 
                 <details>
                     <summary><h3>Day 3 – Networking (Part 2)</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1F_eoZ-2uQkhqofP2HpeyyOq3kFqYoa23/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1OwAjH_YcyVheuuQsl41f8NgqP_zU-tt4/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1F_eoZ-2uQkhqofP2HpeyyOq3kFqYoa23/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1OwAjH_YcyVheuuQsl41f8NgqP_zU-tt4/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank" rel="noopener noreferrer"><strong>→ View Day 3 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -822,15 +961,15 @@
                         <li><strong>2.7</strong> – Compare and contrast internet connection types, network types, and their characteristics.</li>
                         <li><strong>2.8</strong> – Explain networking tools and their purposes.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day3-wap-installation-lab/" target="_blank">Practice PBQ: WAP Installation & Cable Termination</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=42591521&source=liveDashboard" target="_blank">Complete the Domain 2: Networking Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day3-wap-installation-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: WAP Installation & Cable Termination</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=42591521&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 2: Networking Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 4 – Hardware (Part 1)</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/12PGvTFXzqxgaWda1Jpw2ViYhse8qg-3C/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1Nv-pWWt10GCrDz1CJiFTJWbsjJkPsFLY/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/12PGvTFXzqxgaWda1Jpw2ViYhse8qg-3C/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Nv-pWWt10GCrDz1CJiFTJWbsjJkPsFLY/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank" rel="noopener noreferrer"><strong>→ View Day 4 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -839,13 +978,13 @@
                         <li><strong>3.3</strong> – Compare and contrast RAM characteristics.</li>
                         <li><strong>3.4</strong> – Compare and contrast storage devices.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day4-pc-builder-lab/" target="_blank">Practice PBQ: PC Builder</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day4-pc-builder-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: PC Builder</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 5 – Hardware (Part 2)</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1sGl92ep-2MZe3-V-srPDT1Iyr7mtJxri/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1I_SUi7rDI4AWQRQCM4zwuTjKxtAXQgYp/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1sGl92ep-2MZe3-V-srPDT1Iyr7mtJxri/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1I_SUi7rDI4AWQRQCM4zwuTjKxtAXQgYp/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank" rel="noopener noreferrer"><strong>→ View Day 5 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -854,30 +993,30 @@
                         <li><strong>3.7</strong> – Given a scenario, deploy and configure multifunction devices/printers and settings.</li>
                         <li><strong>3.8</strong> – Given a scenario, perform appropriate printer maintenance.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-power-distribution-lab/" target="_blank">Practice PBQ: Power Distribution</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-printer-maintenance-lab/" target="_blank">Practice PBQ: Printer Maintenance</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=20309281&source=liveDashboard" target="_blank">Complete the Domain 3: Hardware Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-power-distribution-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Power Distribution</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day5-printer-maintenance-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Printer Maintenance</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=20309281&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 3: Hardware Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Carefully review all missed questions and revisit any challenging hardware concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 6 – Virtualization & Cloud Computing</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1165wL6CW46zxQF9sjjwJ8RYhwH-cCV2z/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1VFMHfF0P7LWpsFi3XVpbN-tZ7ICBhys7/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1165wL6CW46zxQF9sjjwJ8RYhwH-cCV2z/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1VFMHfF0P7LWpsFi3XVpbN-tZ7ICBhys7/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank" rel="noopener noreferrer"><strong>→ View Day 6 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>4.1</strong> – Explain virtualization concepts.</li>
                         <li><strong>4.2</strong> – Summarize cloud computing concepts.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=58582305&source=liveDashboard" target="_blank">Complete the Domain 4: Virtualization & Cloud Computing Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=58582305&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 4: Virtualization & Cloud Computing Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review any areas requiring additional study.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 7 – Hardware & Network Troubleshooting (Part 1)</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1tvr0OdE6Y4eWfrR60c7PjrzR2LryJSAB/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1maalh0evMiPQ0TlUJotpFaX_o6EpeXcF/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1tvr0OdE6Y4eWfrR60c7PjrzR2LryJSAB/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1maalh0evMiPQ0TlUJotpFaX_o6EpeXcF/edit?usp=drive_web&ouid=105864805098355893306&rtpof=true" target="_blank" rel="noopener noreferrer"><strong>→ View Day 7 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -885,13 +1024,13 @@
                         <li><strong>5.2</strong> – Given a scenario, troubleshoot drive and RAID issues.</li>
                         <li><strong>5.3</strong> – Given a scenario, troubleshoot video, projector, and display issues.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day7-raid-architecture-lab/" target="_blank">Practice PBQ: Raid Architecture & Diagnostics</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day7-raid-architecture-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Raid Architecture & Diagnostics</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 8 – Hardware & Network Troubleshooting (Part 2)</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1eximrE1dZAlbiwEQsIobHwtJil9vl_yF/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/16-YYn_262-MngYyjewBOhYxfi-Ni9deH/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1eximrE1dZAlbiwEQsIobHwtJil9vl_yF/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/16-YYn_262-MngYyjewBOhYxfi-Ni9deH/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 8 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -899,17 +1038,17 @@
                         <li><strong>5.5</strong> – Given a scenario, troubleshoot network issues.</li>
                         <li><strong>5.6</strong> – Given a scenario, troubleshoot printer issues.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-device-issue-diagnostics-lab/" target="_blank">Practice PBQ: Device Issue Diagnosis</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-pc-diagnostics-lab/" target="_blank">Practice PBQ: PC Diagnostics</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=32236833&source=liveDashboard" target="_blank">Complete the Domain 5: Hardware & Network Troubleshooting Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-device-issue-diagnostics-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Device Issue Diagnosis</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1201-day8-pc-diagnostics-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: PC Diagnostics</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=32236833&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 5: Hardware & Network Troubleshooting Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit objectives that need additional attention.</div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1201-test/" target="_blank">Launch A+ 220-1201 Practice Test</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1201-test/" target="_blank" rel="noopener noreferrer">Launch A+ 220-1201 Practice Test</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 9 – Instructor Review Session</h3></summary>
                     <p><strong>Task:</strong></p>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 9).</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank" rel="noopener noreferrer">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 9).</div>
                     
                     <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
                         <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
@@ -956,7 +1095,7 @@
                 <div class="resource-box">
                     <h4>📁 A+ 220-1202 Student Resources Drive</h4>
                     <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
-                    <p><a href="https://drive.google.com/drive/folders/1Sdn3aKzxEi1QG3hqDDtMnBfuWIV6Zeno" target="_blank"><strong>→ Open A+ 220-1202 Student Resources Drive</strong></a></p>
+                    <p><a href="https://drive.google.com/drive/folders/1Sdn3aKzxEi1QG3hqDDtMnBfuWIV6Zeno" target="_blank" rel="noopener noreferrer"><strong>→ Open A+ 220-1202 Student Resources Drive</strong></a></p>
                     <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
                     <ul>
                         <li><strong>PBQ Guidance Documents:</strong> Access guidance and walk-through documents to help you understand complex, simulation-style PBQ scenarios.</li>
@@ -966,15 +1105,15 @@
                     </ul>
                     <p style="margin-top: 0.75rem; margin-bottom: 0.25rem;"><strong>Flash Cards:</strong></p>
                     <ul style="list-style-type: none; padding-left: 0;">
-                        <li><a href="https://wayground.com/join?gc=32127994" target="_blank">→ Acronyms (AAA-OLED) Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=16858106" target="_blank">→ Acronyms (ONT-XSS) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=32127994" target="_blank" rel="noopener noreferrer">→ Acronyms (AAA-OLED) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=16858106" target="_blank" rel="noopener noreferrer">→ Acronyms (ONT-XSS) Flash Cards</a></li>
                     </ul>
                 </div>
 
                 <details>
                     <summary><h3>Day 1 – Operating Systems Fundamentals & Installation</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1S3jDvksZG3o6D_CzFoInquftDbHFLEhe/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1Td7AFRPBip2NdRXjvSgnVLl-iKkUnDd4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1S3jDvksZG3o6D_CzFoInquftDbHFLEhe/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Td7AFRPBip2NdRXjvSgnVLl-iKkUnDd4/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 1 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -983,13 +1122,13 @@
                         <li><strong>1.3</strong> – Compare and contrast basic features of Microsoft Windows editions.</li>
                         <li><strong>1.4</strong> – Given a scenario, use Microsoft Windows operating system features and tools.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202_day6_gpo_lab/" target="_blank">Practice PBQ: Group Policy Object</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202_day6_gpo_lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Group Policy Object</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 2 – Windows Settings & Desktop Interfaces</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/177rXUNH7eMjIQ7CTnRe9CXD1SMGoE1TX/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/143M_olF9MqosaYVxjdftQqMtUeefBFm9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/177rXUNH7eMjIQ7CTnRe9CXD1SMGoE1TX/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/143M_olF9MqosaYVxjdftQqMtUeefBFm9/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 2 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1002,8 +1141,8 @@
 
                 <details>
                     <summary><h3>Day 3 – Linux Desktops, Application Architecture & Cloud Tools</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/13EUOvOhxSFdW8ufutQ503X1TZf0VeYR_/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1HS3fJeNT3CPrJvtbSTUOAsnHroUtURxr/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/13EUOvOhxSFdW8ufutQ503X1TZf0VeYR_/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1HS3fJeNT3CPrJvtbSTUOAsnHroUtURxr/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 3 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1011,14 +1150,14 @@
                         <li><strong>1.10</strong> – Given a scenario, install applications according to requirements.</li>
                         <li><strong>1.11</strong> – Given a scenario, install and configure cloud-based productivity tools.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08983841&source=liveDashboard" target="_blank">Complete the Domain 1: Operating Systems Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08983841&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 1: Operating Systems Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak operating systems concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 4 – OS Security Settings & Malware Mitigation</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1bywVfEPBLF9sazR2iw270LT_X-UVjNZE/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1A-ePzHjfBuP9sl-NT9e2ykA9mofUlc7w/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1bywVfEPBLF9sazR2iw270LT_X-UVjNZE/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1A-ePzHjfBuP9sl-NT9e2ykA9mofUlc7w/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 4 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1027,13 +1166,13 @@
                         <li><strong>2.3</strong> – Compare and contrast wireless security protocols and authentication methods.</li>
                         <li><strong>2.4</strong> – Summarize types of malware and tools/methods for detection, removal, and prevention.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day4-malware-lab/" target="_blank">Practice PBQ: Malware Incident Response</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day4-malware-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Malware Incident Response</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 5 – Social Engineering & System Hardening</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/13r18jQRLLacdNIJndHM_Cgcbw04EQ1nf/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1fmnEGRIRqxqlvd97KKQAZfe2VZcQFTa3/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/13r18jQRLLacdNIJndHM_Cgcbw04EQ1nf/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1fmnEGRIRqxqlvd97KKQAZfe2VZcQFTa3/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 5 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1042,13 +1181,13 @@
                         <li><strong>2.7</strong> – Given a scenario, apply workstation security options and hardening techniques.</li>
                         <li><strong>2.8</strong> – Given a scenario, apply common methods for securing mobile devices.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day5-email-analysis-lab/" target="_blank">Practice PBQ: Email Analysis</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day5-email-analysis-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Email Analysis</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 6 – Network Security & Data Destruction</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1jD5kXUWdazfL8NyXO97GBerLUOSoVN_-/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1-Y_rAq2c5VRwc7VJBI3fha7a0dMewNj5/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1jD5kXUWdazfL8NyXO97GBerLUOSoVN_-/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1-Y_rAq2c5VRwc7VJBI3fha7a0dMewNj5/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 6 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1056,16 +1195,16 @@
                         <li><strong>2.10</strong> – Given a scenario, apply security settings on SOHO wireless and wired networks.</li>
                         <li><strong>2.11</strong> – Given a scenario, configure relevant security settings in a browser.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-home-network-lab/" target="_blank">Practice PBQ: Home Network Configuration</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-router-configuration-audit-lab/" target="_blank">Practice PBQ: Router Configuration & Audit</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=48567585&source=liveDashboard" target="_blank">Complete the Domain 2: Security Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-home-network-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Home Network Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day6-router-configuration-audit-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Router Configuration & Audit</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=48567585&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 2: Security Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review any security areas requiring additional study.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 7 – Operating Systems & Software Troubleshooting</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/13S3vJgRIIBIjhE02RUEJz6ECX-TWLi99/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1kp4xotnUEXKWZxs1LL-Rmnh6UA8qBJ9m/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/13S3vJgRIIBIjhE02RUEJz6ECX-TWLi99/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1kp4xotnUEXKWZxs1LL-Rmnh6UA8qBJ9m/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 7 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1074,15 +1213,15 @@
                         <li><strong>3.3</strong> – Given a scenario, troubleshoot common mobile OS and application security issues.</li>
                         <li><strong>3.4</strong> – Given a scenario, troubleshoot common personal computer (PC) security issues.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day7-application-deployment-troubleshooting-lab/" target="_blank">Practice PBQ: Application Deployment Troubleshooting</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=52237601&source=liveDashboard" target="_blank">Complete the Domain 3: Software Troubleshooting Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day7-application-deployment-troubleshooting-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Application Deployment Troubleshooting</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=52237601&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 3: Software Troubleshooting Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review any troubleshooting areas requiring additional study.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 8 – Documentation, Change Management & Asset Recovery</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1A-HrMCLvHWeKcMOwpcewBDg1ZVhKoMpx/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1qF9ZcTZsyZG_RdI93GRUKV_8VzIzNkf9/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1A-HrMCLvHWeKcMOwpcewBDg1ZVhKoMpx/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1qF9ZcTZsyZG_RdI93GRUKV_8VzIzNkf9/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 8 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1095,8 +1234,8 @@
 
                 <details>
                     <summary><h3>Day 9 – Compliance, Environmental Controls & Professionalism</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1fwEyufHLvaJwDZMlcQQosTqerSzF-u0W/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1k4n4kz-mmt4T5UlxODRglKldQI993FkZ/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1fwEyufHLvaJwDZMlcQQosTqerSzF-u0W/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1k4n4kz-mmt4T5UlxODRglKldQI993FkZ/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 9 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1104,14 +1243,14 @@
                         <li><strong>4.6</strong> – Explain the importance of prohibited content/activity and privacy, licensing, and policy concepts.</li>
                         <li><strong>4.7</strong> – Given a scenario, use proper communication techniques and professionalism.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-email-lab/" target="_blank">Practice PBQ: Help Desk 1</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-router-lab/" target="_blank">Practice PBQ: Help Desk 2</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-email-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Help Desk 1</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/1202-day9-help-desk-router-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Help Desk 2</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 10 – Basic Scripting, Remote Access & AI Concepts</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1qR9KW6PSAi5Qxu9HA59tAI7RuUWrR72O/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1YLP_xcg0tzrkEFl01tcCTQfN5DKNqNP8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1qR9KW6PSAi5Qxu9HA59tAI7RuUWrR72O/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1YLP_xcg0tzrkEFl01tcCTQfN5DKNqNP8/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 10 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1119,15 +1258,15 @@
                         <li><strong>4.9</strong> – Given a scenario, use remote access technologies.</li>
                         <li><strong>4.10</strong> – Explain basic concepts related to artificial intelligence (AI).</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=13833505&source=liveDashboard" target="_blank">Complete the Domain 4: Operational Procedures Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=13833505&source=liveDashboard" target="_blank" rel="noopener noreferrer">Complete the Domain 4: Operational Procedures Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit operational objectives that need additional attention.</div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1202-test/" target="_blank">Launch A+ 220-1202 Practice Test</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-a-plus-1202-test/" target="_blank" rel="noopener noreferrer">Launch A+ 220-1202 Practice Test</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 11 – Instructor Review Session</h3></summary>
                     <p><strong>Task:</strong></p>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank" rel="noopener noreferrer">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
                     
                     <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
                         <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
@@ -1172,7 +1311,7 @@
                 <div class="resource-box">
                     <h4>📁 Network+ N10-009 Student Resources Drive</h4>
                     <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
-                    <p><a href="https://drive.google.com/drive/folders/10JZ4YHSF-U63bE9-4B7ScOdZLfkTDztM" target="_blank"><strong>→ Open Network+ N10-009 Student Resources Drive</strong></a></p>
+                    <p><a href="https://drive.google.com/drive/folders/10JZ4YHSF-U63bE9-4B7ScOdZLfkTDztM" target="_blank" rel="noopener noreferrer"><strong>→ Open Network+ N10-009 Student Resources Drive</strong></a></p>
                     <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
                     <ul>
                         <li><strong>PBQ Guidance Documents:</strong> Access guidance and walk-through documents to help you understand complex, simulation-style PBQ scenarios.</li>
@@ -1182,16 +1321,16 @@
                     </ul>
                     <p style="margin-top: 0.75rem; margin-bottom: 0.25rem;"><strong>Flash Cards:</strong></p>
                     <ul style="list-style-type: none; padding-left: 0;">
-                        <li><a href="https://wayground.com/join?gc=05767305" target="_blank">→ Ports/Protocols Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=16989178" target="_blank">→ Acronyms (A-PoE) Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=63388666" target="_blank">→ Acronyms (PSK-ZTA) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=05767305" target="_blank" rel="noopener noreferrer">→ Ports/Protocols Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=16989178" target="_blank" rel="noopener noreferrer">→ Acronyms (A-PoE) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=63388666" target="_blank" rel="noopener noreferrer">→ Acronyms (PSK-ZTA) Flash Cards</a></li>
                     </ul>
                 </div>
 
                 <details>
                     <summary><h3>Day 1 – Architecture, Networking Infrastructure & Cloud Concepts</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1MmsRew1d0UH1sSh701xAcQi8RdDegyVr/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1LPnewxecUdMjzR_BTtDDS5Be6yiHn4rF/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1MmsRew1d0UH1sSh701xAcQi8RdDegyVr/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1LPnewxecUdMjzR_BTtDDS5Be6yiHn4rF/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 1 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1203,8 +1342,8 @@
 
                 <details>
                     <summary><h3>Day 2 – Media Specifications, Protocols & Structural Topologies</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1x2mlgCnXzc6xwzA1UBVw6TkVa2qEqZu9/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/15sOSWYTrXeXnTfav0ObNVnga7Hs5J-DU/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1x2mlgCnXzc6xwzA1UBVw6TkVa2qEqZu9/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/15sOSWYTrXeXnTfav0ObNVnga7Hs5J-DU/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 2 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1216,55 +1355,55 @@
 
                 <details>
                     <summary><h3>Day 3 – IPv4 Addressing, Subnet Subnetworks & Systems Environment Integration</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1-on3AM6D6dobf2bActA3QeIYevWsUpjQ/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1xM6ctA38ARemP1brik1B9yJFbm7vdTIM/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1-on3AM6D6dobf2bActA3QeIYevWsUpjQ/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1xM6ctA38ARemP1brik1B9yJFbm7vdTIM/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 3 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>1.7</strong> – Given a scenario, use appropriate IPv4 network addressing.</li>
                         <li><strong>1.8</strong> – Summarize evolving cases for modern network environments.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day3-vlsm-lab/" target="_blank">Practice PBQ: VLSM-CIDR</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=06333945" target="_blank">Complete the Domain 1: Networking Concepts Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day3-vlsm-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: VLSM-CIDR</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=06333945" target="_blank" rel="noopener noreferrer">Complete the Domain 1: Networking Concepts Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak networking concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 4 – Routing Fundamentals & Layer 2/3 Switching Technologies</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1P-g86PRBxHh76PB7z025KPZV2VxOEXjH/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1NS01lwQSAunwboqbLyKcATVMQXq0Nwgn/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1P-g86PRBxHh76PB7z025KPZV2VxOEXjH/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1NS01lwQSAunwboqbLyKcATVMQXq0Nwgn/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 4 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>2.1</strong> – Explain characteristics of routing technologies.</li>
                         <li><strong>2.2</strong> – Given a scenario, configure switching technologies and features.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1xo6FGITODd6PsknvjMsdvvVWi7YirqPW/edit" target="_blank">Packet Tracer: Configure VLANs & Router on a Stick</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1QGtFH3BkCM6hLLshje2-od2sGVajBKFA/edit" target="_blank">Packet Tracer: Static & Dynamic Routing with Routers</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-enterprise-routing-lab/" target="_blank">Practice PBQ: Healthcare Enterprise Routing</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-switchport-configuration-lab/" target="_blank">Practice PBQ: Switch Port Configuration</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-stp-switches-lab/" target="_blank">Practice PBQ: STP Switches</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1xo6FGITODd6PsknvjMsdvvVWi7YirqPW/edit" target="_blank" rel="noopener noreferrer">Packet Tracer: Configure VLANs & Router on a Stick</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1QGtFH3BkCM6hLLshje2-od2sGVajBKFA/edit" target="_blank" rel="noopener noreferrer">Packet Tracer: Static & Dynamic Routing with Routers</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-enterprise-routing-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Healthcare Enterprise Routing</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-switchport-configuration-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Switch Port Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day4-stp-switches-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: STP Switches</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 5 – Wireless Deployments & Physical Infrastructure Installations</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1tlujH0daXYETZyVQNyOj-oT7wEb6liV7/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1RCfQuipKTHIT1OU8pzJvOZJ4VGh1SqMP/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1tlujH0daXYETZyVQNyOj-oT7wEb6liV7/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1RCfQuipKTHIT1OU8pzJvOZJ4VGh1SqMP/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 5 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>2.3</strong> – Given a scenario, select and configure wireless devices and technologies.</li>
                         <li><strong>2.4</strong> – Explain important factors of physical installations.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1IXmdpkcJnMz_SPH79yTDC8zUK3gEsy2x/edit" target="_blank">Packet Tracer: Configure Wireless</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=51160569" target="_blank">Complete the Domain 2: Networking Implementation Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1IXmdpkcJnMz_SPH79yTDC8zUK3gEsy2x/edit" target="_blank" rel="noopener noreferrer">Packet Tracer: Configure Wireless</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=51160569" target="_blank" rel="noopener noreferrer">Complete the Domain 2: Networking Implementation Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak implementation concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 6 – Operations Policies, Contingency Procedures & Monitoring Tools</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1M4yn06FuJrEJQ5JqkHDuIprZyobYvu1Q/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1Q7mk3XP_VgAH4cysjQkuZ8U0dncwUNmj/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1M4yn06FuJrEJQ5JqkHDuIprZyobYvu1Q/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Q7mk3XP_VgAH4cysjQkuZ8U0dncwUNmj/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 6 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1276,24 +1415,24 @@
 
                 <details>
                     <summary><h3>Day 7 – Network Engineering Services & Infrastructure Access Management</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1rkaYynRYaLioTLeUOuCaI_JaIxMjzK5R/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1fSosQbjf71mH2fDFsfERrTB8iVP0PsUw/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1rkaYynRYaLioTLeUOuCaI_JaIxMjzK5R/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1fSosQbjf71mH2fDFsfERrTB8iVP0PsUw/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 7 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>3.4</strong> – Given a scenario, implement IPv4 and IPv6 network services.</li>
                         <li><strong>3.5</strong> – Compare and contrast network access and management methods.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/11845ap2eFpu8U9xsqWbiSy1CFSZu5xsq/edit" target="_blank">Packet Tracer: DHCP</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1d6MVlqetbnCG7cSfkWuPpQrekFBc3L12/edit" target="_blank">Packet Tracer: DNS</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=44213753" target="_blank">Complete the Domain 3: Network Operations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/11845ap2eFpu8U9xsqWbiSy1CFSZu5xsq/edit" target="_blank" rel="noopener noreferrer">Packet Tracer: DHCP</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1d6MVlqetbnCG7cSfkWuPpQrekFBc3L12/edit" target="_blank" rel="noopener noreferrer">Packet Tracer: DNS</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=44213753" target="_blank" rel="noopener noreferrer">Complete the Domain 3: Network Operations Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review any network operations areas requiring additional study.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 8 – Network Security Architecture, Threats & Defense Hardening</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1RmR8ZlLduAU1eWXcix-ZIhwb0Bdx18Vz/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1pku9vuMtif2UpXuhy0gop1zzh050wENA/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1RmR8ZlLduAU1eWXcix-ZIhwb0Bdx18Vz/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1pku9vuMtif2UpXuhy0gop1zzh050wENA/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 8 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1301,16 +1440,16 @@
                         <li><strong>4.2</strong> – Summarize various types of attacks and their impact to the network.</li>
                         <li><strong>4.3</strong> – Given a scenario, apply network security features, defense techniques, and solutions.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/15qs2suwWqm5U7b75OabpjXvOGjT8svjC/edit" target="_blank">Packet Tracer: Apply Access Control</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day8-device-placement-lab/" target="_blank">Practice PBQ: Device Placement & Configuration</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08824313" target="_blank">Complete the Domain 4: Network Security Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/15qs2suwWqm5U7b75OabpjXvOGjT8svjC/edit" target="_blank" rel="noopener noreferrer">Packet Tracer: Apply Access Control</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day8-device-placement-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Device Placement & Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=08824313" target="_blank" rel="noopener noreferrer">Complete the Domain 4: Network Security Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review any network security areas requiring additional study.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 9 – Network Core Diagnostics & Physical Medium Triage Protocols</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1CB_Hr0dkdQ8hzeBRWq6p7G94iISTFw2J/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1iIPwxHmggJo67g0eRpLX3ndIzBjHwXaf/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1CB_Hr0dkdQ8hzeBRWq6p7G94iISTFw2J/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1iIPwxHmggJo67g0eRpLX3ndIzBjHwXaf/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 9 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1318,30 +1457,30 @@
                         <li><strong>5.2</strong> – Given a scenario, troubleshoot common cabling and physical interface issues.</li>
                         <li><strong>5.3</strong> – Given a scenario, troubleshoot common issues with network services.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day9-network-troubleshooting-lab/" target="_blank">Practice PBQ: Network Troubleshooting</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day9-network-troubleshooting-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Network Troubleshooting</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 10 – Performance Optimizations & Command-Line Troubleshooting Utilities</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1LYxZ04qYEgIS-7tfPyaf8fhIXqJZOpTP/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1KDKli_-6pKd6L7ZkMjLt6eUrHLLYAfXJ/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1LYxZ04qYEgIS-7tfPyaf8fhIXqJZOpTP/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1KDKli_-6pKd6L7ZkMjLt6eUrHLLYAfXJ/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 10 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>5.4</strong> – Given a scenario, troubleshoot common performance issues.</li>
                         <li><strong>5.5</strong> – Given a scenario, use the appropriate tool or protocol to solve networking issues.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1F7iAbpQEcgYNq364DlHpb3MY8KMCmaJi/edit" target="_blank">Packet Tracer: Demonstration of Commands</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day10-enterprise-NOC-lab/" target="_blank">Practice PBQ: Enterprise NOC Diagnostic Dashboard</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=47097337" target="_blank">Complete the Domain 5: Network Troubleshooting Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/document/d/1F7iAbpQEcgYNq364DlHpb3MY8KMCmaJi/edit" target="_blank" rel="noopener noreferrer">Packet Tracer: Demonstration of Commands</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/network-day10-enterprise-NOC-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Enterprise NOC Diagnostic Dashboard</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://wayground.com/join?gc=47097337" target="_blank" rel="noopener noreferrer">Complete the Domain 5: Network Troubleshooting Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit troubleshooting objectives that need additional attention.</div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-network-plus-009-test/" target="_blank">Launch Network+ N10-009 Practice Test</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-network-plus-009-test/" target="_blank" rel="noopener noreferrer">Launch Network+ N10-009 Practice Test</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 11 – Instructor Review Session</h3></summary>
                     <p><strong>Task:</strong></p>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank" rel="noopener noreferrer">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
                     
                     <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
                         <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
@@ -1386,7 +1525,7 @@
                 <div class="resource-box">
                     <h4>📁 Security+ SY0-701 Student Resources Drive</h4>
                     <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
-                    <p><a href="https://drive.google.com/drive/folders/1aFnn1BfLLG2nq1ugOuzbCTXNaLBTjHPR" target="_blank"><strong>→ Open Security+ SY0-701 Student Resources Drive</strong></a></p>
+                    <p><a href="https://drive.google.com/drive/folders/1aFnn1BfLLG2nq1ugOuzbCTXNaLBTjHPR" target="_blank" rel="noopener noreferrer"><strong>→ Open Security+ SY0-701 Student Resources Drive</strong></a></p>
                     <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
                     <ul>
                         <li><strong>PBQ Guidance Documents:</strong> Access guidance and walk-through documents to help you understand complex, simulation-style PBQ scenarios.</li>
@@ -1396,17 +1535,17 @@
                     </ul>
                     <p style="margin-top: 0.75rem; margin-bottom: 0.25rem;"><strong>Flash Cards:</strong></p>
                     <ul style="list-style-type: none; padding-left: 0;">
-                        <li><a href="https://wayground.com/join?gc=44055546" target="_blank">→ Acronyms (AAA-GPU) Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=19938298" target="_blank">→ Acronyms (GRE-PAT) Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=50871290" target="_blank">→ Acronyms (PBKDF2-TPM) Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=61357050" target="_blank">→ Acronyms (TTP-XSS) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=44055546" target="_blank" rel="noopener noreferrer">→ Acronyms (AAA-GPU) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=19938298" target="_blank" rel="noopener noreferrer">→ Acronyms (GRE-PAT) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=50871290" target="_blank" rel="noopener noreferrer">→ Acronyms (PBKDF2-TPM) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=61357050" target="_blank" rel="noopener noreferrer">→ Acronyms (TTP-XSS) Flash Cards</a></li>
                     </ul>
                 </div>
 
                 <details>
                     <summary><h3>Day 1 – General Security Concepts & Cryptographic Solutions</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1F2z-hRMjugRERdDD00dB4hJCJH261Ggr/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1CXJhK_7Ah_yQGgP1Gn5gOtTngQN0Mw_1/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1F2z-hRMjugRERdDD00dB4hJCJH261Ggr/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1CXJhK_7Ah_yQGgP1Gn5gOtTngQN0Mw_1/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 1 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1415,14 +1554,14 @@
                         <li><strong>1.3</strong> – Explain the importance of change management processes and the impact to security.</li>
                         <li><strong>1.4</strong> – Explain the importance of using appropriate cryptographic solutions.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=83023108" target="_blank">Complete the Domain 1: General Security Concepts Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=83023108" target="_blank" rel="noopener noreferrer">Complete the Domain 1: General Security Concepts Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak core security concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 2 – Threat Actors, Motivations & Attack Surfaces</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1AUQxrLQZka6EWC3_luD1lKxxDnTSUVry/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1NmjnFeOzT3bVboOxnbBk6r6woZlhRK7r/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1AUQxrLQZka6EWC3_luD1lKxxDnTSUVry/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1NmjnFeOzT3bVboOxnbBk6r6woZlhRK7r/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 2 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1430,56 +1569,56 @@
                         <li><strong>2.2</strong> – Explain common threat vectors and attack surfaces.</li>
                         <li><strong>2.3</strong> – Explain various types of vulnerabilities.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day2-threat-identification-lab/" target="_blank">Practice PBQ: Threat Identification</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day2-threat-identification-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Threat Identification</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 3 – Malicious Activity Indicators & Enterprise Mitigation Techniques</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1bjHTbHt4eht_q8vXjVhwUgOb-S-kdHYl/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1q8prfV2L_lTGZqlanNCntwywpM4vyIku/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1bjHTbHt4eht_q8vXjVhwUgOb-S-kdHYl/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1q8prfV2L_lTGZqlanNCntwywpM4vyIku/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 3 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>2.4</strong> – Given a scenario, analyze indicators of malicious activity.</li>
                         <li><strong>2.5</strong> – Explain the purpose of mitigation techniques used to secure the enterprise.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day3-network-threat-analysis-lab/" target="_blank">Practice PBQ: Network Threat Analysis & Forensics</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=80667452" target="_blank">Complete the Domain 2: Threats, Vulnerabilities, & Mitigations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day3-network-threat-analysis-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Network Threat Analysis & Forensics</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=80667452" target="_blank" rel="noopener noreferrer">Complete the Domain 2: Threats, Vulnerabilities, & Mitigations Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak threat landscape concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 4 – Architecture Models & Enterprise Infrastructure Security Principles</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1jCjui124_wFcVCSxIMWYbOi6L8qVSwkZ/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1m8u9Uo1WEhA_T7ICl-pei69p2HQsGtph/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1jCjui124_wFcVCSxIMWYbOi6L8qVSwkZ/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1m8u9Uo1WEhA_T7ICl-pei69p2HQsGtph/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 4 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>3.1</strong> – Compare and contrast security implications of different architecture models.</li>
                         <li><strong>3.2</strong> – Given a scenario, apply security principles to secure enterprise infrastructure.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-cloud-architecture-lab/" target="_blank">Practice PBQ: Cloud Architecture</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-site-to-site-vpn-lab/" target="_blank">Practice PBQ: Site-to-site VPN</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-cloud-architecture-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Cloud Architecture</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day4-site-to-site-vpn-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Site-to-site VPN</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 5 – Data Protection Strategies & Architecture Resilience</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1cXvDfZWrYrZ_xrmZpfjqvmdmOCqlZaxy/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1_I-KemPC5OiynQHdsQDAe_ijPgyM0ySX/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1cXvDfZWrYrZ_xrmZpfjqvmdmOCqlZaxy/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1_I-KemPC5OiynQHdsQDAe_ijPgyM0ySX/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 5 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>3.3</strong> – Compare and contrast concepts and strategies to protect data.</li>
                         <li><strong>3.4</strong> – Explain the importance of resilience and recovery in security architecture.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81398607" target="_blank">Complete the Domain 3: Security Architecture Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81398607" target="_blank" rel="noopener noreferrer">Complete the Domain 3: Security Architecture Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak architecture concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 6 – Resource Security, Asset Management & Vulnerability Lifecycles</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1Zr2W98SdwuUIPeUqjhayUL2rxdQtbXPA/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1yeo-QkKzY1PbIvK3dYThRQI3qWkkWRI4/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1Zr2W98SdwuUIPeUqjhayUL2rxdQtbXPA/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1yeo-QkKzY1PbIvK3dYThRQI3qWkkWRI4/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 6 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1491,8 +1630,8 @@
 
                 <details>
                     <summary><h3>Day 7 – Security Monitoring, Capabilities Enhancement & Identity Management (IAM)</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1xzF-5h5RbkvjH0Jlifz7KPwtQcr3oTJb/edit" target="_blank"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1v5clN7Jp80ui4qeyokT2422qlwM4BwFz/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 7 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1xzF-5h5RbkvjH0Jlifz7KPwtQcr3oTJb/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 7 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1v5clN7Jp80ui4qeyokT2422qlwM4BwFz/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 7 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1500,13 +1639,13 @@
                         <li><strong>4.5</strong> – Given a scenario, modify enterprise capabilities to enhance security.</li>
                         <li><strong>4.6</strong> – Given a scenario, implement and maintain identity and access management.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day7-passwordless-authentication-lab/" target="_blank">Practice PBQ: Passwordless Authentication</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security-day7-passwordless-authentication-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Passwordless Authentication</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 8 – SecOps Automation, Incident Response & Forensic Data Sources</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1ctMW3kJoTQV6dmnU1Fb8ejz8soa-AO6B/edit" target="_blank"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1IwWf_ufZ8sWNue3tPoxqUQcz8FfyW0u8/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 8 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1ctMW3kJoTQV6dmnU1Fb8ejz8soa-AO6B/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 8 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1IwWf_ufZ8sWNue3tPoxqUQcz8FfyW0u8/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 8 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1514,15 +1653,15 @@
                         <li><strong>4.8</strong> – Explain appropriate incident response activities.</li>
                         <li><strong>4.9</strong> – Given a scenario, use data sources to support an investigation.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security_day8_web_server_lab/" target="_blank">Practice PBQ: Web Server Mitigation</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=74734092" target="_blank">Complete the Domain 4: Security Operations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/security_day8_web_server_lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Web Server Mitigation</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=74734092" target="_blank" rel="noopener noreferrer">Complete the Domain 4: Security Operations Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review any security operations areas requiring additional study.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 9 – Security Governance & Third-Party Risk Assessment Frameworks</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1G4aowoDOf6hq3U8Nlxm97yJ2wPi5Hjkh/edit" target="_blank"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1Ob39s2zWtvbDShYhptaZZrmEvPD4518Z/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 9 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1G4aowoDOf6hq3U8Nlxm97yJ2wPi5Hjkh/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 9 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1Ob39s2zWtvbDShYhptaZZrmEvPD4518Z/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 9 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1534,8 +1673,8 @@
 
                 <details>
                     <summary><h3>Day 10 – Regulatory Compliance, Audit Processes & Awareness Hardening</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/13JIOj2kKKNXQB0-KIxF3zcvRenal-rIT/edit" target="_blank"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1JbhjfUhl93NEJvJLroSrB7CspR2CzuSC/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 10 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/13JIOj2kKKNXQB0-KIxF3zcvRenal-rIT/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 10 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1JbhjfUhl93NEJvJLroSrB7CspR2CzuSC/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 10 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1543,15 +1682,15 @@
                         <li><strong>5.5</strong> – Explain types and purposes of audits and assessments.</li>
                         <li><strong>5.6</strong> – Given a scenario, implement security awareness practices.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95875934" target="_blank">Complete the Domain 5: Security Management & Oversight Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95875934" target="_blank" rel="noopener noreferrer">Complete the Domain 5: Security Management & Oversight Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review all incorrect answers and revisit oversight objectives that need additional attention.</div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-security-plus-701-test/" target="_blank">Launch Security+ SY0-701 Practice Test</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-security-plus-701-test/" target="_blank" rel="noopener noreferrer">Launch Security+ SY0-701 Practice Test</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 11 – Instructor Review Session</h3></summary>
                     <p><strong>Task:</strong></p>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank" rel="noopener noreferrer">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 11).</div>
                     
                     <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
                         <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
@@ -1596,7 +1735,7 @@
                 <div class="resource-box">
                     <h4>📁 CySA+ CS0-003 Student Resources Drive</h4>
                     <p>Access our comprehensive repository of supplemental study materials directly on Google Drive:</p>
-                    <p><a href="https://drive.google.com/drive/folders/14sohq92FIYp6_KosbJZuyNw7AjXx3gyo" target="_blank"><strong>→ Open CySA+ CS0-003 Student Resources Drive</strong></a></p>
+                    <p><a href="https://drive.google.com/drive/folders/14sohq92FIYp6_KosbJZuyNw7AjXx3gyo" target="_blank" rel="noopener noreferrer"><strong>→ Open CySA+ CS0-003 Student Resources Drive</strong></a></p>
                     <p><strong>Why This Drive Is Essential for Your Preparation:</strong></p>
                     <ul>
                         <li><strong>PBQ Guidance Documents:</strong> Access guidance and walk-through documents to help you understand complex, simulation-style PBQ scenarios.</li>
@@ -1606,29 +1745,29 @@
                     </ul>
                     <p style="margin-top: 0.75rem; margin-bottom: 0.25rem;"><strong>Flash Cards:</strong></p>
                     <ul style="list-style-type: none; padding-left: 0;">
-                        <li><a href="https://wayground.com/join?gc=53468154" target="_blank">→ Acronyms (ACL-NTP) Flash Cards</a></li>
-                        <li><a href="https://wayground.com/join?gc=12573690" target="_blank">→ Acronyms (OpenVAS-ZTNA) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=53468154" target="_blank" rel="noopener noreferrer">→ Acronyms (ACL-NTP) Flash Cards</a></li>
+                        <li><a href="https://wayground.com/join?gc=12573690" target="_blank" rel="noopener noreferrer">→ Acronyms (OpenVAS-ZTNA) Flash Cards</a></li>
                     </ul>
                 </div>
 
                 <details>
                     <summary><h3>Day 1 – Security Architecture & Malicious Activity Indicators</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1mfreJl2F0l8CIBsOaCtmHp_UirFaJ_Df/edit" target="_blank"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1n6e2q_EBgJEVvDS7-m_q_5Po66PltK2_/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 1 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1mfreJl2F0l8CIBsOaCtmHp_UirFaJ_Df/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 1 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1n6e2q_EBgJEVvDS7-m_q_5Po66PltK2_/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 1 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>1.1</strong> – Explain the importance of system and network architecture concepts in security operations.</li>
                         <li><strong>1.2</strong> – Given a scenario, analyze indicators of potentially malicious activity.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-cybersecurity-suspicous-login-lab/" target="_blank">Practice PBQ: Cybersecurity Suspicious Login</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-phishing-log-review-lab/" target="_blank">Practice PBQ: Phishing Log Review</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-cybersecurity-suspicous-login-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Cybersecurity Suspicious Login</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day1-phishing-log-review-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Phishing Log Review</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 2 – Security Analytics Tools, Threat Hunting & Process Optimization</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1vzjfwJ0pzYOfDpezrrypFxHIS-VPJtbz/edit" target="_blank"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1s2zEvFNVhsGow7-F7IfLWYl0hLs2PnVk/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 2 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1vzjfwJ0pzYOfDpezrrypFxHIS-VPJtbz/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 2 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1s2zEvFNVhsGow7-F7IfLWYl0hLs2PnVk/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 2 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1636,29 +1775,29 @@
                         <li><strong>1.4</strong> – Compare and contrast threat-intelligence and threat-hunting concepts.</li>
                         <li><strong>1.5</strong> – Explain the importance of efficiency and process improvement in security operations.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-cybersecurity-investigation-lab/" target="_blank">Practice PBQ: Cybersecurity Investigation</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-it-help-desk-lab/" target="_blank">Practice PBQ: IT Help Desk</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=73411914" target="_blank">Complete the Domain 1: Security Operations Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-cybersecurity-investigation-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Cybersecurity Investigation</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day2-it-help-desk-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: IT Help Desk</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=73411914" target="_blank" rel="noopener noreferrer">Complete the Domain 1: Security Operations Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak security operations concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 3 – Vulnerability Scanning Methods & Assessment Tool Outputs</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1LetEulCTClSz1zI_ZTSFHY6y5S_EiWs8/edit" target="_blank"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1BZC02QM6gZNf4AAJTFzNc0TLX-9-eqUu/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 3 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1LetEulCTClSz1zI_ZTSFHY6y5S_EiWs8/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 3 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1BZC02QM6gZNf4AAJTFzNc0TLX-9-eqUu/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 3 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>2.1</strong> – Given a scenario, implement vulnerability scanning methods and concepts.</li>
                         <li><strong>2.2</strong> – Given a scenario, analyze output from vulnerability assessment tools.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day3-security-analysis-lab/" target="_blank">Practice PBQ: Security Analysis</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day3-security-analysis-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Security Analysis</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 4 – Vulnerability Prioritization, Response Handling & Mitigations</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1G1SVv542pJu3Vpo9KyaSf785Ni8TUAZg/edit" target="_blank"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1QsUCeMYcCrdVCSHFthzN2SFUh3nntGLI/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 4 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1G1SVv542pJu3Vpo9KyaSf785Ni8TUAZg/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 4 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1QsUCeMYcCrdVCSHFthzN2SFUh3nntGLI/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 4 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1666,17 +1805,17 @@
                         <li><strong>2.4</strong> – Given a scenario, recommend controls to mitigate attacks and software vulnerabilities.</li>
                         <li><strong>2.5</strong> – Explain concepts related to vulnerability response, handling, and management.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-cybersecurity-configuration-lab/" target="_blank">Practice PBQ: Cybersecurity Configuration</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-vulnerability-remediation-lab/" target="_blank">Practice PBQ: Vulnerability Remediation</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-web-server-vulnerability-lab/" target="_blank">Practice PBQ: Web Server Vulnerability</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=84093385" target="_blank">Complete the Domain 2: Vulnerability Management Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-cybersecurity-configuration-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Cybersecurity Configuration</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-vulnerability-remediation-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Vulnerability Remediation</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day4-web-server-vulnerability-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Web Server Vulnerability</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=84093385" target="_blank" rel="noopener noreferrer">Complete the Domain 2: Vulnerability Management Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak vulnerability management concepts.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 5 – Attack Methodologies, Incident Response Frameworks & Life Cycles</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/17Wi6_uggtIpbphlGLNgmucmJ351LTmp1/edit" target="_blank"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1pQs_rNls5yuPDRzFScB6fUTh83B2Zi8k/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 5 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/17Wi6_uggtIpbphlGLNgmucmJ351LTmp1/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 5 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1pQs_rNls5yuPDRzFScB6fUTh83B2Zi8k/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 5 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
@@ -1684,31 +1823,31 @@
                         <li><strong>3.2</strong> – Given a scenario, perform incident response activities.</li>
                         <li><strong>3.3</strong> – Explain the preparation and post-incident activity phases of the incident management life cycle.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-kill-chain-lab/" target="_blank">Practice PBQ: Kill Chain</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-security-incident-lab/" target="_blank">Practice PBQ: Security Incident</a></div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95937944" target="_blank">Complete the Domain 3: Incident Response & Management Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-kill-chain-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Kill Chain</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/cysa-day5-security-incident-lab/" target="_blank" rel="noopener noreferrer">Practice PBQ: Security Incident</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=95937944" target="_blank" rel="noopener noreferrer">Complete the Domain 3: Incident Response & Management Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak response mechanics.</div>
                 </details>
 
                 <details>
                     <summary><h3>Day 6 – Intelligence Communications, Incident Reporting & Vulnerability Disclosures</h3></summary>
-                    <p><a href="https://docs.google.com/document/d/1Fx4XavgdDWUi6zX_1XzF6oO0eODEqrkN/edit" target="_blank"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
-                    <p><a href="https://docs.google.com/presentation/d/1GQvWbJ-XRe1sa6zEpotUitKmtzNNVxoW/edit?slide=id.p1#slide=id.p1" target="_blank"><strong>→ View Day 6 Study Slides</strong></a></p>
+                    <p><a href="https://docs.google.com/document/d/1Fx4XavgdDWUi6zX_1XzF6oO0eODEqrkN/edit" target="_blank" rel="noopener noreferrer"><strong>→ Access & Download Day 6 Worksheet</strong></a></p>
+                    <p><a href="https://docs.google.com/presentation/d/1GQvWbJ-XRe1sa6zEpotUitKmtzNNVxoW/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener noreferrer"><strong>→ View Day 6 Study Slides</strong></a></p>
                     <p class="slides-alert-text">(Note: Make sure to review the notes written under the slides)</p>
                     <p><strong>Study the Following Objectives:</strong></p>
                     <ul>
                         <li><strong>4.1</strong> – Explain the importance of vulnerability management reporting and communication.</li>
                         <li><strong>4.2</strong> – Explain the importance of incident response reporting and communication.</li>
                     </ul>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81235044" target="_blank">Complete the Domain 4: Reporting & Communication Practice Test.</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://quizizz.com/join?gc=81235044" target="_blank" rel="noopener noreferrer">Complete the Domain 4: Reporting & Communication Practice Test.</a></div>
                     <div class="checkbox-item"><input type="checkbox"> Review incorrect answers and strengthen any weak communication mechanics.</div>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-cysa-plus-003-test/" target="_blank">Launch CySA+ CS0-003 Practice Test</a></div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://robertteney.github.io/comptia-cysa-plus-003-test/" target="_blank" rel="noopener noreferrer">Launch CySA+ CS0-003 Practice Test</a></div>
                 </details>
 
                 <details>
                     <summary><h3>Day 7 – Instructor Review Session</h3></summary>
                     <p><strong>Task:</strong></p>
-                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 7).</div>
+                    <div class="checkbox-item"><input type="checkbox"> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdqT9EBeTExEceesDqmnk6kZXmB2yyf2A7-HdgZcZZFD6tV9g/viewform" target="_blank" rel="noopener noreferrer">Schedule and attend a 1-on-1 session with a Lead Instructor.</a> (Align with Day 7).</div>
                     
                     <p style="margin: 0.5rem 0 0.5rem 1.5rem; font-size: 0.95rem; color: #475569;">
                         <strong>Before your meeting:</strong> Prepare a list of questions, identify objectives for clarification, and review difficult practice items or PBQs.<br>
@@ -1765,6 +1904,7 @@
         }
 
         function closeAllModals(e = null, forceClose = false) {
+            if (e && !forceClose && e.target !== e.currentTarget) return;
             modals.forEach(modal => {
                 modal.classList.remove('open');
             });
@@ -1779,156 +1919,120 @@
         function openStudyPlanFullscreen(modalId) {
             const modal = document.getElementById(modalId);
             if (!modal) return;
-
-            const contentElement = modal.querySelector('.study-plan-container');
-            const titleElement = modal.querySelector('h2');
-            
-            const fullscreenWindow = window.open('', '_blank');
-            if (!fullscreenWindow) {
-                alert("Popup blocker prevented opening the study plan in a new tab. Please allow popups for this site.");
-                return;
-            }
-
-            const titleText = titleElement ? titleElement.innerText : 'Study Plan';
-            const bodyHTML = contentElement ? contentElement.innerHTML : '';
-
-            fullscreenWindow.document.write(`
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>${titleText}</title>
-                    <style>
-                        body {
-                            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-                            background-color: #f8fafc;
-                            color: #1e293b;
-                            margin: 0;
-                            padding: 2rem;
-                            display: flex;
-                            justify-content: center;
-                        }
-                        .fullscreen-container {
-                            background: #ffffff;
-                            max-width: 900px;
-                            width: 100%;
-                            padding: 3rem;
-                            border-radius: 12px;
-                            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-                            border-top: 6px solid #0A2540;
-                        }
-                        h2 {
-                            color: #0A2540;
-                            font-size: 2rem;
-                            margin-bottom: 1.5rem;
-                            border-bottom: 2px solid #00A3E0;
-                            padding-bottom: 0.5rem;
-                        }
-                        h3 {
-                            color: #0A2540;
-                            margin: 0;
-                            font-size: 1.3rem;
-                        }
-                        details {
-                            margin-top: 1.25rem;
-                            margin-bottom: 1.25rem;
-                            border: 1px solid #e2e8f0;
-                            border-radius: 8px;
-                            padding: 0.5rem 1rem 1rem 1rem;
-                            background-color: #ffffff;
-                        }
-                        summary {
-                            cursor: pointer;
-                            outline: none;
-                            user-select: none;
-                            padding: 0.5rem 0;
-                        }
-                        summary h3 {
-                            display: inline-block;
-                        }
-                        p {
-                            color: #475569;
-                            font-size: 1.05rem;
-                            line-height: 1.7;
-                            margin-bottom: 1.25rem;
-                        }
-                        a {
-                            color: #00A3E0;
-                            text-decoration: none;
-                            font-weight: 600;
-                        }
-                        a:hover {
-                            text-decoration: underline;
-                        }
-                        ul {
-                            padding-left: 1.25rem;
-                            margin-bottom: 1.25rem;
-                            list-style-type: disc;
-                        }
-                        li {
-                            margin-bottom: 0.4rem;
-                            color: #334155;
-                            font-size: 1rem;
-                            line-height: 1.5;
-                        }
-                        .resource-box {
-                            background-color: #f1f5f9;
-                            border-left: 4px solid #00A3E0;
-                            padding: 1.25rem;
-                            border-radius: 6px;
-                            margin: 1.5rem 0;
-                        }
-                        .resource-box h4 {
-                            color: #0A2540;
-                            font-size: 1.1rem;
-                            margin-bottom: 0.5rem;
-                        }
-                        .checkbox-item {
-                            display: flex;
-                            align-items: flex-start;
-                            gap: 0.6rem;
-                            margin-bottom: 0.6rem;
-                            font-weight: 500;
-                            color: #1e293b;
-                            line-height: 1.4;
-                        }
-                        .checkbox-item input {
-                            margin-top: 0.25rem;
-                            width: 16px;
-                            height: 16px;
-                            cursor: pointer;
-                        }
-                        .slides-alert-text {
-                            font-size: 0.95rem;
-                            color: #475569;
-                            font-style: italic;
-                            margin: 0.25rem 0 1rem 0;
-                        }
-                        @media print {
-                            body { background: white; padding: 0; }
-                            .fullscreen-container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
-                            details { border: none !important; padding: 0 !important; margin: 1.5rem 0 !important; }
-                            input[type="checkbox"] { display: none !important; }
-                            .checkbox-item::before {
-                                content: "[  ] ";
-                                font-family: monospace;
-                                font-weight: bold;
-                            }
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div class="fullscreen-container">
-                        <h2>${titleText}</h2>
-                        ${bodyHTML}
-                    </div>
-                </body>
-                </html>
-            `);
-            fullscreenWindow.document.close();
+            const content = modal.querySelector('.study-plan-container');
+            const title = modal.querySelector('h2');
+            const popup = window.open('', '_blank');
+            if (!popup) { alert('Please allow popups to view the study plan in a new tab.'); return; }
+            const doc = popup.document;
+            doc.open();
+            doc.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Certification Study Plan</title><style>body{font:16px Segoe UI,Arial,sans-serif;color:#183047;background:#f1f5f9;padding:25px;line-height:1.6}.container{max-width:950px;margin:auto;background:white;padding:35px;border-radius:12px}details{border:1px solid #d9e3eb;border-radius:8px;margin:14px 0;padding:12px}summary{cursor:pointer;font-weight:700}a{color:#007ea9}@media print{body{background:white;padding:0}.container{padding:0}}</style></head><body><div class="container"><h2 id="plan-title"></h2><div id="plan-content"></div></div></body></html>');
+            doc.close();
+            doc.getElementById('plan-title').textContent = title ? title.textContent : 'Study Plan';
+            if (content) doc.getElementById('plan-content').appendChild(content.cloneNode(true));
         }
     </script>
 
-</body>
-</html>
+<script id="resource-layout-controller">
+(function(){
+ const workspace=document.querySelector('.workspace');
+ const tools=workspace?.querySelector('.workspace-tools');
+ const main=workspace?.querySelector('main');
+ const returnBtn=tools?.querySelector('.return-home-btn');
+ if(!workspace||!tools||!main||!returnBtn)return;
+ const bar=document.createElement('div');bar.className='resource-return-bar';bar.appendChild(returnBtn);main.parentNode.insertBefore(bar,main);
+ document.getElementById('section-overview').appendChild(tools);
+
+})();
+</script>
+<script id="category-tabs-script">
+(function(){
+ const tabs=Array.from(document.querySelectorAll('.section-tab'));
+ const sections=Array.from(document.querySelectorAll('main .row-section'));
+ const search=document.getElementById('resourceSearch');
+ const status=document.getElementById('searchStatus');
+ let current='section-overview';
+ function activate(id,scroll){
+   if(!document.getElementById(id))return;
+   current=id;
+   const home=id==='section-overview';
+   document.body.classList.toggle('mtf-resource-view',!home);
+   document.getElementById('section-overview').hidden=!home;
+   document.querySelector('main').dataset.homeHidden=String(home);
+   sections.forEach(section=>{const active=section.id===id;section.dataset.inactiveTab=String(!active);section.setAttribute('aria-hidden',String(!active));});
+   tabs.forEach(tab=>{const active=tab.dataset.section===id;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});
+   if(scroll)(id==='section-overview'?document.querySelector('.mtf-home'):document.querySelector('#'+id))?.scrollIntoView({behavior:'smooth',block:'start'});
+ }
+ window.mtfShowCategory=function(id,scroll=true){activate(id,scroll);};
+ tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>activate(tab.dataset.section,true));tab.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();const available=tabs.filter(x=>!x.hidden);const next=available[(available.indexOf(tab)+(e.key==='ArrowDown'?1:-1)+available.length)%available.length];next.focus();activate(next.dataset.section,false);}});});
+ document.querySelectorAll('a[href^="#section-"]').forEach(link=>link.addEventListener('click',e=>{const id=link.getAttribute('href').slice(1);if(document.getElementById(id)){e.preventDefault();window.mtfShowCategory(id,true);}}));
+ activate(current,false);
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.querySelector('.modal-overlay.open')&&typeof closeAllModals==='function')closeAllModals(null,true);});
+})();
+</script>
+
+<button class="mtf-help-launch" id="mtfHelpLaunch" type="button" aria-controls="mtfHelpPanel" aria-expanded="false"><span class="help-dot">?</span> MTF Student Assistant</button>
+<section class="mtf-help-panel" id="mtfHelpPanel" role="dialog" aria-label="MTF Student Support Assistant" aria-modal="false">
+ <div class="mtf-help-head"><span class="mtf-help-icon">♧</span><div><strong>MTF Student Support Assistant</strong><small>Dashboard navigation • Exam guidance • Study resources</small></div><button class="mtf-help-close" id="mtfHelpClose" aria-label="Close assistant" type="button">×</button></div>
+ <div class="mtf-help-messages" id="mtfHelpMessages" role="log" aria-live="polite"></div>
+ <form class="mtf-help-form" id="mtfHelpForm"><input id="mtfHelpInput" class="mtf-help-input" aria-label="Ask a question about MTF" placeholder="Ask a question about MTF…" maxlength="500" autocomplete="off"><button class="mtf-help-send" type="submit" aria-label="Send question">➤</button></form>
+ <div class="mtf-help-foot">Guidance uses dashboard resources • No live instructor chat</div>
+</section>
+
+<script id="mtf-assistant-script">
+(function(){
+'use strict';
+const panel=document.getElementById('mtfHelpPanel'),launch=document.getElementById('mtfHelpLaunch'),close=document.getElementById('mtfHelpClose'),log=document.getElementById('mtfHelpMessages'),form=document.getElementById('mtfHelpForm'),input=document.getElementById('mtfHelpInput');
+const resources=[...document.querySelectorAll('main .tile')].map(tile=>({label:tile.querySelector('span')?.textContent.trim().replace(/\s+/g,' ')||'',tile,href:tile.getAttribute('href'),modal:(tile.getAttribute('onclick')||'').match(/openModal\('([^']+)'/)?.[1]}));
+const find=(term)=>resources.find(r=>r.label.toLowerCase().includes(term.toLowerCase()));
+const routes={
+ voucher:{title:'Exam voucher assistance',steps:['Open the Self Study Voucher Request Form for the dashboard’s voucher request process.','Review Voucher Policies: only one active voucher is permitted at a time, and requests must be completed within your MTF period.','For a new attempt or a retake, schedule a 1-on-1 with an MTF instructor and follow their instructions.'],actions:[['Open voucher request form','resource','Self Study Voucher'],['Read voucher policies','modal','limitationsModal'],['Schedule instructor support','resource','Support Staff']]},
+ study:{title:'Certification study plans',steps:['Select the certification you are preparing for.','Open its study plan and expand the daily sections to review activities and links.','Use Canvas, MeasureUp, boot camps, and the linked materials as directed by the study plan.'],actions:[['A+ Core 1','modal','studyPlanModal'],['A+ Core 2','modal','studyPlanModalCore2'],['Network+','modal','studyPlanModalNetworkPlus'],['Security+','modal','studyPlanModalSecurityPlus'],['CySA+','modal','studyPlanModalCySA']]},
+ schedule:{title:'Schedule a 1-on-1',steps:['Open Support Staff & One-on-One Scheduling.','Choose an available instructor and appointment through the linked scheduling resource.','Bring the exam objectives, practice questions, or topics you need help understanding.'],actions:[['Open scheduling','resource','Support Staff']]},
+ reschedule:{title:'Exam rescheduling',steps:['Open Exam Rescheduling to review the complete policy.','Reschedule an existing exam at least 24 hours before the appointment to avoid forfeiting the voucher.','Confirm the updated appointment through Pearson VUE. For testing problems, call Pearson VUE at 877-551-7587 and retain your case number.','A new attempt is not a reschedule; schedule a 1-on-1 with your MTF instructor instead.'],actions:[['Read rescheduling policy','modal','reschedulingModal'],['Schedule instructor support','resource','Support Staff']]},
+ bootcamp:{title:'Boot camps and training',steps:['Choose Morning Boot Camps or Evening Boot Camps. Neither requires registration according to the dashboard.','Saturday Master Courses require registration.','You can also access Canvas and MeasureUp from the training section.'],actions:[['Morning boot camps','resource','Morning Boot'],['Evening boot camps','resource','Evening Boot'],['Saturday master courses','resource','Saturday Master'],['Canvas','resource','Canvas'],['MeasureUp','resource','MeasureUp']]},
+ results:{title:'Exam results and retakes',steps:['If you completed an exam, follow up with your MTF instructor to provide your results.','If you did not pass and need another attempt, schedule a 1-on-1 with your MTF instructor and follow the instructions provided.','Review voucher limitations before requesting another voucher.'],actions:[['Schedule instructor support','resource','Support Staff'],['Voucher policies','modal','limitationsModal'],['Study plans','section','section-certifications']]},
+ expired:{title:'MTF period expired',steps:['Open the MTF Expired? What’s Next? resource.','The dashboard directs students to Alumni Services at alumni@mycomputercareer.com for information on refresher courses and potential additional voucher eligibility.'],actions:[['Read expired MTF guidance','modal','expiredModal']]},
+ career:{title:'Career services and records',steps:['Open Alumni Career Services for alumni employment resources.','Use Request your Transcript to access the transcript request resource.'],actions:[['Career services','resource','Alumni Career'],['Request transcript','resource','Request your Transcript']]},
+ policy:{title:'MTF policies and information',steps:['About MTF explains the post-graduation Maximum Time Frame period.','Voucher Policies explains active voucher limits and exam attempt limits.','Exam Rescheduling explains existing appointments and Pearson VUE support.'],actions:[['About MTF','modal','aboutModal'],['Voucher policies','modal','limitationsModal'],['Rescheduling','modal','reschedulingModal']]},
+ contact:{title:'Contact MTF instructor support',steps:['For personalized assistance, open Support Staff & One-on-One Scheduling.','Choose an instructor appointment or follow the contact instructions available through that resource.','Email delivery from this assistant is not yet configured; no messages are transmitted from this chat box.'],actions:[['Open instructor support','resource','Support Staff']]},
+ general:{title:'Find dashboard resources',steps:['Select one of the topics below or type a question in your own words.','I can open the dashboard’s study plans, policies, and support links.','If your question requires an instructor, use Support Staff & One-on-One Scheduling.'],actions:[['Training resources','section','section-training'],['Certification study plans','section','section-certifications'],['Instructor support','resource','Support Staff']]}
+};
+const topics=[['Exam Voucher Assistance','voucher'],['Certification Study Help','study'],['Schedule a 1-on-1','schedule'],['Exam Rescheduling','reschedule'],['Boot Camps & Practice','bootcamp'],['Exam Results / Retakes','results'],['MTF Policies','policy'],['Other Questions','general']];
+function bubble(kind){const el=document.createElement('div');el.className='mtf-bubble'+(kind==='user'?' user':'');log.appendChild(el);return el;}
+function button(label,fn,secondary){const b=document.createElement('button');b.type='button';b.className='mtf-action'+(secondary?' secondary':'');b.textContent=label;b.addEventListener('click',fn);return b;}
+function scroll(){log.scrollTop=log.scrollHeight;}
+function navigate(type,target){
+ if(type==='modal'){if(typeof window.openModal==='function'){window.openModal(target);panel.classList.remove('is-open');launch.setAttribute('aria-expanded','false');}else{answer('general');}return;}
+ if(type==='resource'){const item=find(target);if(item){if(item.href){window.open(item.href,'_blank','noopener,noreferrer');}else if(item.modal&&typeof window.openModal==='function'){window.openModal(item.modal);panel.classList.remove('is-open');launch.setAttribute('aria-expanded','false');}}return;}
+ if(type==='section'){const section=document.getElementById(target);if(section){if(typeof window.mtfShowCategory==='function')window.mtfShowCategory(target,true);else section.scrollIntoView({behavior:'smooth',block:'start'});panel.classList.remove('is-open');launch.setAttribute('aria-expanded','false');}}
+}
+function answer(key){const data=routes[key]||routes.general;const el=bubble('bot');const title=document.createElement('strong');title.textContent=data.title;el.appendChild(title);const ol=document.createElement('ol');data.steps.forEach(step=>{const li=document.createElement('li');li.textContent=step;ol.appendChild(li)});el.appendChild(ol);const actions=document.createElement('div');actions.className='mtf-help-actions';data.actions.forEach(([label,type,target])=>{const item=type==='resource'?find(target):null;if(type==='resource'&&!item)return;actions.appendChild(button(label,()=>navigate(type,target)));});actions.appendChild(button('Main menu',menu,true));el.appendChild(actions);scroll();}
+function menu(){const el=bubble('bot');const title=document.createElement('strong');title.textContent='Welcome to MTF Support!';el.appendChild(title);const p=document.createElement('p');p.textContent='I can help you find study plans, voucher information, exam policies, and dashboard resources. Select a topic or ask your own question.';el.appendChild(p);const wrap=document.createElement('div');wrap.className='mtf-help-topics';topics.forEach(([label,key])=>{const b=document.createElement('button');b.type='button';b.className='mtf-topic';b.append(document.createTextNode(label));const arrow=document.createElement('span');arrow.textContent='›';b.appendChild(arrow);b.addEventListener('click',()=>answer(key));wrap.appendChild(b)});el.appendChild(wrap);scroll();}
+function classify(q){
+ const t=q.toLowerCase().replace(/[^a-z0-9+ ]/g,' '),has=(...xs)=>xs.some(x=>t.includes(x));
+ if(has('expired','mtf over','time frame ended','mtf ended'))return 'expired';
+ if(has('transcript','career service','job search','alumni career'))return 'career';
+ if(has('reschedul','cancel my exam','change my exam','pearson','testing center','test center','exam crashed','proctor','24 hour'))return 'reschedule';
+ if(has('failed','did not pass','didn t pass','retake','another attempt','new attempt','exam result','score report'))return 'results';
+ if(has('voucher','exam code','exam ticket'))return 'voucher';
+ if(has('boot camp','bootcamp','master course','canvas','measureup','practice test','practice exam'))return 'bootcamp';
+ if(has('1 on 1','one on one','appointment','book a session','schedule with','meet with','tutor','instructor session'))return 'schedule';
+ if(has('core 1','1201','220 1201'))return 'core1';
+ if(has('core 2','1202','220 1202'))return 'core2';
+ if(has('network+','n10','network plus'))return 'network';
+ if(has('security+','sy0','security plus'))return 'security';
+ if(has('cysa','cs0'))return 'cysa';
+ if(has('study','certification','exam prep','flashcard','study plan','worksheet','slides'))return 'study';
+ if(has('contact','email','message','speak to','talk to','reach rob','reach instructor'))return 'contact';
+ if(has('mtf','limitation','policy','policies','maximum time'))return 'policy';
+ return 'general';
+}
+const plans={core1:['CompTIA A+ Core 1 (220-1201)','studyPlanModal'],core2:['CompTIA A+ Core 2 (220-1202)','studyPlanModalCore2'],network:['CompTIA Network+ (N10-009)','studyPlanModalNetworkPlus'],security:['CompTIA Security+ (SY0-701)','studyPlanModalSecurityPlus'],cysa:['CompTIA CySA+','studyPlanModalCySA']};
+function ask(q){const t=q.trim();if(!t)return;const u=bubble('user');u.textContent=t;const category=classify(t);if(plans[category]){const [name,id]=plans[category];const el=bubble('bot');const strong=document.createElement('strong');strong.textContent=name+' study resources';el.appendChild(strong);const p=document.createElement('p');p.textContent='Open the certification study plan to review the daily checklist, linked materials, and exam preparation activities.';el.appendChild(p);const actions=document.createElement('div');actions.className='mtf-help-actions';actions.appendChild(button('Open study plan',()=>navigate('modal',id)));actions.appendChild(button('All study plans',()=>answer('study'),true));el.appendChild(actions);scroll();}else answer(category);}
+launch.addEventListener('click',()=>{const open=!panel.classList.contains('is-open');panel.classList.toggle('is-open',open);launch.setAttribute('aria-expanded',String(open));if(open){if(!log.children.length)menu();input.focus();}});
+close.addEventListener('click',()=>{panel.classList.remove('is-open');launch.setAttribute('aria-expanded','false');launch.focus();});
+form.addEventListener('submit',e=>{e.preventDefault();const q=input.value;input.value='';ask(q);input.focus();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('is-open')){panel.classList.remove('is-open');launch.setAttribute('aria-expanded','false');}});
+})();
+</script>
+</body></html>
