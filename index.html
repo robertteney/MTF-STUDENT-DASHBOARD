@@ -720,6 +720,19 @@ body.mtf-resource-view .resource-page-copy:before{content:"🍂 THANKSGIVING SEA
 @media(max-width:760px){.resource-page-hero:after{right:7px;top:7px;font-size:13px;letter-spacing:2px;opacity:.5}.command-sidebar{background:#2d2b2a}}
 @media print{.resource-page-hero:after,body.mtf-resource-view .resource-page-copy:before{display:none!important}}
 </style>
+
+<style id="thanksgiving-falling-leaves-style">
+/* Banner-only animated autumn leaves; content and links remain interactive. */
+.hero { position:relative; overflow:hidden; isolation:isolate; }
+.hero .falling-leaves-layer { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+.hero .falling-leaf { position:absolute; top:-48px; left:var(--leaf-left); font-size:var(--leaf-size); opacity:.94; line-height:1; filter:drop-shadow(0 2px 2px rgba(0,0,0,.22)); animation:leaf-fall var(--leaf-duration) linear var(--leaf-delay) infinite; will-change:transform; }
+.hero .hero-copy, .hero .hero-graphic { position:relative; z-index:2; }
+/* Leaves remain behind the foreground content, including headings and action buttons. */
+.hero .hero-copy { isolation:isolate; }
+@keyframes leaf-fall { 0%{transform:translate3d(0,-55px,0) rotate(0deg);opacity:0} 8%{opacity:.94} 88%{opacity:.94} 100%{transform:translate3d(var(--leaf-drift),440px,0) rotate(var(--leaf-spin));opacity:0} }
+@media (prefers-reduced-motion:reduce) { .hero .falling-leaf {animation:none;display:none;} }
+@media print { .hero .falling-leaves-layer {display:none!important;} }
+</style>
 </head>
 <body>
 
@@ -2001,7 +2014,8 @@ body.mtf-resource-view .resource-page-copy:before{content:"🍂 THANKSGIVING SEA
             if (!popup) { alert('Please allow popups to view the study plan in a new tab.'); return; }
             const doc = popup.document;
             doc.open();
-            doc.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Certification Study Plan</title><style>body{font:16px Segoe UI,Arial,sans-serif;color:#183047;background:#f1f5f9;padding:25px;line-height:1.6}.container{max-width:950px;margin:auto;background:white;padding:35px;border-radius:12px}details{border:1px solid #d9e3eb;border-radius:8px;margin:14px 0;padding:12px}summary{cursor:pointer;font-weight:700}a{color:#007ea9}@media print{body{background:white;padding:0}.container{padding:0}}</style></head><body><div class="container"><h2 id="plan-title"></h2><div id="plan-content"></div></div></body></html>');
+            doc.write('<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Certification Study Plan</title><style>body{font:16px Segoe UI,Arial,sans-serif;color:#183047;background:#f1f5f9;padding:25px;line-height:1.6}.container{max-width:950px;margin:auto;background:white;padding:35px;border-radius:12px}details{border:1px solid #d9e3eb;border-radius:8px;margin:14px 0;padding:12px}summary{cursor:pointer;font-weight:700}a{color:#007ea9}@media print{body{background:white;padding:0}.container{padding:0}}</style></head><body><div class="container"><h2 id="plan-title"></h2><div id="plan-content"></div></div>
+</body></html>');
             doc.close();
             doc.getElementById('plan-title').textContent = title ? title.textContent : 'Study Plan';
             if (content) doc.getElementById('plan-content').appendChild(content.cloneNode(true));
@@ -2109,6 +2123,34 @@ launch.addEventListener('click',()=>{const open=!panel.classList.contains('is-op
 close.addEventListener('click',()=>{panel.classList.remove('is-open');launch.setAttribute('aria-expanded','false');launch.focus();});
 form.addEventListener('submit',e=>{e.preventDefault();const q=input.value;input.value='';ask(q);input.focus();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panel.classList.contains('is-open')){panel.classList.remove('is-open');launch.setAttribute('aria-expanded','false');}});
+})();
+</script>
+<script id="thanksgiving-falling-leaves-script">
+/* Runs on the dashboard itself, not in the study-plan popup template. */
+(function () {
+  function initFallingLeaves() {
+    const hero = document.querySelector('.workspace > .hero');
+    if (!hero || hero.querySelector('.falling-leaves-layer')) return;
+    const layer = document.createElement('div');
+    layer.className = 'falling-leaves-layer';
+    layer.setAttribute('aria-hidden', 'true');
+    const icons = ['🍁','🍂','🍁','🍃'];
+    for (let i = 0; i < 32; i++) {
+      const leaf = document.createElement('span');
+      leaf.className = 'falling-leaf';
+      leaf.textContent = icons[i % icons.length];
+      leaf.style.setProperty('--leaf-left', ((i * 37 + 11) % 100) + '%');
+      leaf.style.setProperty('--leaf-size', (18 + (i * 7 % 18)) + 'px');
+      leaf.style.setProperty('--leaf-duration', (5 + (i * 11 % 7)) + 's');
+      leaf.style.setProperty('--leaf-delay', (-((i * 17) % 110) / 10) + 's');
+      leaf.style.setProperty('--leaf-drift', (((i * 23) % 170) - 85) + 'px');
+      leaf.style.setProperty('--leaf-spin', (180 + (i * 73 % 540)) + 'deg');
+      layer.appendChild(leaf);
+    }
+    hero.appendChild(layer);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initFallingLeaves);
+  else initFallingLeaves();
 })();
 </script>
 </body></html>
